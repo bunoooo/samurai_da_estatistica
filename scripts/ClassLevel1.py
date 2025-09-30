@@ -76,13 +76,9 @@ class Level1():
         ]
         
         self.quest_system = QuestSystem(quests, self.displaySurface )
-
-     
-
-
          # Carregar o arquivo TMX
 
-        self.levelData = load_pygame(LEVELS_PATH + "Level1/level1.tmx")
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level1_ajustado.tmx")
 
         # Instanciar classes
         self.background = Background()
