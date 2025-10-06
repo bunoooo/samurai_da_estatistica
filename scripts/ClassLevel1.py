@@ -191,7 +191,7 @@ class Tutorial():
     def draw(self):
         # Fundo
         self.background = Background()
-        self.background.draw2(self.displaySurface)
+        self.background.draw1(self.displaySurface)
 
         # Background tiles
         for tile in self.othersprites:
