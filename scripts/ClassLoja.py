@@ -9,7 +9,7 @@ NpcLojaSprites = [(31, 48, 88, 67),
                    (463, 48, 88, 67)]
 
 class LojaNpc(pygame.sprite.Sprite):
-    def __init__(self, position, faceRight=True , nome = "Loja"):
+    def __init__(self, position, faceRight=True , nome = "Mercador"):
         super().__init__()
         # Carrega spritesheet
         self.idleSpriteSheet = SpriteSheet(loja_path + "idle_loja.png", NpcLojaSprites)
@@ -58,7 +58,7 @@ class LojaNpc(pygame.sprite.Sprite):
         # Mensagem de interação
         if self.show_interaction:
             msg = self.font.render("(B) Abrir loja", True , (49,59,114))
-            msg_rect = msg.get_rect(midbottom=(screen_pos.centerx + 5, screen_pos.top + 5))
+            msg_rect = msg.get_rect(midbottom=(screen_pos.centerx , screen_pos.top + 5))
             surface.blit(msg, msg_rect)
 
            

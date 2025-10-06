@@ -1,5 +1,6 @@
 import pygame
 from Config import *
+from ClassLoja import *
 
 class LojaSimples:
     def __init__(self, hero, displaySurface, npc, dicas, pos=(50, 50)):
@@ -50,6 +51,12 @@ class LojaSimples:
 
     def handle_input(self):
         keys = pygame.key.get_pressed()
+
+        if self.hero.hitbox.colliderect(self.npc.hitbox):
+            self.npc.show_interaction = True 
+
+        else: 
+            self.npc.show_interaction = False
 
         # Abrir/fechar loja com B
         if keys[pygame.K_b] and not self.b_pressed_last_frame:

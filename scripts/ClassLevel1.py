@@ -134,8 +134,8 @@ class Tutorial():
    
 ]
         quests = [
-            {"id": 1, "text": "Falar com o Mestre Estatístico", "done": False},
-            {"id": 2, "text": "Elimine todos os inimigos", "done": False},
+            {"id": 1, "text": "Falar com o Homem Estatístico", "done": False},
+            {"id": 2, "text": "Elimine a maioria dos inimigos", "done": False},
             {"id": 3, "text": "Encontre o mercador", "done": False},
             {"id": 4 , "text": "Retorne ao Mestre e retire a duvida" , "done" : False}
         ]
