@@ -4,44 +4,60 @@ class Dialogos:
     def __init__(self):
         # Dicionário com os diálogos organizados por fase
         self.dialogos = {
-    1: [
-        ("homem", [
-            "Samurai... você não pertence a este tempo, não é?",
-            "Nossa cidade enfrenta um grave problema: falta de comida.",
-            "Não conseguimos ajustar a quantidade que sirva para todos",
-            "para que ninguém passe fome."
-        ]),
-        ("Samurai", [
-            "Entendo. Isso é um problema sério. Diga-me, o que vocês já tentaram?"
-        ]),
-        ("homem", [
-            "Temos os dados de produção e consumo. "
-            "Mas eles não fazem sentido isolados.",
-            "Precisamos de uma forma de resumir tudo em um único valor confiável.",
-            "Sem isso, não conseguimos planejar nem garantir alimento para todos."
-        ]),
-        ("Samurai", [
-            "Compreendo... mas não conheço métodos desse mundo.",
-            "Talvez haja alguém aqui que possa ajudá-lo."
-        ]),
-        ("homem", [
-            "Ouvi falar de um viajante mercador que guarda segredos antigos.",
-            "Ele sabe como equilibrar recursos",
-            "encontrando a quantidade certa para todos.",
-            "Mas ele só aparece para aqueles que provam coragem e determinação.",
-            "Para isso, ele necessita de se sentir seguro"
-        ]),
-        ("homem", [
-            "Samurai, você deve encontrá-lo e aprender com ele.",
-            "Só assim poderemos ajustar a comida e salvar nossa cidade."
-        ]),
-        ("Samurai", [
-            "Minha missão está clara.",
-            "Buscarei o mercador, aprenderei com ele e retornarei.",
-            "Nada ficará sem solução enquanto eu estiver aqui."
-        ])
-    ],
-            2: [
+            0: [  # 📝 Fase Tutorial
+                ("Jogo", [
+                    "Bem-vindo, jovem Samurai.",
+                    "Ouça com atenção cada diálogo... eles revelarão pistas importantes.",
+                    "Dentro de cada diálogo, existirá um problema criado pelo npc",
+                    "Através dele você deve associar o problema ao conceito de estatistico"
+                ]),
+                ("Jogo", [
+                    "Após analisar o diálogo, você tem a opção de comprar conceitos na loja",
+                    "Para isso, é necessario eliminar a maioria dos inimigos",
+                    "Para passar de fase é necessario responder corretamente a pergunta",
+                    "Abrindo o portal e seguindo para a próxima fase!"
+                ])
+            ],
+
+            1: [  # 🌾 Fase 1 — Cidade com falta de comida
+                ("homem", [
+                    "Samurai... você não pertence a este tempo, não é?",
+                    "Nossa cidade enfrenta um grave problema: falta de comida.",
+                    "Não conseguimos ajustar a quantidade que sirva para todos",
+                    "para que ninguém passe fome."
+                ]),
+                ("Samurai", [
+                    "Entendo. Isso é um problema sério. Diga-me, o que vocês já tentaram?"
+                ]),
+                ("homem", [
+                    "Temos os dados de produção e consumo. "
+                    "Mas eles não fazem sentido isolados.",
+                    "Precisamos de uma forma de resumir tudo em um único valor confiável.",
+                    "Sem isso, não conseguimos planejar nem garantir alimento para todos."
+                ]),
+                ("Samurai", [
+                    "Compreendo... mas não conheço métodos desse mundo.",
+                    "Talvez haja alguém aqui que possa ajudá-lo."
+                ]),
+                ("homem", [
+                    "Ouvi falar de um viajante mercador que guarda segredos antigos.",
+                    "Ele sabe como equilibrar recursos",
+                    "encontrando a quantidade certa para todos.",
+                    "Mas ele só aparece para aqueles que provam coragem e determinação.",
+                    "Para isso, ele necessita de se sentir seguro"
+                ]),
+                ("homem", [
+                    "Samurai, você deve encontrá-lo e aprender com ele.",
+                    "Só assim poderemos ajustar a comida e salvar nossa cidade."
+                ]),
+                ("Samurai", [
+                    "Minha missão está clara.",
+                    "Buscarei o mercador, aprenderei com ele e retornarei.",
+                    "Nada ficará sem solução enquanto eu estiver aqui."
+                ])
+            ],
+
+            2: [  # 👻 Fase 2 — Santa da Morte
                 ("NARRADOR", [
                     "Você encontrou a Santa da Morte.",
                     "Ela guarda segredos que podem salvar a princesa.",
@@ -52,8 +68,12 @@ class Dialogos:
                     "Somente assim o portal será ativado."
                 ])
             ]
-            # pode ir adicionando novas fases aqui...
+
+            # novas fases podem ser adicionadas aqui...
         }
 
     def dialogo_fase(self, fase: int):
-        return self.dialogos.get(fase, [("NARRADOR", ["Nenhum diálogo encontrado para essa fase."])])
+        return self.dialogos.get(
+            fase,
+            [("NARRADOR", ["Nenhum diálogo encontrado para essa fase."])]
+        )

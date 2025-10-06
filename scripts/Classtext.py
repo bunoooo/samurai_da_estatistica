@@ -77,7 +77,7 @@ class AppearingTextBox:
         for i in range(self.current_text + 1):
             if i < len(lines):
                 text_surf = self.font.render(lines[i], True, self.text_color)
-                self.screen.blit(text_surf, (start_x, start_y + i * 15))
+                self.screen.blit(text_surf, (start_x - 10, start_y + i * 15))
 
     def update(self):
         if self.text_active:

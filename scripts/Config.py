@@ -16,7 +16,7 @@ robot_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios s
 
 loja_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/loja_sprites/"
 
-
+image_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/cutscenes/"
 
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540

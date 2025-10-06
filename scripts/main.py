@@ -4,7 +4,6 @@ from ClassLevel1 import *
 from ClassMenu import Menu
 from AnimatedText import *
 
-
 def main():
     pygame.init()
     clock = pygame.time.Clock()
@@ -13,25 +12,21 @@ def main():
 
     current_level = None
     show_menu = True
-    confirm_exit = False  # <- estado para confirmar saída
+    confirm_exit = False
 
     font = pygame.font.Font(font_path, 15)
 
-    # mensagem de morte
     reset_msg = AnimatedText(
         text="Você morreu... Aperte R para reiniciar ou ESC para voltar ao menu",
         font=font,
         color=(255, 255, 255),
         surface=displaySurface,
-        
         speed=0.5,
-        duration=999999999999999999999999999999  # não some automaticamente
+        duration=999999999999999999999999999999
     )
 
-    # menu de saída
     exit_menu = ExitMenu(displaySurface, font)
 
-    # callback para iniciar o jogo
     def start_game(level_instance):
         nonlocal current_level, show_menu
         current_level = level_instance
@@ -47,10 +42,10 @@ def main():
                 isGameRunning = False
 
             elif event.type == pygame.KEYDOWN:
-                # prioridade máxima: confirmação de saída
+                # Confirmação de saída
                 if confirm_exit:
                     result = exit_menu.handle_input(event)
-                    if result == "SAIR":  # confirma saída
+                    if result == "SAIR":
                         show_menu = True
                         current_level = None
                         confirm_exit = False
@@ -62,18 +57,16 @@ def main():
                             ("fases", menu.fases_rect),
                             ("sair", menu.sair_rect),
                         ]
-                    elif result == "NÃO":  # cancela saída
+                    elif result == "NÃO":
                         confirm_exit = False
-
-                    # IMPORTANTE: não deixa outros comandos rodarem
                     continue
 
-                # ESC normal (sem confirmação)
+                # ESC padrão
                 if event.key == pygame.K_ESCAPE:
                     if show_menu and menu.state == "inicio":
                         isGameRunning = False
                     else:
-                        if not show_menu:  # dentro de uma fase → pede confirmação
+                        if not show_menu:
                             confirm_exit = True
                         elif menu.state in ["tutorial_texto", "fases"]:
                             menu.state = "principal"
@@ -85,10 +78,16 @@ def main():
                                 ("sair", menu.sair_rect),
                             ]
 
-                # encaminha evento para o menu
+                #  Se estiver em cutscene, passa os eventos para ela
+                if current_level is not None and hasattr(current_level, "cutscene_active"):
+                    if current_level.cutscene_active:
+                        current_level.cutscene.handle_input(event)
+
+                # Eventos do menu
                 if show_menu and not confirm_exit:
                     menu.handle_input(event)
-        # --- lógica e desenho ---
+
+        # --- Lógica e desenho ---
         if show_menu:
             menu.draw()
         else:
@@ -96,6 +95,8 @@ def main():
                 current_level.update(confirm_exit=confirm_exit)
                 current_level.draw()
 
+
+                # Mensagem de morte
                 keys = pygame.key.get_pressed()
                 if hasattr(current_level.hero.sprite, "lives") and current_level.hero.sprite.lives <= 0:
                     reset_msg.draw()
@@ -103,7 +104,7 @@ def main():
                     if keys[pygame.K_r]:
                         current_level.reset()
 
-        # se está confirmando saída, desenha por cima
+        # Confirmação de saída sobreposta
         if confirm_exit:
             exit_menu.draw()
 

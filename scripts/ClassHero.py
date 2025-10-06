@@ -486,7 +486,7 @@ class Hero(pygame.sprite.Sprite):
            self.animationIndex = 0
            self.invincibleTimer = 0
 
-        print(self.lives)
+        
 
 
     def checkEnemyCollisions(self, enemies):
@@ -506,15 +506,16 @@ class Hero(pygame.sprite.Sprite):
         collidedSprites = pygame.sprite.spritecollide(self, npc, False)
         for npc in collidedSprites:
                     if self.hitbox.colliderect(npc.hitbox):
+                        npc.show_interaction = True
                         self.contato_dialogo = True
                         self.falou_com_npc = True 
                     else:
                         self.contato_dialogo = False
+                        npc.show_interaction = False
 
 
 
     def checkpower_apps(self, apps):
-
         collided_apps_Sprites = pygame.sprite.spritecollide(self, apps, False)
         for apps in collided_apps_Sprites:
             if self.hitbox.colliderect(apps.hitbox):

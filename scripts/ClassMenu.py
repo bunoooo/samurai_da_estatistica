@@ -57,44 +57,7 @@ class Menu:
         ]
         self.selected_fase = 0
 
-        # Tutorial com páginas
-        self.tutorial_paginas = [
-            {
-                "linhas": [
-                    "Movimentação:",
-                    "Use as setinhas do teclado para se movimentar",
-                    "e a barra de espaço para atacar.",
-                    "Se o personagem estiver correndo, ele pula mais alto."
-                ]
-            },
-            {
-                "linhas": [
-                    "Interação com NPC:",
-                    "Para abrir o diálogo com o NPC aperte E.",
-                    "Para avançar no diálogo aperte A.",
-                    "Para interagir no modo pergunta, aperte P."
-                ]
-            },
-            {
-                "linhas": [
-                    "Interação com moedas e poções:",
-                    "Para pegar a moeda basta passar por cima.",
-                    "A moeda serve para comprar dicas na loja.",
-                    "Para utilizar a poção aperte V.",
-                    "Somente é possível carregar uma porção por vez."
-                ]
-            },
-            {
-                "linhas": [
-                    "Interação com o mercado:",
-                    "Para abrir a lojinha, aperte B perto do mercador.",
-                    "Para visualizar as dicas compradas, aperte Tab."
-                ]
-            }
-        ]
-        self.tutorial_pagina_atual = 0
-        self.tutorial_pagina_atual = 0
-
+     
     def draw(self):
         self.parallax_bg.draw()
         self.hero.update_dummy()
@@ -125,29 +88,7 @@ class Menu:
                 self.surface.blit(text_surface, text_rect)
 
         # Tutorial com páginas
-        elif self.state == "tutorial_texto":
-            self.surface.blit(self.painel_texto, self.painel_rect)
-            pagina = self.tutorial_paginas[self.tutorial_pagina_atual]
-
-            # Desenha imagem
-            if "imagem" in pagina:
-                img = pygame.image.load(pagina["imagem"]).convert_alpha()
-                img_rect = img.get_rect(center=(self.painel_rect.centerx, self.painel_rect.centery - 20))
-                self.surface.blit(img, img_rect)
-
-            # Desenha linhas de texto
-            for i, linha in enumerate(pagina["linhas"]):
-                txt_surface = self.font_tutorial.render(linha, True, (255, 255, 255))
-                txt_rect = txt_surface.get_rect(center=(self.painel_rect.centerx,
-                                                        self.painel_rect.top + 40 + i * 40))
-                self.surface.blit(txt_surface, txt_rect)
-
-            # Seta de próxima página
-            if self.tutorial_pagina_atual < len(self.tutorial_paginas) - 1:
-                seta_surface = self.font.render("→ Próxima", True, (255, 255, 255))
-                seta_rect = seta_surface.get_rect(bottomright=(self.painel_rect.right - 20,
-                                                               self.painel_rect.bottom - 10))
-                self.surface.blit(seta_surface, seta_rect)
+        
 
         # Seleção de fases
         elif self.state == "fases":
@@ -203,7 +144,7 @@ class Menu:
                         self.start_game(Level1(self.surface, fase_id=1))
                     elif opcao == "tutorial":
                         self.state = "tutorial_texto"
-                        self.tutorial_pagina_atual = 0
+                        self.start_game(Tutorial(self.surface, fase_id=0))
                     elif opcao == "fases":
                         self.state = "fases"
                         self.selected_fase = 0
