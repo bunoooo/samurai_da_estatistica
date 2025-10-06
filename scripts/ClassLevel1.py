@@ -93,8 +93,9 @@ class Tutorial():
         self.instructions = [
             {"text": "Use as setas para andar", "pos": (0, 380)},
             {"text": "Use a seta para cima para pular", "pos": (400, 490)},
-            {"text": "Ao cair, você tomara dano e será teletransportado para o inicio da fase", "pos": (260, 510)},
+            {"text": "Ao cair, jack tomará dano e será teletransportado para o inicio da fase", "pos": (260, 510)},
             {"text": "aperte espaço para atacar", "pos": (150, 200)},
+            {"text": "Ao tomar dano, jack ficará um tempo invunerável", "pos": (150, 190)},
             {"text": "Se estiver correndo, o pulo vai mais alto", "pos": (350, 500)},
             {"text": "Para abrir dialogos com os npcs aperte E", "pos": (680, 130)},
             {"text": "Para avançar no dialogo aperte A", "pos": (680, 140)},
@@ -107,7 +108,6 @@ class Tutorial():
             {"text": "Para abrir/fechar a loja aperte B", "pos": (750, 380)},
             {"text": "Para comprar o item aperte Enter", "pos": (750, 390)},
             {"text": "Para abrir/fechar os conceitos comprados aperte tab", "pos": (630, 400)},
-
         ]
 
         
@@ -115,47 +115,23 @@ class Tutorial():
         displaySurface=self.displaySurface,
         hero=self.hero.sprite,
         npc=self.npcrobot.sprite,
-        pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
-        opcoes=["Usando a média", "Usando a mediana", "Usando a moda"],
+        pergunta="Então, Preparado para seguir para o jogo?",
+        opcoes=["Sim", "Não"],
         correta_index=0,  # média é a correta
         feedbacks=[
-            "Correto! A média resume todos os valores em um único número representativo, ideal para planejar a quantidade de comida.",
-            "A mediana mostra o valor do meio quando os dados estão ordenados. Ela é útil quando há valores muito extremos, mas não representa todo o conjunto tão bem quanto a média.",
-            "A moda indica apenas o valor mais frequente. Pode mostrar o consumo mais comum, mas não ajuda a equilibrar os recursos para todos."
+            "Uhuuul! Bom jogo!",
+            "Dê uma olhada novamente no tutorial"
         ]
     )
 
         dicas_estatisticas = [
     {
-        "conceito": "Média", 
-        "descricao": "A soma dos valores dividida pelo total.", 
-        "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados. Ela é calculada somando todos os valores do conjunto e dividindo pelo número total de observações. É útil para entender o comportamento geral dos dados, mas pode ser sensível a valores extremos.",
-        "preco": 2
-    },
-    {
-        "conceito": "Mediana", 
-        "descricao": "O valor central de um conjunto ordenado.", 
-        "descricao_completa": "A mediana é uma medida de tendência central que indica o valor que separa a metade superior da metade inferior dos dados. Ao contrário da média, a mediana não é influenciada por valores muito altos ou muito baixos, tornando-se útil para conjuntos de dados assimétricos.",
-        "preco": 2
-    },
-    {
-        "conceito": "Moda", 
-        "descricao": "O valor que mais se repete.", 
-        "descricao_completa": "A moda é a medida de tendência central que representa o valor mais frequente em um conjunto de dados. Pode haver mais de uma moda, e é particularmente útil para dados categóricos ou quando se deseja identificar padrões de repetição.",
-        "preco": 3
-    },
-    {
-        "conceito": "Desvio Padrão", 
-        "descricao": "Mede o quanto os valores se afastam da média.", 
-        "descricao_completa": "O desvio padrão é uma medida de dispersão que indica o quanto os valores de um conjunto de dados se afastam da média. Quanto maior o desvio padrão, mais espalhados estão os dados; quanto menor, mais próximos da média eles se encontram.",
-        "preco": 2
-    },
-    {
-        "conceito": "Probabilidade", 
-        "descricao": "Chance de um evento acontecer.", 
-        "descricao_completa": "Probabilidade é a medida numérica da chance de ocorrência de um evento dentro de um conjunto de possibilidades. É um conceito fundamental em estatística e análise de risco, usado para modelar incertezas e tomar decisões baseadas em chances relativas.",
+        "conceito": "Conceito exemplo", 
+        "descricao": "Descrição parcial sobre o conceito", 
+        "descricao_completa": "Aqui é possivel visualizar a descrição completa do Conceito estátistico",
         "preco": 1
-    }
+    },
+   
 ]
         quests = [
             {"id": 1, "text": "Falar com o Mestre Estatístico", "done": False},
@@ -208,6 +184,7 @@ class Tutorial():
         self.loja.handle_input()
         self.Coin.update()
         self.potion.update()
+        self.pergunta.handle_input()
 
         self.npcrobot.update(self)
         
@@ -248,6 +225,7 @@ class Tutorial():
         
         pos1 = self.camera.apply(self.npcloja.sprite)
         self.displaySurface.blit(self.npcloja.sprite.image, pos1)
+        self.npcloja.sprite.draw(self.displaySurface, self.camera)
        
         # HUD e título
         self.hud.draw(self.displaySurface)
@@ -268,6 +246,8 @@ class Tutorial():
         self.phase_text.draw()
         self.dialogue_box.draw_box()
         self.dialogue_box.draw_text()
+        self.pergunta.draw() 
+            
 
 
 
@@ -616,16 +596,18 @@ class Level1():
         
             pos = self.camera.apply(self.npcrobot.sprite)
             self.displaySurface.blit(self.npcrobot.sprite.image, pos)
+            self.npcrobot.sprite.draw(self.displaySurface, self.camera)
 
             
-            if len(self.robot) == 0:
+            if len(self.robot) < 4:
 
                 self.quest_system.complete_quest(2)
                 
                     
                 pos1 = self.camera.apply(self.npcloja.sprite)
                 self.displaySurface.blit(self.npcloja.sprite.image, pos1)
-                #pygame.draw.rect(self.displaySurface, (255, 0, 0), self.npcloja.sprite.hitbox.rect, 2)
+                self.npcloja.sprite.draw(self.displaySurface, self.camera)
+                
 
                 hitbox_rect = self.npcloja.sprite.hitbox.rect.copy()
                 hitbox_rect.topleft = (hitbox_rect.left + (pos1.left - self.npcloja.sprite.rect.left),
