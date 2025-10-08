@@ -18,6 +18,8 @@ loja_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios sc
 
 image_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/cutscenes/"
 
+portal_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/portal/"
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 

@@ -135,7 +135,7 @@ class Hero(pygame.sprite.Sprite):
         self.xDir = 0
         
         if self.isInvincible:
-            print(self.invincibleTimer)
+            
             self.invincibleTimer -= 1
        
         if self.invincibleTimer <= 0:
@@ -315,7 +315,9 @@ class Hero(pygame.sprite.Sprite):
 
         self.checkpower_apps_health(level.potion)
 
-        print(self.xPos,self.yPos)
+        self.checkportalcontato(level.portal)
+
+       # print(self.xPos,self.yPos)
 
     def selectAnimation(self):
     
@@ -487,8 +489,6 @@ class Hero(pygame.sprite.Sprite):
            self.invincibleTimer = 0
 
         
-
-
     def checkEnemyCollisions(self, enemies):
         # Check for collisions between hero and all enemies in the spritegroup
         collidedSprites = pygame.sprite.spritecollide(self, enemies, False)
@@ -506,13 +506,12 @@ class Hero(pygame.sprite.Sprite):
         collidedSprites = pygame.sprite.spritecollide(self, npc, False)
         for npc in collidedSprites:
                     if self.hitbox.colliderect(npc.hitbox):
-                        npc.show_interaction = True
-                        self.contato_dialogo = True
+                        npc.show_interaction = True # aparecer o texto de interação do npc da loja
+                        self.contato_dialogo = True # aparecer o texto de interação do npc da pergunta
                         self.falou_com_npc = True 
                     else:
                         self.contato_dialogo = False
                         npc.show_interaction = False
-
 
 
     def checkpower_apps(self, apps):
@@ -522,9 +521,15 @@ class Hero(pygame.sprite.Sprite):
                 self.coins_count += 1
                 apps.die()
 
-        
-    def checkpower_apps_health(self, health):
+    def checkportalcontato(self,portal):
+        collided_portal_Sprites = pygame.sprite.spritecollide(self, portal, False)
+        for portal in collided_portal_Sprites:
+            if self.hitbox.colliderect(portal.hitbox):
+                portal.portal_show_interaction = True
+            else:
+                portal.portal_show_interaction = False
 
+    def checkpower_apps_health(self, health):
         collided_health_Sprites = pygame.sprite.spritecollide(self, health, False)
         for health in collided_health_Sprites:
           
@@ -533,13 +538,10 @@ class Hero(pygame.sprite.Sprite):
                 self.health = True
                 health.die()
     
-        print(self.health)
+        
          
 
         
-
-
-
 ################################################################################################################################################
 # animação da tela de entrada do Jogo
     def update_dummy(self):

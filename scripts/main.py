@@ -10,15 +10,19 @@ def main():
     displaySurface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     pygame.display.set_caption("Statistcsamurai")
 
+    fase_id = 0
+
     current_level = None
     show_menu = True
     confirm_exit = False
+    result = None
 
     font = pygame.font.Font(font_path, 15)
 
     reset_msg = AnimatedText(
         text="Você morreu... Aperte R para reiniciar ou ESC para voltar ao menu",
         font=font,
+
         color=(255, 255, 255),
         surface=displaySurface,
         speed=0.5,
@@ -29,6 +33,7 @@ def main():
 
     def start_game(level_instance):
         nonlocal current_level, show_menu
+
         current_level = level_instance
         show_menu = False
 
@@ -95,6 +100,18 @@ def main():
                 current_level.update(confirm_exit=confirm_exit)
                 current_level.draw()
 
+            # Verifica se deve passar de fase
+                if current_level.verificar_prox_fase == "next_level":
+                    
+                 if fase_id == 0:
+                      fase_id = 1
+                      current_level = Level1(displaySurface, fase_id=1)
+                 
+                 elif fase_id == 1:
+                        fase_id = 2
+                        current_level = Level2(displaySurface, fase_id=2)
+                 
+                    
 
                 # Mensagem de morte
                 keys = pygame.key.get_pressed()

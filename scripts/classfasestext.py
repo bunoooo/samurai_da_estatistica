@@ -30,7 +30,7 @@ class Dialogos:
                     "Entendo. Isso é um problema sério. Diga-me, o que vocês já tentaram?"
                 ]),
                 ("homem", [
-                    "Temos os dados de produção e consumo. "
+                    "Temos os dados de produção e consumo. ",
                     "Mas eles não fazem sentido isolados.",
                     "Precisamos de uma forma de resumir tudo em um único valor confiável.",
                     "Sem isso, não conseguimos planejar nem garantir alimento para todos."
@@ -57,17 +57,69 @@ class Dialogos:
                 ])
             ],
 
-            2: [  # 👻 Fase 2 — Santa da Morte
-                ("NARRADOR", [
-                    "Você encontrou a Santa da Morte.",
-                    "Ela guarda segredos que podem salvar a princesa.",
-                    "Mas primeiro, você deve provar sua sabedoria."
-                ]),
-                ("SANTA DA MORTE", [
-                    "Resolva o desafio estatístico que irei propor.",
-                    "Somente assim o portal será ativado."
-                ])
-            ]
+            2: [  # 🌡️ Fase 2 — Cidade atormentada por uma epidemia
+    ("Dr", [
+        
+        "Uma nova doença começou a se espalhar rapidamente pela cidade.",
+        "Tudo começou com alguns casos isolados nos bairros mais populosos.",
+        "Mas em poucos dias, a contaminação se alastrou como fogo.",
+        "Os sintomas aparecem de forma súbita "
+        
+    ]),
+     ("Dr", ["enfraquencendo as pessoas."
+        "Precisamos agir com rapidez,",
+        "mas também com precisão ,",
+        "para escolher o tratamento certo."
+    ]),
+    ("Samurai", [
+        "Eu percebi a tensão nas ruas. Há filas enormes nas farmácias ",
+        "e muita desinformação circulando.",
+        "Erradon está por trás disso, não está? ",
+        "Ele adora espalhar dados confusos para criar pânico "
+       
+    ]),
+    ("Dr", [
+        "Exatamente. Os registros sobre os tratamentos foram corrompidos.",
+        "Alguns dados são verdadeiros, outros foram distorcidos, ",
+        "muitos cidadãos estão se guiando apenas por boatos.",
+        "Temos quatro tratamentos possíveis, mas cada um apresenta ",
+        "diferentes chances de sucesso e riscos."
+        
+    ]),
+    ("Samurai", [
+        "Entendo... então não se trata apenas de agir rápido, ",
+        "e sim de escolher com sabedoria.",
+        "Afinal, um tratamento mal escolhido pode ",
+        "gerar novos problemas e agravar a situação."
+    ]),
+    ("Dr", [
+        "Correto. vi num pergaminho, que um tratamento pode ser rápido e barato, ",
+        "mas se tiver pouca eficácia, a epidemia continuará se espalhando.",
+        "Outro pode ter excelentes resultados, mas exigir mais tempo",
+        "para ser aplicado em larga escala."
+    ]),
+     ("Dr", [
+        "Também há opções experimentais que parecem promissoras, ",
+        "mas cujos dados foram manipulados por Erradon."
+    ]),
+    ("Samurai", [
+        "Então devemos considerar não só a eficácia,",
+        "mas também o risco e a confiabilidade das informações.",
+        "É um desafio estatístico… perfeito para um discípulo da Arte dos Dados."
+    ]),
+    ("Dr", [
+        "Samurai, sua ajuda será crucial. ",
+        "Avalie cada tratamento vendido pelo mercador com cuidado.",
+        "Compare as probabilidades e os possíveis efeitos colaterais, ",
+        "e escolha a estratégia mais segura e eficaz para conter a epidemia."
+    ]),
+    ("Samurai", [
+        "Pode contar comigo, doutor. Erradon não vencerá desta vez.",
+        "Usarei a razão e o conhecimento da arte dos dados para ",
+        "revelar a melhor escolha!"
+    ])
+    ]
+
 
             # novas fases podem ser adicionadas aqui...
         }
