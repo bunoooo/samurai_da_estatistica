@@ -1,5 +1,5 @@
 # Assets:
-SPRITESHEET_PATH = "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/Assets/SpriteSheets/Legacy-Fantasy - High Forest 2.3/"
+SPRITESHEET_PATH = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/background/"
 LEVELS_PATH = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/"
 
 

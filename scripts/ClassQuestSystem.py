@@ -27,8 +27,8 @@ class QuestSystem:
 
         offset = 15
         for quest in self.quests:
-            color = GREEN if quest["done"] else GRAY
-            text = f"[X] {quest['text']}" if quest["done"] else f"[ ] {quest['text']}"
+            color = GREEN if quest["done"] else (0,0,0)
+            text = f"(X) {quest['text']}" if quest["done"] else f" ( )) {quest['text']}"
             quest_surf = self.font.render(text, True, color)
             self.screen.blit(quest_surf, (start_x, start_y + offset))
             offset += 10

@@ -710,7 +710,7 @@ class Level2():
         self.fase_id = fase_id
 
         self.font = pygame.font.Font(font_path, 40)
-        self.phase_text = AnimatedText("Fase 2: O Inicio da Jornada", self.font, (255, 255, 255), surface=self.displaySurface)
+        self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
 
         dicas_estatisticas = [ 
     {
@@ -782,7 +782,7 @@ class Level2():
         self.quest_system = QuestSystem(quests, self.displaySurface )
          # Carregar o arquivo TMX
 
-        self.levelData = load_pygame(LEVELS_PATH + "Level1/level1_ajustado.tmx")
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level2_ajustado.tmx")
 
         # Instanciar classes
         self.background = Background()
@@ -791,6 +791,7 @@ class Level2():
         self.hero = pygame.sprite.GroupSingle()
         self.platformTiles = pygame.sprite.Group()
         self.othersprites = pygame.sprite.Group()
+        self.other2sprites = pygame.sprite.Group()
         self.paredesprites = pygame.sprite.Group()
         self.bees = pygame.sprite.Group()
         self.robot = pygame.sprite.Group()
@@ -812,6 +813,11 @@ class Level2():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
             self.othersprites.add(tile)
 
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in  other2.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other2sprites.add(tile)
+
         parede = self.levelData.get_layer_by_name('Parede')
         for x, y, tileSurface in parede.tiles():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
@@ -819,55 +825,53 @@ class Level2():
 
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
     
-        self.robot.add(Robot((178, 165), moveRight=True,limit_left= 120, limit_right= 320))
-
-        self.robot.add(Robot((310, 225), moveRight=True,limit_left= 310, limit_right= 550))
-
-        self.robot.add(Robot((550, 400), moveRight=True,limit_left= 480, limit_right= 570))
-        
-        self.robot.add(Robot((300, 465), moveRight=True,limit_left= 40, limit_right= 450))
-      
-        self.robot.add(Robot((600, 465), moveRight=True,limit_left= 580, limit_right= 770))
-
-        self.robot.add(Robot((500, 225), moveRight=True,limit_left= 310, limit_right= 550))
-
-        self.robot.add(Robot((800, 160), moveRight=True,limit_left= 800, limit_right= 1000))
-
-        self.robot.add(Robot((900, 400), moveRight=True,limit_left= 900, limit_right= 1000))
-
-        self.robot.add(Robot((900, 400), moveRight=True,limit_left= 900, limit_right= 1000))
        
-        self.robot.add(Robot((900, 400), moveRight=True,limit_left= 900, limit_right= 1000))
+        self.robot.add(Robot((300, 510), moveRight=True,limit_left= 40, limit_right= 450))
+        
 
-        self.robot.add(Robot((1510, 275), moveRight=True,limit_left= 1300, limit_right= 1790))
+        self.robot.add(Robot((550, 365), moveRight=True,limit_left= 480, limit_right= 850))
+        
+        self.robot.add(Robot((600, 510), moveRight=True,limit_left= 700, limit_right= 850))
 
-        self.robot.add(Robot((1310, 275), moveRight=True,limit_left= 1300, limit_right= 1790))
+        self.robot.add(Robot((500, 160), moveRight=True,limit_left= 480, limit_right= 650))
+
+        self.robot.add(Robot((800, 160), moveRight=True,limit_left= 700, limit_right= 950))
+       
+        self.robot.add(Robot((950, 445), moveRight=True,limit_left= 950, limit_right= 1150))
+
+        self.robot.add(Robot((1610, 240), moveRight=True,limit_left= 1600, limit_right= 1790))
+
+        self.robot.add(Robot((1670, 240), moveRight=True,limit_left= 1600, limit_right= 1890))
 
 
-        self.npcrobot.add(RobotNpc((1435,515) , faceRight= False))
+        self.npcrobot.add(RobotNpc((1705,510) , faceRight= False))
 
-        self.npcloja.add(LojaNpc((1240,120) , faceRight= False))
+        self.npcloja.add(LojaNpc((80,132) , faceRight= True))
        
         self.Coin.add(Coin((200,105)))
         self.Coin.add(Coin((170,105)))
         self.Coin.add(Coin((20,320)))
-        self.Coin.add(Coin((540,320)))
-        self.Coin.add(Coin((510,320)))
+        self.Coin.add(Coin((40,320)))
+        self.Coin.add(Coin((540,300)))
+        self.Coin.add(Coin((510,300)))
         self.Coin.add(Coin((705,140)))
 
-        self.Coin.add(Coin((820,420)))
-        self.Coin.add(Coin((850,420)))
+        self.Coin.add(Coin((780,400)))
+        self.Coin.add(Coin((810,400)))
 
         self.Coin.add(Coin((1840,130)))
         self.Coin.add(Coin((1810,130)))
 
+        self.Coin.add(Coin((1840,400)))
+        self.Coin.add(Coin((1810,400)))
 
-        self.potion.add(Potion((10,220)))
-        self.potion.add(Potion((1214,452)))
-        self.potion.add(Potion((1900,310)))
+
+        self.potion.add(Potion((195,385)))
+        self.potion.add(Potion((1314,302)))
+        self.potion.add(Potion((1900,340)))
 
                 
-        self.hero.add(Hero((170, 250), faceRight=True))
+        self.hero.add(Hero((185, 400), faceRight=True))
        
 
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
@@ -922,6 +926,10 @@ class Level2():
         for x, y, tileSurface in other.tiles():
             self.othersprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in other2.tiles():
+            self.other2sprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
         parede = self.levelData.get_layer_by_name('Parede')
         for x, y, tileSurface in parede.tiles():
             self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
@@ -940,7 +948,7 @@ class Level2():
 
         # Recria NPCs e portal
         self.npcrobot.add(RobotNpc((1435, 515), faceRight=False))
-        self.npcloja.add(LojaNpc((1240, 120), faceRight=False))
+        self.npcloja.add(LojaNpc((178, 120), faceRight=False))
         
        
 
@@ -1068,7 +1076,7 @@ class Level2():
                                    
     def draw(self):
                 # Desenha o fundo         
-            self.background.draw2(self.displaySurface)
+            self.background.draw3(self.displaySurface)
             self.quest_system.draw()
 
             # Desenha as camadas com o deslocamento da câmera
@@ -1086,6 +1094,10 @@ class Level2():
 
             
             for tile in self.othersprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            for tile in self.other2sprites:
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
 

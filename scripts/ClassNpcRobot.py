@@ -6,7 +6,7 @@ from HitboxEmemy import *
 NpcRobotSprites = [(x, 0, 48, 48) for x in range(0, 288, 48)]
 
 class RobotNpc(pygame.sprite.Sprite):
-    def __init__(self, position, faceRight=True, nome="Homem"):
+    def __init__(self, position, faceRight=True, nome="Chefe"):
         super().__init__()
         self.idleSpriteSheet = SpriteSheet(robot_path + "npc_robot.png", NpcRobotSprites)
         self.animationIndex = 0
@@ -42,10 +42,10 @@ class RobotNpc(pygame.sprite.Sprite):
 
         # Mensagem de interação
         if self.show_interaction:
-            msg_pergunta = self.font.render("(P) Pergunta", True , (49,59,114))
+            msg_pergunta = self.font.render("(P) Pergunta", True , (244,164,96))
             msg_pergunta_rect = msg_pergunta.get_rect(midbottom=(screen_pos.centerx, screen_pos.top - 15))
             surface.blit(msg_pergunta, msg_pergunta_rect)
 
-            msg_surface = self.font.render("(E) Dialogo ", True, (49, 59, 114))
+            msg_surface = self.font.render("(E) Dialogo ", True, (244,164,96))
             msg_rect = msg_surface.get_rect(midbottom=(screen_pos.centerx, screen_pos.top - 5))
             surface.blit(msg_surface, msg_rect)
