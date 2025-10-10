@@ -23,15 +23,14 @@ from portal import *
 
 repositorio = Dialogos()
 
-import pygame
-from Config import *
-
 class Tutorial():
     def __init__(self, displaySurface, fase_id=0):
         self.displaySurface = displaySurface
         self.fase_id = fase_id
         self.ja_teletransportou = False
         self.verificar_prox_fase = None
+
+        self.background = Background()
 
         # Fonte e texto inicial
         self.font = pygame.font.Font(font_path, 40)
@@ -106,7 +105,7 @@ class Tutorial():
         ]
 
         # Loja e conceitos
-        self.dicas_estatisticas = [
+        dicas_estatisticas = [
             {
                 "conceito": "Conceito exemplo",
                 "descricao": "Descrição parcial do conceito",
@@ -115,7 +114,7 @@ class Tutorial():
                 "preco": 1
             },
         ]
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, self.dicas_estatisticas, pos=(100, 50))
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
 
         # Pergunta baseada em conceito da loja
         self.pergunta = PerguntaResposta(
@@ -149,9 +148,13 @@ class Tutorial():
         self.hero.add(Hero((100, 250), faceRight=True))
 
     def update(self, confirm_exit=False):
+
+       
         self.hero.update(self)
-        self.phase_text.update()
+          
         self.camera.update(self.hero.sprite)
+        
+        self.phase_text.update()
         self.npcloja.update(self)
         self.robot.update(self)
         self.dialogue_box.update()
@@ -176,16 +179,23 @@ class Tutorial():
 
     def draw(self):
         # Fundo
-        self.background = Background()
+      
         self.background.draw1(self.displaySurface)
 
         # Tiles
         for tile in self.othersprites:
-            self.displaySurface.blit(tile.image, self.camera.apply(tile))
+            pos = self.camera.apply(tile)
+            self.displaySurface.blit(tile.image, pos)
+       
+       
         for tile in self.othersprites2:
-            self.displaySurface.blit(tile.image, self.camera.apply(tile))
+            pos = self.camera.apply(tile)
+            self.displaySurface.blit(tile.image, pos)
+       
         for tile in self.platformTiles:
-            self.displaySurface.blit(tile.image, self.camera.apply(tile))
+            pos = self.camera.apply(tile)
+            self.displaySurface.blit(tile.image, pos)
+           
 
         # Portal
         if self.portal.sprite is not None:
@@ -194,13 +204,17 @@ class Tutorial():
             self.portal.sprite.draw(self.displaySurface, self.camera)
 
         # Herói e NPCs
-        self.displaySurface.blit(self.hero.sprite.image, self.camera.apply(self.hero.sprite))
+        pos = self.camera.apply(self.hero.sprite)
+        self.displaySurface.blit(self.hero.sprite.image, pos)
+        
         for robot in self.robot:
             pos = self.camera.apply(robot)
             self.displaySurface.blit(robot.image, pos)
+      
         pos = self.camera.apply(self.npcrobot.sprite)
         self.displaySurface.blit(self.npcrobot.sprite.image, pos)
         self.npcrobot.sprite.draw(self.displaySurface, self.camera)
+       
         pos1 = self.camera.apply(self.npcloja.sprite)
         self.displaySurface.blit(self.npcloja.sprite.image, pos1)
         self.npcloja.sprite.draw(self.displaySurface, self.camera)
@@ -215,6 +229,7 @@ class Tutorial():
         for coin in self.Coin:
             pos = self.camera.apply(coin)
             self.displaySurface.blit(coin.image, pos)
+       
         for potion in self.potion:
             pos = self.camera.apply(potion)
             self.displaySurface.blit(potion.image, pos)
@@ -228,6 +243,7 @@ class Tutorial():
     def run(self, confirm_exit=False):
         self.update(confirm_exit)
         self.draw()
+        
 
 class Level1():
     def __init__(self, displaySurface, fase_id=1):
@@ -516,13 +532,12 @@ class Level1():
 
         if not confirm_exit:
                 self.hero.update(self)
+                print(self.hero.sprite.animationSpeed)
         if self.cutscene_active:
             if self.cutscene.finished:
                 self.cutscene_active = False  # agora a fase 1 começa
             return
         else:
-
-            
 
             if self.pergunta.acertou and self.portal.sprite is None:
                  self.quest_system.complete_quest(3)
@@ -612,10 +627,7 @@ class Level1():
             for tile in self.paredesprites:
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
-                pygame.draw.rect(
-                self.displaySurface, (255, 255, 0),
-                tile.rect.move(pos.left - tile.rect.left, pos.top - tile.rect.top), 1
-                )
+             
 
             
             for coin in self.Coin:

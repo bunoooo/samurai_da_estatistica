@@ -79,9 +79,7 @@ class HUD:
             y = y_start + 9
             surface.blit(self.vida_icon, (x, y))
 
-        life_text = f"{self.hero.lives}"
-        text_surface = self.font.render(life_text, True, (255, 255, 255))
-        surface.blit(text_surface, (x_start + self.vida_hud.get_width() + 10, y_start + 5))
+       
 
         
         ################################## HUD MOEDA ############################################
