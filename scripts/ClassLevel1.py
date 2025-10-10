@@ -718,7 +718,7 @@ class Level2():
         "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
         "descricao_completa": (
             "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55%, "
+            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
             "e há risco moderado de efeitos colaterais. "
             "Muitas pessoas acreditam nele por tradição, não por evidência científica."
         ),
@@ -733,7 +733,7 @@ class Level2():
         "descricao": "Novo método, com dados promissores, mas origem incerta.",
         "descricao_completa": (
             "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80%, mas há fortes indícios "
+            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
             "de que parte das informações foi manipulada por Erradon. "
             "Também há risco de efeitos colaterais não totalmente documentados."
         ),
@@ -747,7 +747,7 @@ class Level2():
         "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
         "descricao_completa": (
             "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90%, porém o tempo de aplicação é maior "
+            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
             "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
         ),
         "preco": 3,
@@ -761,7 +761,7 @@ class Level2():
         "descricao": "Práticas naturais sem comprovação científica.",
         "descricao_completa": (
             "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30%. "
+            "Sua taxa de sucesso real é estimada em 30 porcento. "
             "Muitos acreditam nele devido a boatos espalhados por Erradon."
         ),
         "preco": 1,
@@ -1063,8 +1063,8 @@ class Level2():
         if self.pergunta.errou and not self.ja_teletransportou:
                 self.hero.sprite.teleport(0, 250)
                 # Adiciona inimigos adicionais
-                self.robot.add(Robot((800, 160), moveRight=True, limit_left=800, limit_right=1000))
-                self.robot.add(Robot((900, 400), moveRight=True, limit_left=900, limit_right=1000))
+                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
                 self.ja_teletransportou = True
                 # Reseta o erro para não teletransportar várias vezes
                 self.pergunta.errou = False
@@ -1077,7 +1077,7 @@ class Level2():
     def draw(self):
                 # Desenha o fundo         
             self.background.draw3(self.displaySurface)
-            self.quest_system.draw()
+            
 
             # Desenha as camadas com o deslocamento da câmera
             for tile in self.platformTiles:
@@ -1166,7 +1166,7 @@ class Level2():
             self.dialogue_box.draw_text()
 
             
-
+            self.quest_system.draw()
 
 
 

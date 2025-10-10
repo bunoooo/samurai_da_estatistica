@@ -10,7 +10,7 @@ def main():
     displaySurface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     pygame.display.set_caption("Statistcsamurai")
 
-    fase_id = 0
+    fase_id = 1
 
     current_level = None
     show_menu = True
@@ -102,18 +102,17 @@ def main():
 
             # Verifica se deve passar de fase
                 if current_level.verificar_prox_fase == "next_level":
-                    
-                 if fase_id == 0:
-                      fase_id = 1
-                      current_level = Level1(displaySurface, fase_id=1)
-                 
-                 elif fase_id == 1:
-                        fase_id = 2
-                        current_level = Level2(displaySurface, fase_id=2)
-                 
+                    fase_id += 1
+                    if fase_id == 1:
+                        current_level = Level1(displaySurface, fase_id=fase_id)
+                    elif fase_id == 2:
+                        current_level = Level2(displaySurface, fase_id=fase_id)
+
+                                
                     
 
                 # Mensagem de morte
+                
                 keys = pygame.key.get_pressed()
                 if hasattr(current_level.hero.sprite, "lives") and current_level.hero.sprite.lives <= 0:
                     reset_msg.draw()
