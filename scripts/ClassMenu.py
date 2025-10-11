@@ -7,16 +7,19 @@ from ClassHero import Hero
 class Menu:
     def __init__(self, surface, start_game_callback, font_path=font_path, font_size=24):
         self.surface = surface
-        self.start_game = start_game_callback
+        self.start_game_callback = start_game_callback  # renomeado para clareza
         self.font_tutorial = pygame.font.Font(font_path, 20)
         self.parallax_bg = StaticMenuBackground(surface)
+
+        # Controle global de fase
+        self.id_fase = 0
 
         # Fontes
         self.font_titulo = pygame.font.Font(font_path, 72)
         self.font = pygame.font.Font(font_path, font_size)
 
         # Título
-        self.titulo_surface = self.font_titulo.render("Samurai da Estatistica", True, (255, 255, 255))
+        self.titulo_surface = self.font_titulo.render("Samurai da Estatística", True, (255, 255, 255))
         self.titulo_rect = self.titulo_surface.get_rect(center=(surface.get_width() // 2, 250))
 
         # Texto "Pressione ENTER"
@@ -48,16 +51,19 @@ class Menu:
 
         # Fases disponíveis
         self.fases_disponiveis = [
-            ("Fase 1", lambda: Level1(surface, fase_id=1)),
-            ("Fase 2", lambda: Level2(surface, fase_id=2)),
-            ("Fase 3", lambda: Level3(surface, fase_id=3)),
-            ("Fase 4", lambda: Level4(surface, fase_id=4)),
-            ("Fase 5", lambda: Level1(surface, fase_id=5)),
-            ("Fase 6", lambda: Level1(surface, fase_id=6)),
+          
+            ("Fase 1", Level1, 1),
+            ("Fase 2", Level2, 2),
+            ("Fase 3", Level3, 3),
+            ("Fase 4" , Level4, 4),
+            ("Fase 5" , Level5, 5),
+            ("Fase 6" , Level6, 6),
         ]
         self.selected_fase = 0
 
-     
+    # -----------------------------------------------------------------------
+    # DESENHO DO MENU
+    # -----------------------------------------------------------------------
     def draw(self):
         self.parallax_bg.draw()
         self.hero.update_dummy()
@@ -87,9 +93,6 @@ class Menu:
                 text_rect = text_surface.get_rect(center=rect.center)
                 self.surface.blit(text_surface, text_rect)
 
-        # Tutorial com páginas
-        
-
         # Seleção de fases
         elif self.state == "fases":
             self.surface.blit(self.painel_texto, self.painel_rect)
@@ -108,7 +111,7 @@ class Menu:
             margem_esquerda = self.painel_rect.centerx - largura_total_grade // 2 - 40
             margem_topo = self.painel_rect.centery - altura_total_grade // 2 - 10
 
-            for i, (nome, _) in enumerate(self.fases_disponiveis):
+            for i, (nome, _, _) in enumerate(self.fases_disponiveis):
                 coluna = i // linhas_por_coluna
                 linha = i % linhas_por_coluna
                 x = margem_esquerda + coluna * espacamento_horizontal
@@ -118,6 +121,9 @@ class Menu:
                 fase_rect = fase_surface.get_rect(topleft=(x, y))
                 self.surface.blit(fase_surface, fase_rect)
 
+    # -----------------------------------------------------------------------
+    # ENTRADAS DO TECLADO
+    # -----------------------------------------------------------------------
     def handle_input(self, event):
         if event.type == pygame.KEYDOWN:
             # Tela inicial
@@ -140,29 +146,22 @@ class Menu:
                     self.selected_index = (self.selected_index + 1) % len(self.buttons)
                 elif event.key == pygame.K_RETURN:
                     opcao = self.buttons[self.selected_index][0]
+
                     if opcao == "entrar":
-                        self.start_game(Level1(self.surface, fase_id=1))
+                        self.id_fase = 1
+                        self.start_game_callback(Level1(self.surface, fase_id=self.id_fase))
+
                     elif opcao == "tutorial":
-                        self.state = "tutorial_texto"
-                        self.start_game(Tutorial(self.surface, fase_id=0))
+                        self.id_fase = 0
+                        self.start_game_callback(Tutorial(self.surface, fase_id=self.id_fase))
+
                     elif opcao == "fases":
                         self.state = "fases"
                         self.selected_fase = 0
+
                     elif opcao == "sair":
                         pygame.quit()
                         exit()
-
-            # Tutorial
-            elif self.state == "tutorial_texto":
-                if event.key == pygame.K_ESCAPE:
-                    self.state = "principal"
-                    self.tutorial_pagina_atual = 0
-                elif event.key == pygame.K_RIGHT or event.key == pygame.K_RETURN:
-                    if self.tutorial_pagina_atual < len(self.tutorial_paginas) - 1:
-                        self.tutorial_pagina_atual += 1
-                elif event.key == pygame.K_LEFT:
-                    if self.tutorial_pagina_atual > 0:
-                        self.tutorial_pagina_atual -= 1
 
             # Seleção de fases
             elif self.state == "fases":
@@ -171,8 +170,9 @@ class Menu:
                 elif event.key == pygame.K_DOWN:
                     self.selected_fase = (self.selected_fase + 1) % len(self.fases_disponiveis)
                 elif event.key == pygame.K_RETURN:
-                    _, fase_func = self.fases_disponiveis[self.selected_fase]
-                    self.start_game(fase_func())
+                    nome, classe, fase_id = self.fases_disponiveis[self.selected_fase]
+                    self.id_fase = fase_id
+                    self.start_game_callback(classe(self.surface, fase_id=fase_id))
                 elif event.key == pygame.K_ESCAPE:
                     self.state = "principal"
 
