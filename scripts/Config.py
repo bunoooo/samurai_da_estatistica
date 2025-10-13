@@ -20,6 +20,8 @@ image_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios s
 
 portal_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/portal/"
 
+skeleton_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Tilesets/enemies_level2/"
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 

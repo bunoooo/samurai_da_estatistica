@@ -21,7 +21,9 @@ def main():
     current_level = None
     show_menu = True
     confirm_exit = False
+    
     result = None
+
 
     font = pygame.font.Font(font_path, 15)
 

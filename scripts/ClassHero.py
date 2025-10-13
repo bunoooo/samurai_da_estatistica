@@ -309,6 +309,8 @@ class Hero(pygame.sprite.Sprite):
 
         self.checkEnemyCollisions(level.robot)
 
+        self.checkEnemyCollisions(level.skeleton)
+
         self.checkNpcCollisions(level.npcrobot)
 
         self.checkpower_apps(level.Coin)
@@ -497,6 +499,10 @@ class Hero(pygame.sprite.Sprite):
                 enemy.die()
                 
             else:
+                if enemy.currentState == 'ATTACK' and self.currentState != 'DIE':
+                    if enemy.attack_hitbox.colliderect(self.hitbox):
+                        self.get_hit()
+
                 if enemy.currentState != 'DYING' and self.currentState != 'DIE':
                     if self.hitbox.colliderect(enemy.hitbox):
                         self.get_hit()
