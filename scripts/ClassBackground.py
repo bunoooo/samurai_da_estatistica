@@ -16,6 +16,24 @@ class Background():
         self.background_factory = pygame.transform.scale(self.background_factory, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
 
+        # background fase 4 
+        self.background_overlay = pygame.image.load(SPRITESHEET_PATH + "Overlay.png").convert_alpha()
+        self.background_layer_1 = pygame.image.load(SPRITESHEET_PATH + "b1.png").convert_alpha()
+        self.background_layer_2 = pygame.image.load(SPRITESHEET_PATH + "b2.png").convert_alpha()
+        self.background_layer_3 = pygame.image.load(SPRITESHEET_PATH + "b3.png").convert_alpha()
+        self.background_layer_4 = pygame.image.load(SPRITESHEET_PATH + "b4.png").convert_alpha()
+        self.background_layer_5 = pygame.image.load(SPRITESHEET_PATH + "b5.png").convert_alpha()
+
+
+        self.background_layer_1 = pygame.transform.scale(self.background_layer_1, (WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.background_layer_2 = pygame.transform.scale(self.background_layer_2, (WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.background_layer_3 = pygame.transform.scale(self.background_layer_3, (WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.background_layer_4 = pygame.transform.scale(self.background_layer_4, (WINDOW_WIDTH, WINDOW_HEIGHT))
+        self.background_layer_5 = pygame.transform.scale(self.background_layer_5, (WINDOW_WIDTH, WINDOW_HEIGHT))
+
+
+        self.background_overlay.set_alpha(100)
+
 
 
         ### background tutorial e tela inicial
@@ -56,12 +74,14 @@ class Background():
        # self.Grass_background_2 = pygame.transform.scale(self.Grass_background_2, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
 
-
-
-
     def draw(self, displaySurface):
        
-        displaySurface.blit(self.skyImage, (0, 0))
+        displaySurface.blit(self.background_layer_1, (0, -30))
+        displaySurface.blit(self.background_layer_2, (0, -15))
+        displaySurface.blit(self.background_layer_3, (0, -20))
+        displaySurface.blit(self.background_layer_4, (0, 0))
+        displaySurface.blit(self.background_layer_5, (0, 0))
+        displaySurface.blit(self.background_overlay, (0, 0))
 
 
     def draw1(self, displaySurface):

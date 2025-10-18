@@ -21,6 +21,7 @@ from ClassPerguntaresposta import *
 from cutscene import *
 from portal import *
 from Skeleton import *
+from Crownpc import *
 
 repositorio = Dialogos()
 
@@ -329,6 +330,7 @@ class Level1():
         self.npcloja = pygame.sprite.GroupSingle()
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -816,6 +818,7 @@ class Level2():
         self.npcloja = pygame.sprite.GroupSingle()
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1207,7 +1210,6 @@ class Level2():
         self.draw()
 
 
- 
 class Level3():
     def __init__(self, displaySurface, fase_id=3):
        
@@ -1311,6 +1313,7 @@ class Level3():
         self.npcloja = pygame.sprite.GroupSingle()
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1453,39 +1456,62 @@ class Level3():
         for x, y, tileSurface in parede.tiles():
             self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
-        # Recria inimigos
-        self.robot.add(Robot((178, 165), moveRight=True, limit_left=120, limit_right=320))
-        self.robot.add(Robot((310, 225), moveRight=True, limit_left=310, limit_right=550))
-        self.robot.add(Robot((550, 400), moveRight=True, limit_left=480, limit_right=570))
-        self.robot.add(Robot((300, 465), moveRight=True, limit_left=40, limit_right=450))
-        self.robot.add(Robot((600, 465), moveRight=True, limit_left=580, limit_right=770))
-        self.robot.add(Robot((500, 225), moveRight=True, limit_left=310, limit_right=550))
-        self.robot.add(Robot((800, 160), moveRight=True, limit_left=800, limit_right=1000))
-        self.robot.add(Robot((900, 400), moveRight=True, limit_left=900, limit_right=1000))
-        self.robot.add(Robot((1510, 275), moveRight=True, limit_left=1300, limit_right=1790))
-        self.robot.add(Robot((1310, 275), moveRight=True, limit_left=1300, limit_right=1790))
-
-        # Recria NPCs e portal
-        self.npcrobot.add(RobotNpc((1435, 515), faceRight=False))
-        self.npcloja.add(LojaNpc((178, 120), faceRight=False))
-        
        
+        # Recria inimigos
+        
+        
 
-        # Recria itens
-        self.Coin.add(Coin((200,105)))
-        self.Coin.add(Coin((170,105)))
-        self.Coin.add(Coin((20,320)))
-        self.Coin.add(Coin((540,320)))
-        self.Coin.add(Coin((510,320)))
-        self.Coin.add(Coin((705,140)))
-        self.Coin.add(Coin((820,420)))
-        self.Coin.add(Coin((850,420)))
-        self.Coin.add(Coin((1840,130)))
-        self.Coin.add(Coin((1810,130)))
+        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
 
-        self.potion.add(Potion((10,220)))
-        self.potion.add(Potion((1214,452)))
-        self.potion.add(Potion((1900,310)))
+        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
+
+        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
+
+        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
+        
+        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
+
+        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
+
+
+        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
+
+        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
+
+        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
+        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
+
+
+        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+       
+        self.Coin.add(Coin((120,115)))
+        self.Coin.add(Coin((150,115)))
+        
+        self.Coin.add(Coin((80,370)))
+        self.Coin.add(Coin((50,370)))
+        
+        
+        self.Coin.add(Coin((540,200)))
+        self.Coin.add(Coin((510,200)))
+        
+        self.Coin.add(Coin((1040,200)))
+        self.Coin.add(Coin((1010,200)))
+
+
+        self.Coin.add(Coin((1250,140)))
+        self.Coin.add(Coin((1280,140)))
+
+
+
+
+        self.potion.add(Potion((1800,490)))
+
+        self.potion.add(Potion((1600,490)))
+
+        self.potion.add(Potion((225,385)))
+      
 
         # Recria herói
         self.hero.add(Hero((170, 250), faceRight=True))
@@ -1716,11 +1742,551 @@ class Level3():
         self.draw()
 
 
+class Level4():
+    def __init__(self, displaySurface, fase_id=3):
+       
+        self.ja_teletransportou = False
+
+        self.verificar_prox_fase = None
+        
+        self.displaySurface = displaySurface
+        
+        self.fase_id = fase_id
+
+        self.font = pygame.font.Font(font_path, 40)
+        self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
+
+        dicas_estatisticas = [ 
+    {
+        "conceito": "Tratamento A ",
+        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "descricao_completa": (
+            "Este tratamento é fácil de distribuir e tem ação rápida. "
+            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
+            "e há risco moderado de efeitos colaterais. "
+            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Apesar de ser popular e rápido, sua eficácia é baixa. "
+            "Não é o ideal para controlar uma epidemia com segurança."
+        )
+    },
+    {
+        "conceito": "Tratamento B ",
+        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "descricao_completa": (
+            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
+            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
+            "de que parte das informações foi manipulada por Erradon. "
+            "Também há risco de efeitos colaterais não totalmente documentados."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
+        )
+    },
+    {
+        "conceito": "Tratamento C",
+        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
+        "descricao_completa": (
+            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
+            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
+            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
+            "É uma escolha estratégica e segura para conter a epidemia."
+        )
+    },
+    {
+        "conceito": "Tratamento D ",
+        "descricao": "Práticas naturais sem comprovação científica.",
+        "descricao_completa": (
+            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
+            "Sua taxa de sucesso real é estimada em 30 porcento. "
+            "Muitos acreditam nele devido a boatos espalhados por Erradon."
+        ),
+        "preco": 1,
+        "feedback": (
+            "Baixa eficácia e forte influência de desinformação. "
+            "Não é uma escolha racional para conter uma epidemia."
+        )
+    }
+]
+
+        quests = [
+            {"id": 1, "text": "Fale com o dr da cidade", "done": False},
+            {"id": 2, "text": "Encontre o mercador", "done": False},
+            {"id": 3 , "text": "Resolva o problema do dr" , "done" : False},
+            {"id": 4 , "text": "Entre no portal" , "done" : False}
+        ]
+        
+        self.quest_system = QuestSystem(quests, self.displaySurface )
+         # Carregar o arquivo TMX
+
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level4.tmx")
+
+        # Instanciar classes
+        self.background = Background()
+
+        # Criar grupos de sprites
+        self.hero = pygame.sprite.GroupSingle()
+        self.platformTiles = pygame.sprite.Group()
+        self.othersprites = pygame.sprite.Group()
+        self.other2sprites = pygame.sprite.Group()
+        self.other3sprites = pygame.sprite.Group()
+        self.paredesprites = pygame.sprite.Group()
+        self.bees = pygame.sprite.Group()
+        self.robot = pygame.sprite.Group()
+        self.Coin = pygame.sprite.Group()
+        self.potion = pygame.sprite.Group()
+        self.npcrobot = pygame.sprite.GroupSingle()
+        self.npcloja = pygame.sprite.GroupSingle()
+        self.portal = pygame.sprite.GroupSingle()
+        self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
+      
+
+        layer = self.levelData.get_layer_by_name('Platforms')
+        for x, y, tileSurface in layer.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.platformTiles.add(tile)
+        
+        other = self.levelData.get_layer_by_name('Background')
+        for x, y, tileSurface in other.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.othersprites.add(tile)
+
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in  other2.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other2sprites.add(tile)
+
+        other3 = self.levelData.get_layer_by_name('Predio')
+        for x, y, tileSurface in  other3.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other3sprites.add(tile)
+
+        
+        parede = self.levelData.get_layer_by_name('Parede')
+        for x, y, tileSurface in parede.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.paredesprites.add(tile)
+
+        self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
+       
+        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
+
+        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
+
+        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
+
+        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
+        
+        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
+
+        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
+
+
+        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
+
+        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
+
+        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
+        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
+
+
+        self.crow.add(CrowNpc((100,515) , faceRight= False))
+
+        
+
+        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+       
+        self.Coin.add(Coin((120,115)))
+        self.Coin.add(Coin((150,115)))
+        
+        self.Coin.add(Coin((80,370)))
+        self.Coin.add(Coin((50,370)))
+        
+        
+        self.Coin.add(Coin((540,200)))
+        self.Coin.add(Coin((510,200)))
+        
+        self.Coin.add(Coin((1040,200)))
+        self.Coin.add(Coin((1010,200)))
+
+
+        self.Coin.add(Coin((1250,140)))
+        self.Coin.add(Coin((1280,140)))
 
 
 
-class Level4(): 
-    pass
+
+        self.potion.add(Potion((1800,490)))
+
+        self.potion.add(Potion((1600,490)))
+
+        self.potion.add(Potion((225,385)))
+    
+                
+        self.hero.add(Hero((185, 400), faceRight=True))
+       
+
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
+  
+        self.pergunta = PerguntaResposta(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.crow.sprite,
+            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
+            loja=self.loja,
+            correta_conceito="Tratamento C",
+            pos=(100, 100)
+        )
+
+       
+
+        vida_rect = (0, 0, 12, 12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
+
+        # Configura a câmera
+        self.camera = Camera(self.levelData.width * TILESIZE, self.levelData.height * TILESIZE)
+
+        
+
+        self.teleport_zone = pygame.Rect(
+        self.crow.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
+        self.crow.sprite.hitbox.rect.y -100,   # aumenta para cima
+        self.crow.sprite.hitbox.rect.width + 100,  # aumenta largura
+        self.crow.sprite.hitbox.rect.height + 100  # aumenta altura
+    )
+
+    def reset(self):
+        # Limpa todos os grupos de sprites
+        self.hero.empty()
+        self.platformTiles.empty()
+        self.paredesprites.empty()
+        self.othersprites.empty()
+        self.bees.empty()
+        self.robot.empty()
+        self.Coin.empty()
+        self.potion.empty()
+        self.npcrobot.empty()
+        self.npcloja.empty()
+        self.portal.empty()
+
+        # Recarrega camadas do mapa
+        layer = self.levelData.get_layer_by_name('Platforms')
+        for x, y, tileSurface in layer.tiles():
+            self.platformTiles.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+        
+        other = self.levelData.get_layer_by_name('Background')
+        for x, y, tileSurface in other.tiles():
+            self.othersprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in other2.tiles():
+            self.other2sprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        parede = self.levelData.get_layer_by_name('Parede')
+        for x, y, tileSurface in parede.tiles():
+            self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+       
+        # Recria inimigos
+        
+        
+
+        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
+
+        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
+
+        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
+
+        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
+        
+        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
+
+        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
+
+
+        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
+
+        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
+
+        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
+        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
+
+
+        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+       
+        self.Coin.add(Coin((120,115)))
+        self.Coin.add(Coin((150,115)))
+        
+        self.Coin.add(Coin((80,370)))
+        self.Coin.add(Coin((50,370)))
+        
+        
+        self.Coin.add(Coin((540,200)))
+        self.Coin.add(Coin((510,200)))
+        
+        self.Coin.add(Coin((1040,200)))
+        self.Coin.add(Coin((1010,200)))
+
+
+        self.Coin.add(Coin((1250,140)))
+        self.Coin.add(Coin((1280,140)))
+
+
+
+
+        self.potion.add(Potion((1800,490)))
+
+        self.potion.add(Potion((1600,490)))
+
+        self.potion.add(Potion((225,385)))
+      
+
+        # Recria herói
+        self.hero.add(Hero((170, 250), faceRight=True))
+
+        vida_rect = (0, 0, 12, 12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
+
+        # Recria loja e pergunta para garantir estado inicial
+        dicas_estatisticas = [
+            {
+                "conceito": "Média", 
+                "descricao": "A soma dos valores dividida pelo total.", 
+                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
+                "preco": 2,
+                "feedback": "A média resume todos os valores em um único número representativo."
+            }
+        ]
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
+        self.pergunta = PerguntaResposta(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.npcrobot.sprite,
+            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            loja=self.loja,
+            correta_conceito="Média",
+            pos=(100, 100)
+        )
+
+        # Recria zona de teleporte
+        self.teleport_zone = pygame.Rect(
+            self.npcrobot.sprite.hitbox.rect.x - 50,
+            self.npcrobot.sprite.hitbox.rect.y - 100,
+            self.npcrobot.sprite.hitbox.rect.width + 100,
+            self.npcrobot.sprite.hitbox.rect.height + 100
+        )
+
+        # Reseta flags
+        self.ja_teletransportou = False
+        self.pergunta.acertou = None
+        self.pergunta.errou = None
+
+    def update(self, confirm_exit=False):
+    # Atualiza o herói sempre
+
+        if not confirm_exit:
+                self.hero.update(self)
+
+
+        if self.pergunta.acertou and self.portal.sprite is None:
+                 self.quest_system.complete_quest(3)
+                 self.portal.add(Portal((0,170)))
+            
+        if self.npcloja.sprite.show_interaction:
+                self.quest_system.complete_quest(2)
+                self.hero.sprite.falou_com_npcloja = False    
+
+
+        if self.hero.sprite.falou_com_npc:
+                self.quest_system.complete_quest(1)
+                self.hero.sprite.falou_com_npc = False
+
+        keys = pygame.key.get_pressed()
+        if self.portal.sprite is not None:
+                self.portal.update()
+                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                    if keys[pygame.K_h]:
+                        print("Portal ativado!")
+                        self.verificar_prox_fase = "next_level"
+
+        if (self.dialogue_box and not self.dialogue_box.text_active and
+                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                self.pergunta.handle_input()
+
+                self.robot.update(self)
+                self.Coin.update()
+                self.potion.update()
+                self.skeleton.update(self)
+
+                
+            # Atualiza NPCs e loja sempre, se existirem
+        if self.crow.sprite:
+                self.crow.update(self)
+        if self.npcloja.sprite:
+                self.npcloja.update(self)
+            
+        self.camera.update(self.hero.sprite)
+        self.phase_text.update()
+        self.dialogue_box.update()
+        self.loja.handle_input()
+
+            # Teleporte quando errou
+        if self.pergunta.errou and not self.ja_teletransportou:
+                self.hero.sprite.teleport(0, 250)
+                # Adiciona inimigos adicionais
+                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                self.ja_teletransportou = True
+                # Reseta o erro para não teletransportar várias vezes
+                self.pergunta.errou = False
+
+
+            # Resetar o teleporte caso ele saia da área
+        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                self.ja_teletransportou = False
+                                   
+    def draw(self):
+                # Desenha o fundo         
+            self.background.draw(self.displaySurface)
+            
+
+            for tile in self.other3sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            for tile in self.other2sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            
+            # Desenha as camadas com o deslocamento da câmera
+            for tile in self.platformTiles:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+        
+
+        # for r in self.hero.sprite.debug_platform_rects:
+                # r é relativo ao herói
+            #    rect_on_screen = r.copy()
+            #   rect_on_screen.topleft = (r.x - self.hero.sprite.rect.x + self.camera.apply(self.hero.sprite).x,
+            #                     r.y - self.hero.sprite.rect.y + self.camera.apply(self.hero.sprite).y)
+            #  pygame.draw.rect(self.displaySurface, (255, 0, 0), rect_on_screen, 2)
+
+            
+            for tile in self.othersprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+           
+
+
+            for tile in self.paredesprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+                pygame.draw.rect(
+                self.displaySurface, (255, 255, 0),
+                tile.rect.move(pos.left - tile.rect.left, pos.top - tile.rect.top), 1
+                )
+
+            
+            for coin in self.Coin:
+                pos = self.camera.apply(coin)
+                self.displaySurface.blit(coin.image, pos)
+        
+        
+            for potion in self.potion:
+                pos = self.camera.apply(potion)
+                self.displaySurface.blit(potion.image, pos)
+
+            # Desenha o herói com o deslocamento da câmera
+            pos = self.camera.apply(self.hero.sprite)
+            self.displaySurface.blit(self.hero.sprite.image, pos)
+
+           
+            # Portal
+
+            if self.portal.sprite is not None:
+                pos = self.camera.apply(self.portal.sprite)
+                self.displaySurface.blit(self.portal.sprite.image, pos)
+                self.portal.sprite.draw(self.displaySurface, self.camera)
+
+        
+            # Desenha os robôs com seus rects
+            for robot in self.robot:
+                pos = self.camera.apply(robot)
+                self.displaySurface.blit(robot.image, pos)
+
+
+            for skeleton in self.skeleton:
+                pos = self.camera.apply(skeleton)
+                self.displaySurface.blit(skeleton.image, pos)
+                skeleton.draw_hitbox(self.displaySurface)
+                
+            
+        
+            pos = self.camera.apply(self.crow.sprite)
+            self.displaySurface.blit(self.crow.sprite.image, pos)
+            self.crow.sprite.draw(self.displaySurface, self.camera)
+
+            
+         
+            pos1 = self.camera.apply(self.npcloja.sprite)
+            self.displaySurface.blit(self.npcloja.sprite.image, pos1)
+            self.npcloja.sprite.draw(self.displaySurface, self.camera)
+                
+
+            hitbox_rect = self.npcloja.sprite.hitbox.rect.copy()
+            hitbox_rect.topleft = (hitbox_rect.left + (pos1.left - self.npcloja.sprite.rect.left),
+                                    hitbox_rect.top + (pos1.top - self.npcloja.sprite.rect.top))
+
+                #pygame.draw.rect(self.displaySurface, (255, 0, 0), hitbox_rect, 2)
+                
+            
+            # HUD e texto da fase
+            self.hud.draw(self.displaySurface)
+            self.phase_text.draw()
+
+            
+            self.dialogue_box.draw_box()
+            self.dialogue_box.draw_text()
+
+            
+            self.quest_system.draw()
+
+
+
+            #rect_on_screen = self.teleport_zone.copy()
+            #rect_on_screen.topleft = (self.teleport_zone.x - self.hero.sprite.rect.x + self.camera.apply(self.hero.sprite).x,
+            #                           self.teleport_zone.y - self.hero.sprite.rect.y + self.camera.apply(self.hero.sprite).y)
+            #pygame.draw.rect(self.displaySurface, (255, 0, 0), rect_on_screen, 2)
+            
+
+            
+
+            self.loja.draw()
+            
+
+
+            self.pergunta.draw()    
+            
+    def run(self, confirm_exit=False):
+        # Atualiza a lógica do jogo
+        self.update(confirm_exit=confirm_exit)
+        # Desenha a tela
+        self.draw()
+
+
 
 class Level5():
     pass

@@ -22,6 +22,9 @@ portal_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios 
 
 skeleton_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Tilesets/enemies_level2/"
 
+crow_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/crow/"
+
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 
@@ -37,7 +40,6 @@ ANIMSPEED_HERO_JUMP_FALL = 0.1
 ANIMSPEED_HERO_HURT = 0.09
 ANIMSPEED_HERO_DIE = 0.1
 ANIMSPEED_HERO_ATTACK = 0.2
-
 
 
 JUMP_NORMAL = -5

@@ -9,7 +9,8 @@ fases = [
     Tutorial,   # fase_id = 0
     Level1,     # fase_id = 1
     Level2,     # fase_id = 2
-    Level3,     # fase_id = 3
+    Level3, 
+    Level4,    # fase_id = 3
 ]
 
 def main():
@@ -21,6 +22,7 @@ def main():
     current_level = None
     show_menu = True
     confirm_exit = False
+    
     
     result = None
 
