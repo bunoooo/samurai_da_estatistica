@@ -22,6 +22,7 @@ from cutscene import *
 from portal import *
 from Skeleton import *
 from Crownpc import *
+from Reapernpc import *
 
 repositorio = Dialogos()
 
@@ -58,7 +59,8 @@ class Tutorial():
         self.npcloja = pygame.sprite.GroupSingle()
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
-
+        self.crow = pygame.sprite.GroupSingle()
+        self.reaper = pygame.sprite.GroupSingle()
         # Dialogue
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(0), self.displaySurface)
 
@@ -271,37 +273,38 @@ class Level1():
         "descricao": "A soma dos valores dividida pelo total.", 
         "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados. Ela é calculada somando todos os valores do conjunto e dividindo pelo número total de observações. É útil para entender o comportamento geral dos dados, mas pode ser sensível a valores extremos.",
         "preco": 2,
-        "feedback": "A média resume todos os valores em um único número representativo, ideal para planejar a quantidade de comida."
+        "feedback": "A média pode ser distorcida por valores muito altos ou muito baixos, o que pode não refletir bem o consumo da maioria das famílias."
     },
     {
         "conceito": "Mediana", 
         "descricao": "O valor central de um conjunto ordenado.", 
         "descricao_completa": "A mediana é uma medida de tendência central que indica o valor que separa a metade superior da metade inferior dos dados. Ao contrário da média, a mediana não é influenciada por valores muito altos ou muito baixos, tornando-se útil para conjuntos de dados assimétricos.",
         "preco": 2,
-        "feedback": "A mediana mostra o valor do meio quando os dados estão ordenados. Ela é útil quando há valores muito extremos, mas não representa todo o conjunto tão bem quanto a média."
+        "feedback": "Esta medida considera a posição dos valores, ajudando a entender qual é o consumo típico sem que os extremos influenciem o resultado."
     },
     {
         "conceito": "Moda", 
         "descricao": "O valor que mais se repete.", 
         "descricao_completa": "A moda é a medida de tendência central que representa o valor mais frequente em um conjunto de dados. Pode haver mais de uma moda, e é particularmente útil para dados categóricos ou quando se deseja identificar padrões de repetição.",
         "preco": 3,
-        "feedback" : "A moda indica apenas o valor mais frequente. Pode mostrar o consumo mais comum, mas não ajuda a equilibrar os recursos para todos."
+        "feedback": "A moda mostra apenas o valor que mais se repete, ignorando a distribuição completa dos dados e podendo não representar o consumo da maioria."
     },
     {
         "conceito": "Desvio Padrão", 
         "descricao": "Mede o quanto os valores se afastam da média.", 
         "descricao_completa": "O desvio padrão é uma medida de dispersão que indica o quanto os valores de um conjunto de dados se afastam da média. Quanto maior o desvio padrão, mais espalhados estão os dados; quanto menor, mais próximos da média eles se encontram.",
         "preco": 2,
-        "feedback" : "bubbles"
+        "feedback": "O desvio padrão indica variação e dispersão, mas não fornece um valor central representativo do consumo."
     },
     {
         "conceito": "Probabilidade", 
         "descricao": "Chance de um evento acontecer.", 
         "descricao_completa": "Probabilidade é a medida numérica da chance de ocorrência de um evento dentro de um conjunto de possibilidades. É um conceito fundamental em estatística e análise de risco, usado para modelar incertezas e tomar decisões baseadas em chances relativas.",
         "preco": 1,
-        "feedback" : "bubbles"
+        "feedback": "A probabilidade informa a chance de um evento ocorrer, mas não descreve um valor central de consumo."
     }
 ]
+
         quests = [
             {"id": 1, "text": "Fale com o chefe da vila", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
@@ -331,6 +334,7 @@ class Level1():
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
+        self.reaper = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -408,14 +412,13 @@ class Level1():
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
-            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            pergunta="Samurai, qual seria o conhecimento da arte dos dados mais indicado para o meu problema?",
             loja=self.loja,
-            correta_conceito="Média",
+            correta_conceito="Mediana",
             pos=(100, 100)
         )
 
        
-
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
@@ -819,6 +822,7 @@ class Level2():
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
+        self.reaper = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1314,6 +1318,7 @@ class Level3():
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
+        self.reaper = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1362,7 +1367,7 @@ class Level3():
         self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
 
 
-        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+        self.reaper.add(ReaperNpc((1855,505) , faceRight= False))
 
         self.npcloja.add(LojaNpc((700,215) , faceRight= True))
        
@@ -1419,10 +1424,10 @@ class Level3():
         
 
         self.teleport_zone = pygame.Rect(
-        self.npcrobot.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
-        self.npcrobot.sprite.hitbox.rect.y -100,   # aumenta para cima
-        self.npcrobot.sprite.hitbox.rect.width + 100,  # aumenta largura
-        self.npcrobot.sprite.hitbox.rect.height + 100  # aumenta altura
+        self.reaper.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
+        self.reaper.sprite.hitbox.rect.y -100,   # aumenta para cima
+        self.reaper.sprite.hitbox.rect.width + 100,  # aumenta largura
+        self.reaper.sprite.hitbox.rect.height + 100  # aumenta altura
     )
 
     def reset(self):
@@ -1482,7 +1487,7 @@ class Level3():
         self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
 
 
-        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+        self.reaper.add(ReaperNpc((1855,505) , faceRight= False))
 
         self.npcloja.add(LojaNpc((700,215) , faceRight= True))
        
@@ -1502,8 +1507,6 @@ class Level3():
 
         self.Coin.add(Coin((1250,140)))
         self.Coin.add(Coin((1280,140)))
-
-
 
 
         self.potion.add(Potion((1800,490)))
@@ -1533,7 +1536,7 @@ class Level3():
         self.pergunta = PerguntaResposta(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
-            npc=self.npcrobot.sprite,
+            npc= self.reaper.sprite,
             pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
             loja=self.loja,
             correta_conceito="Média",
@@ -1542,10 +1545,10 @@ class Level3():
 
         # Recria zona de teleporte
         self.teleport_zone = pygame.Rect(
-            self.npcrobot.sprite.hitbox.rect.x - 50,
-            self.npcrobot.sprite.hitbox.rect.y - 100,
-            self.npcrobot.sprite.hitbox.rect.width + 100,
-            self.npcrobot.sprite.hitbox.rect.height + 100
+             self.reaper.sprite.hitbox.rect.x - 50,
+             self.reaper.sprite.hitbox.rect.y - 100,
+             self.reaper.sprite.hitbox.rect.width + 100,
+             self.reaper.sprite.hitbox.rect.height + 100
         )
 
         # Reseta flags
@@ -1593,8 +1596,8 @@ class Level3():
 
                 
             # Atualiza NPCs e loja sempre, se existirem
-        if self.npcrobot.sprite:
-                self.npcrobot.update(self)
+        if self.reaper.sprite:
+                self.reaper.update(self)
         if self.npcloja.sprite:
                 self.npcloja.update(self)
             
@@ -1690,12 +1693,11 @@ class Level3():
                 
             
         
-            pos = self.camera.apply(self.npcrobot.sprite)
-            self.displaySurface.blit(self.npcrobot.sprite.image, pos)
-            self.npcrobot.sprite.draw(self.displaySurface, self.camera)
+            pos = self.camera.apply( self.reaper.sprite)
+            self.displaySurface.blit(self.reaper.sprite.image, pos)
+            self.reaper.sprite.draw(self.displaySurface, self.camera)
 
             
-         
             pos1 = self.camera.apply(self.npcloja.sprite)
             self.displaySurface.blit(self.npcloja.sprite.image, pos1)
             self.npcloja.sprite.draw(self.displaySurface, self.camera)
@@ -1899,8 +1901,6 @@ class Level4():
 
 
         self.crow.add(CrowNpc((100,515) , faceRight= False))
-
-        
 
         self.npcloja.add(LojaNpc((700,215) , faceRight= True))
        
@@ -2189,8 +2189,6 @@ class Level4():
                 self.displaySurface.blit(tile.image, pos)
 
            
-
-
             for tile in self.paredesprites:
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)

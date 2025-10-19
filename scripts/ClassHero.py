@@ -313,6 +313,8 @@ class Hero(pygame.sprite.Sprite):
 
         self.checkNpcCollisions(level.npcrobot)
 
+        self.checkNpcCollisions(level.reaper)
+
         self.checkNpcCollisions(level.crow)
 
         self.checkpower_apps(level.Coin)

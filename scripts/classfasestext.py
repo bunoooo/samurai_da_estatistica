@@ -38,6 +38,7 @@ class Dialogos:
                 ("Chefe", [
                     "é preciso que haja quantidade suficiente ",
                     "para a próxima colheita",
+                    "sabemos que algumas familias comem muito mais que outras"
                     
                 ]),
 
@@ -48,9 +49,7 @@ class Dialogos:
                 ("Chefe", [
                     "Ouvi falar de um viajante mercador que guarda segredos antigos.",
                     "Ele sabe como equilibrar recursos",
-                    "encontrando a quantidade certa para todos.",
-                    "Mas ele só aparece para aqueles que provam coragem e determinação.",
-                    "Para isso, ele necessita de se sentir seguro"
+                    "encontrando a quantidade certa para todos."
                 ]),
                 ("Chefe", [
                     "Samurai, você deve encontrá-lo e aprender com ele.",
@@ -117,7 +116,7 @@ class Dialogos:
         "Samurai, sua ajuda será crucial. ",
         "Avalie cada tratamento vendido pelo mercador com cuidado.",
         "Compare as probabilidades e os possíveis efeitos colaterais, ",
-        "e escolha a estratégia mais segura e eficaz para conter a epidemia."
+        "e escolha a estratégia mais segura e eficaz para conter a doença."
     ]),
     ("Jack", [
         "Pode contar comigo, doutor. Erradon não vencerá desta vez.",
@@ -126,9 +125,7 @@ class Dialogos:
     ])
     ]
 
-
-        
-        }
+    }
 
     def dialogo_fase(self, fase: int):
         return self.dialogos.get(
