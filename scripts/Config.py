@@ -26,6 +26,10 @@ crow_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios sc
 
 reaper_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/reaper/"
 
+zombie_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Tilesets/enemies_level4/"
+
+music_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Music_levels/"
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 

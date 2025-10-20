@@ -21,7 +21,7 @@ class Coin(pygame.sprite.Sprite):
         self.image = self.frames[0]
         self.rect = self.image.get_rect(center=position)
 
-        self.hitbox = Hitbox(self.rect.centerx, self.rect.y, 8, 8, scale_x = 1, scale_y = 1, offset_y=0)
+        self.hitbox = Hitbox(self.rect.centerx, self.rect.y, 8, 8, scale_x = 1, scale_y = 1.4, offset_y=0)
 
 
     def update(self):

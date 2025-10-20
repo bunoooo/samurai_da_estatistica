@@ -23,8 +23,10 @@ from portal import *
 from Skeleton import *
 from Crownpc import *
 from Reapernpc import *
+from Zombie import *
 
 repositorio = Dialogos()
+
 
 class Tutorial():
     def __init__(self, displaySurface, fase_id=0):
@@ -502,26 +504,56 @@ class Level1():
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
         # Recria loja e pergunta para garantir estado inicial
+
+        
         dicas_estatisticas = [
-            {
-                "conceito": "Média", 
-                "descricao": "A soma dos valores dividida pelo total.", 
-                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
-                "preco": 2,
-                "feedback": "A média resume todos os valores em um único número representativo."
-            }
-        ]
+    {
+        "conceito": "Média", 
+        "descricao": "A soma dos valores dividida pelo total.", 
+        "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados. Ela é calculada somando todos os valores do conjunto e dividindo pelo número total de observações. É útil para entender o comportamento geral dos dados, mas pode ser sensível a valores extremos.",
+        "preco": 2,
+        "feedback": "A média pode ser distorcida por valores muito altos ou muito baixos, o que pode não refletir bem o consumo da maioria das famílias."
+    },
+    {
+        "conceito": "Mediana", 
+        "descricao": "O valor central de um conjunto ordenado.", 
+        "descricao_completa": "A mediana é uma medida de tendência central que indica o valor que separa a metade superior da metade inferior dos dados. Ao contrário da média, a mediana não é influenciada por valores muito altos ou muito baixos, tornando-se útil para conjuntos de dados assimétricos.",
+        "preco": 2,
+        "feedback": "Esta medida considera a posição dos valores, ajudando a entender qual é o consumo típico sem que os extremos influenciem o resultado."
+    },
+    {
+        "conceito": "Moda", 
+        "descricao": "O valor que mais se repete.", 
+        "descricao_completa": "A moda é a medida de tendência central que representa o valor mais frequente em um conjunto de dados. Pode haver mais de uma moda, e é particularmente útil para dados categóricos ou quando se deseja identificar padrões de repetição.",
+        "preco": 3,
+        "feedback": "A moda mostra apenas o valor que mais se repete, ignorando a distribuição completa dos dados e podendo não representar o consumo da maioria."
+    },
+    {
+        "conceito": "Desvio Padrão", 
+        "descricao": "Mede o quanto os valores se afastam da média.", 
+        "descricao_completa": "O desvio padrão é uma medida de dispersão que indica o quanto os valores de um conjunto de dados se afastam da média. Quanto maior o desvio padrão, mais espalhados estão os dados; quanto menor, mais próximos da média eles se encontram.",
+        "preco": 2,
+        "feedback": "O desvio padrão indica variação e dispersão, mas não fornece um valor central representativo do consumo."
+    },
+    {
+        "conceito": "Probabilidade", 
+        "descricao": "Chance de um evento acontecer.", 
+        "descricao_completa": "Probabilidade é a medida numérica da chance de ocorrência de um evento dentro de um conjunto de possibilidades. É um conceito fundamental em estatística e análise de risco, usado para modelar incertezas e tomar decisões baseadas em chances relativas.",
+        "preco": 1,
+        "feedback": "A probabilidade informa a chance de um evento ocorrer, mas não descreve um valor central de consumo."
+    }
+]
+  
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
         self.pergunta = PerguntaResposta(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
-            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            pergunta="Samurai, qual seria o conhecimento da arte dos dados mais indicado para o meu problema?",
             loja=self.loja,
-            correta_conceito="Média",
+            correta_conceito="Mediana",
             pos=(100, 100)
         )
-
         # Recria zona de teleporte
         self.teleport_zone = pygame.Rect(
             self.npcrobot.sprite.hitbox.rect.x - 50,
@@ -958,65 +990,138 @@ class Level2():
             self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
         # Recria inimigos
-        self.robot.add(Robot((178, 165), moveRight=True, limit_left=120, limit_right=320))
-        self.robot.add(Robot((310, 225), moveRight=True, limit_left=310, limit_right=550))
-        self.robot.add(Robot((550, 400), moveRight=True, limit_left=480, limit_right=570))
-        self.robot.add(Robot((300, 465), moveRight=True, limit_left=40, limit_right=450))
-        self.robot.add(Robot((600, 465), moveRight=True, limit_left=580, limit_right=770))
-        self.robot.add(Robot((500, 225), moveRight=True, limit_left=310, limit_right=550))
-        self.robot.add(Robot((800, 160), moveRight=True, limit_left=800, limit_right=1000))
-        self.robot.add(Robot((900, 400), moveRight=True, limit_left=900, limit_right=1000))
-        self.robot.add(Robot((1510, 275), moveRight=True, limit_left=1300, limit_right=1790))
-        self.robot.add(Robot((1310, 275), moveRight=True, limit_left=1300, limit_right=1790))
 
-        # Recria NPCs e portal
-        self.npcrobot.add(RobotNpc((1435, 515), faceRight=False))
-        self.npcloja.add(LojaNpc((178, 120), faceRight=False))
+        self.robot.add(Robot((300, 510), moveRight=True,limit_left= 40, limit_right= 450))
         
-       
 
-        # Recria itens
+        self.robot.add(Robot((550, 365), moveRight=True,limit_left= 480, limit_right= 850))
+        
+        self.robot.add(Robot((600, 510), moveRight=True,limit_left= 700, limit_right= 850))
+
+        self.robot.add(Robot((500, 160), moveRight=True,limit_left= 480, limit_right= 650))
+
+        self.robot.add(Robot((800, 160), moveRight=True,limit_left= 700, limit_right= 950))
+       
+        self.robot.add(Robot((950, 445), moveRight=True,limit_left= 950, limit_right= 1150))
+
+        self.robot.add(Robot((1610, 240), moveRight=True,limit_left= 1600, limit_right= 1790))
+
+        self.robot.add(Robot((1670, 240), moveRight=True,limit_left= 1600, limit_right= 1890))
+
+
+        self.npcrobot.add(RobotNpc((1705,510) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((100,132) , faceRight= True))
+       
         self.Coin.add(Coin((200,105)))
         self.Coin.add(Coin((170,105)))
         self.Coin.add(Coin((20,320)))
-        self.Coin.add(Coin((540,320)))
-        self.Coin.add(Coin((510,320)))
+        self.Coin.add(Coin((40,320)))
+        self.Coin.add(Coin((540,300)))
+        self.Coin.add(Coin((510,300)))
         self.Coin.add(Coin((705,140)))
-        self.Coin.add(Coin((820,420)))
-        self.Coin.add(Coin((850,420)))
+
+        self.Coin.add(Coin((780,400)))
+        self.Coin.add(Coin((810,400)))
+
         self.Coin.add(Coin((1840,130)))
         self.Coin.add(Coin((1810,130)))
 
-        self.potion.add(Potion((10,220)))
-        self.potion.add(Potion((1214,452)))
-        self.potion.add(Potion((1900,310)))
+        self.Coin.add(Coin((1840,400)))
+        self.Coin.add(Coin((1810,400)))
 
-        # Recria herói
-        self.hero.add(Hero((170, 250), faceRight=True))
+
+        self.potion.add(Potion((195,385)))
+        self.potion.add(Potion((1314,302)))
+        self.potion.add(Potion((1900,340)))
+
+                
+        self.hero.add(Hero((185, 400), faceRight=True))
+
 
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
-        # Recria loja e pergunta para garantir estado inicial
-        dicas_estatisticas = [
-            {
-                "conceito": "Média", 
-                "descricao": "A soma dos valores dividida pelo total.", 
-                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
-                "preco": 2,
-                "feedback": "A média resume todos os valores em um único número representativo."
-            }
+        dicas_estatisticas = [ 
+    {
+        "conceito": "Tratamento A ",
+        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "descricao_completa": (
+            "Este tratamento é fácil de distribuir e tem ação rápida. "
+            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
+            "e há risco moderado de efeitos colaterais. "
+            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Apesar de ser popular e rápido, sua eficácia é baixa. "
+            "Não é o ideal para controlar uma epidemia com segurança."
+        )
+    },
+    {
+        "conceito": "Tratamento B ",
+        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "descricao_completa": (
+            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
+            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
+            "de que parte das informações foi manipulada por Erradon. "
+            "Também há risco de efeitos colaterais não totalmente documentados."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
+        )
+    },
+    {
+        "conceito": "Tratamento C",
+        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
+        "descricao_completa": (
+            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
+            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
+            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
+            "É uma escolha estratégica e segura para conter a epidemia."
+        )
+    },
+    {
+        "conceito": "Tratamento D ",
+        "descricao": "Práticas naturais sem comprovação científica.",
+        "descricao_completa": (
+            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
+            "Sua taxa de sucesso real é estimada em 30 porcento. "
+            "Muitos acreditam nele devido a boatos espalhados por Erradon."
+        ),
+        "preco": 1,
+        "feedback": (
+            "Baixa eficácia e forte influência de desinformação. "
+            "Não é uma escolha racional para conter uma epidemia."
+        )
+    }
+]
+        quests = [
+            {"id": 1, "text": "Fale com o chefe da vila", "done": False},
+            {"id": 2, "text": "Encontre o mercador", "done": False},
+            {"id": 3 , "text": "Resolva o problema do chefe" , "done" : False},
+            {"id": 4 , "text": "Entre no portal" , "done" : False}
         ]
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
+        
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
+        self.quest_system = QuestSystem(quests, self.displaySurface )
+
+
         self.pergunta = PerguntaResposta(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
-            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
             loja=self.loja,
-            correta_conceito="Média",
+            correta_conceito="Tratamento C",
             pos=(100, 100)
         )
+
 
         # Recria zona de teleporte
         self.teleport_zone = pygame.Rect(
@@ -1226,7 +1331,7 @@ class Level3():
         self.fase_id = fase_id
 
         self.font = pygame.font.Font(font_path, 40)
-        self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
+        self.phase_text = AnimatedText("Fase 3: A volta dos mortos", self.font, (255, 255, 255), surface=self.displaySurface)
 
         dicas_estatisticas = [ 
     {
@@ -1406,7 +1511,7 @@ class Level3():
         self.pergunta = PerguntaResposta(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
-            npc=self.npcrobot.sprite,
+            npc=self.reaper.sprite,
             pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
             loja=self.loja,
             correta_conceito="Tratamento C",
@@ -1849,8 +1954,9 @@ class Level4():
         self.portal = pygame.sprite.GroupSingle()
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
+        self.zombie =  pygame.sprite.Group()
+        self.reaper = pygame.sprite.GroupSingle()
       
-
         layer = self.levelData.get_layer_by_name('Platforms')
         for x, y, tileSurface in layer.tiles():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
@@ -1879,26 +1985,22 @@ class Level4():
 
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
        
-        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
+     
+        self.zombie.add(Zombie((900,260), moveRight=True,limit_left= 700, limit_right= 950))
 
-        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
+        self.zombie.add(Zombie((700,450), moveRight=True,limit_left= 700, limit_right= 950))
 
-        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
 
-        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
+        self.zombie.add(Zombie((1200,515), moveRight=True,limit_left= 1250, limit_right= 1400))
         
-        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
+        self.zombie.add(Zombie((1200,405), moveRight=True,limit_left= 1150, limit_right= 1350))
 
-        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
-
-
-        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
-
-        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
-
-        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
-        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
-
+        self.zombie.add(Zombie((1500,240), moveRight=True,limit_left= 1500, limit_right= 1700))
+        
+        self.zombie.add(Zombie((1600,435), moveRight=True,limit_left= 1600, limit_right= 1800))
+        self.zombie.add(Zombie((1600,515), moveRight=True,limit_left= 1600, limit_right= 1850))
+        
+        
 
         self.crow.add(CrowNpc((100,515) , faceRight= False))
 
@@ -1930,7 +2032,6 @@ class Level4():
 
         self.potion.add(Potion((225,385)))
     
-                
         self.hero.add(Hero((185, 400), faceRight=True))
        
 
@@ -2124,10 +2225,9 @@ class Level4():
 
                 self.pergunta.handle_input()
 
-                self.robot.update(self)
                 self.Coin.update()
                 self.potion.update()
-                self.skeleton.update(self)
+                self.zombie.update(self)
 
                 
             # Atualiza NPCs e loja sempre, se existirem
@@ -2192,10 +2292,7 @@ class Level4():
             for tile in self.paredesprites:
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
-                pygame.draw.rect(
-                self.displaySurface, (255, 255, 0),
-                tile.rect.move(pos.left - tile.rect.left, pos.top - tile.rect.top), 1
-                )
+              
 
             
             for coin in self.Coin:
@@ -2221,18 +2318,11 @@ class Level4():
 
         
             # Desenha os robôs com seus rects
-            for robot in self.robot:
-                pos = self.camera.apply(robot)
-                self.displaySurface.blit(robot.image, pos)
+            for zombie in self.zombie:
+                pos = self.camera.apply(zombie)
+                self.displaySurface.blit(zombie.image, pos)
 
 
-            for skeleton in self.skeleton:
-                pos = self.camera.apply(skeleton)
-                self.displaySurface.blit(skeleton.image, pos)
-                skeleton.draw_hitbox(self.displaySurface)
-                
-            
-        
             pos = self.camera.apply(self.crow.sprite)
             self.displaySurface.blit(self.crow.sprite.image, pos)
             self.crow.sprite.draw(self.displaySurface, self.camera)

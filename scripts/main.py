@@ -3,6 +3,7 @@ from Config import *
 from ClassLevel1 import *
 from ClassMenu import Menu
 from AnimatedText import *
+from Musicmanager import *
 
 # Lista de fases disponíveis
 fases = [
@@ -12,6 +13,8 @@ fases = [
     Level3, 
     Level4,    # fase_id = 3
 ]
+
+music = MusicManager()
 
 def main():
     pygame.init()
@@ -56,6 +59,8 @@ def main():
 
         show_menu = False
 
+        music.tocar_musica(menu.id_fase)
+
     # Passa a função de início para o menu
     menu.start_game_callback = start_game
 
@@ -71,6 +76,7 @@ def main():
                 if confirm_exit:
                     result = exit_menu.handle_input(event)
                     if result == "SAIR":
+                        music.tocar_musica(0)
                         show_menu = True
                         current_level = None
                         confirm_exit = False
@@ -115,6 +121,11 @@ def main():
         # --- Lógica principal ---
         if show_menu:
             menu.draw()
+            if not pygame.mixer.music.get_busy() :
+                 music.tocar_musica(0)
+            
+
+
 
         else:
             if current_level is not None:
@@ -126,11 +137,14 @@ def main():
                     menu.id_fase += 1  # avança para a próxima fase
                     if menu.id_fase < len(fases):
                         current_level = fases[menu.id_fase](displaySurface, fase_id=menu.id_fase)
+                        music.tocar_musica(menu.id_fase) 
                     else:
                         # Todas as fases concluídas → volta ao menu
                         current_level = None
                         show_menu = True
                         menu.id_fase = 0
+                        music.tocar_musica(menu.id_fase) 
+                        
 
                 # --- Morte do jogador ---
                 keys = pygame.key.get_pressed()
@@ -139,6 +153,7 @@ def main():
                     reset_msg.update()
                     if keys[pygame.K_r]:
                         current_level.reset()
+                        music.tocar_musica(menu.id_fase)
 
         # --- Confirmação de saída ---
         if confirm_exit:

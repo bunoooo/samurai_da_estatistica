@@ -4,8 +4,9 @@ from ClassSpriteSheet import SpriteSheet
 import random
 from Classtext import *
 from ClassPerguntaresposta import *
+from Musicmanager import *
 
-
+music = MusicManager()
 
 
 # RUN SPRITES
@@ -154,7 +155,7 @@ class Hero(pygame.sprite.Sprite):
                 # ATAQUE
                 if keys[pygame.K_SPACE] and not self.isJumping:
                     self.currentState = 'ATTACK'
-                
+
                 # MOVIMENTO PARA ESQUERDA OU DIREITA
                 elif keys[pygame.K_LEFT] or keys[pygame.K_RIGHT]:
                     if keys[pygame.K_LEFT]:
@@ -164,25 +165,31 @@ class Hero(pygame.sprite.Sprite):
                         self.xDir = 1
                         self.facingRight = True
                     self.currentState = 'RUN'
+                    
+                    
 
                     if self.yDir > 0.2:
                             self.currentState = 'FALL'
+                           
 
                     # PULO COM MOVIMENTO
                     if keys[pygame.K_UP] and self.y_collision:
                         self.yDir = JUMP_WITH_RUN
                         self.isJumping = True
+                        
 
                     # Transição aérea durante movimento
                     if self.isJumping:
                         if self.yDir < -1:
                             self.currentState = 'JUMP'
+                            
                     
                         elif -1 <= self.yDir <= 1:
                                 self.currentState = 'JUMPTRANS' 
                             
                         elif self.yDir > 1:
                             self.currentState = 'FALL'
+                            
                     
                     
                 # PULO PARADO
@@ -190,6 +197,7 @@ class Hero(pygame.sprite.Sprite):
                     self.yDir = JUMP_NORMAL
                     self.isJumping = True
                     self.currentState = 'JUMP'
+                    
 
                 # DESCIDA FORÇADA
                 elif keys[pygame.K_DOWN] and  self.y_collision:
@@ -198,11 +206,13 @@ class Hero(pygame.sprite.Sprite):
                         self.isJumping = True
                         self.down_pressed = True
                         self.currentState = 'FALL'
+                        
 
                 elif keys[pygame.K_v] and self.health and self.lives < 4:
                     self.currentState = 'HEALING'
                     self.health = False
                     self.lives += 1
+                    
 
                 # SEM TECLAS PRESSIONADAS: IDLE OU ESTADO AÉREO
                 else:
@@ -255,9 +265,9 @@ class Hero(pygame.sprite.Sprite):
             
              if self.animationIndex >= 3:
                 if self.facingRight:
-                    self.attack_hitbox = pygame.Rect(self.rect.x + 55, self.rect.y + 15, 30, 35)
+                    self.attack_hitbox = pygame.Rect(self.rect.x + 55, self.rect.y + 15, 40, 35)
                 else:
-                    self.attack_hitbox = pygame.Rect(self.rect.x - 5, self.rect.y + 15, 30, 35)
+                    self.attack_hitbox = pygame.Rect(self.rect.x - 5, self.rect.y + 15, 40, 35)
         
         elif self.currentState == 'DIE':
             self.rect = pygame.Rect(self.xPos - 40, self.yPos - 30, 80, 60)
@@ -325,6 +335,21 @@ class Hero(pygame.sprite.Sprite):
 
        # print(self.xPos,self.yPos)
 
+
+        if self.previousState != self.currentState:
+            if self.currentState == 'JUMP':
+                music.animations_sounds("jump")
+            elif self.currentState == 'FALL':
+                music.animations_sounds("jump_end")
+            elif self.currentState == 'ATTACK':
+                music.animations_sounds("ataquesemhit")
+            elif self.currentState == 'HEALING':
+                music.animations_sounds("curar_vida")
+            elif self.currentState == 'RUN':
+                music.animations_sounds("run")
+       
+        
+
     def selectAnimation(self):
     
         if self.currentState == 'IDLE':
@@ -350,7 +375,7 @@ class Hero(pygame.sprite.Sprite):
         spriteSheet = self.spriteSheets[self.currentState]
         self.currentAnimation = spriteSheet.getSprites(flipped = not self.facingRight)
 
-    
+        
 
     def teleport(self, posx , posy):
         self.xPos = posx
@@ -487,12 +512,14 @@ class Hero(pygame.sprite.Sprite):
             self.currentState = 'HURT'
             self.animationIndex = 0
             self.isInvincible = True
-            self.invincibleTimer = invicible_time  # duração da invencibilidade em frames (1 segundo, se fps=60)
+            self.invincibleTimer = invicible_time
+            music.animations_sounds("hurt1")  # duração da invencibilidade em frames (1 segundo, se fps=60)
 
         if self.lives <= 0:
            self.currentState = 'DIE'
            self.animationIndex = 0
            self.invincibleTimer = 0
+
 
         
     def checkEnemyCollisions(self, enemies):
@@ -500,6 +527,7 @@ class Hero(pygame.sprite.Sprite):
         collidedSprites = pygame.sprite.spritecollide(self, enemies, False)
         for enemy in collidedSprites:
             if self.currentState == 'ATTACK'and self.attack_hitbox and self.attack_hitbox.colliderect(enemy.hitbox):
+                music.animations_sounds("ataquecomhit")
                 enemy.die()
                 
             else:
@@ -528,6 +556,7 @@ class Hero(pygame.sprite.Sprite):
         collided_apps_Sprites = pygame.sprite.spritecollide(self, apps, False)
         for apps in collided_apps_Sprites:
             if self.hitbox.colliderect(apps.hitbox):
+                music.animations_sounds("pegar_moeda")
                 self.coins_count += 1
                 apps.die()
 
@@ -545,6 +574,7 @@ class Hero(pygame.sprite.Sprite):
           
           if self.health == False:
             if self.hitbox.colliderect(health.hitbox):
+                music.animations_sounds("pegar_moeda")
                 self.health = True
                 health.die()
     
