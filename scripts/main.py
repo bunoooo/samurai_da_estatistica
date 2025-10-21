@@ -11,7 +11,8 @@ fases = [
     Level1,     # fase_id = 1
     Level2,     # fase_id = 2
     Level3, 
-    Level4,    # fase_id = 3
+    Level4, 
+    Level5   # fase_id = 3
 ]
 
 music = MusicManager()
@@ -124,9 +125,6 @@ def main():
             if not pygame.mixer.music.get_busy() :
                  music.tocar_musica(0)
             
-
-
-
         else:
             if current_level is not None:
                 current_level.update(confirm_exit=confirm_exit)
@@ -145,7 +143,6 @@ def main():
                         menu.id_fase = 0
                         music.tocar_musica(menu.id_fase) 
                         
-
                 # --- Morte do jogador ---
                 keys = pygame.key.get_pressed()
                 if hasattr(current_level.hero.sprite, "lives") and current_level.hero.sprite.lives <= 0:
@@ -161,6 +158,7 @@ def main():
 
         pygame.display.flip()
         clock.tick(60)
+        
 
     pygame.quit()
 

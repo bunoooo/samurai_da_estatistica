@@ -112,26 +112,35 @@ class LojaSimples:
             self.displaySurface.blit(titulo, (self.painellojarect.x + 10, self.painellojarect.y + 10))
             return
 
+        y = self.painellojarect.y + 30  # posição inicial
+
         if not self.modo_descricao:
+            # Título
             titulo = self.font.render("Dicas Compradas", True, self.text_color)
             self.displaySurface.blit(titulo, (self.painellojarect.x + 10, self.painellojarect.y + 10))
 
+            # Lista de dicas compradas com espaçamento dinâmico
             for i, dica in enumerate(self.compradas):
-                y = self.painellojarect.y + 40 + i * 15
                 color = self.highlight_color if i == self.compradas_index else self.text_color
-                text_surf = self.font.render(f"- {dica['conceito']}", True, color)
-                self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y))
+                linhas = self._quebrar_texto(f"- {dica['conceito']}", 32)
+                for linha in linhas:
+                    text_surf = self.font.render(linha, True, color)
+                    self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y))
+                    y += 10  # altura por linha
+                
+
         else:
             # Mostra descrição da dica selecionada
             dica = self.compradas[self.compradas_index]
             titulo = self.font.render(dica['conceito'], True, self.highlight_color)
             self.displaySurface.blit(titulo, (self.painellojarect.x + 10, self.painellojarect.y + 10))
 
+            y = self.painellojarect.y + 30  # posição inicial para o texto
             linhas = self._quebrar_texto(dica['descricao_completa'], 32)
-            for i, linha in enumerate(linhas):
-                y = self.painellojarect.y + 50 + i * 15
+            for linha in linhas:
                 text_surf = self.font.render(linha, True, self.text_color)
                 self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y))
+                y += 10  # altura por linha
 
 
     def _quebrar_texto(self, texto, max_caracteres_por_linha):
@@ -166,43 +175,43 @@ class LojaSimples:
 
 
     def draw(self):
-    # Painel da loja ativa
+        # Painel da loja ativa
         if self.active:
-            # Desenha a imagem de fundo
             self.displaySurface.blit(self.painelloja, self.painellojarect)
 
             # Título centralizado
-            titulo = self.font.render("Loja de Conceitos Estatísticos", True, self.text_color)
+            titulo = self.font.render("Loja de Conceitos Variados", True, self.text_color)
             titulo_x = self.painellojarect.x + (self.painellojarect.width - titulo.get_width()) // 2
             titulo_y = self.painellojarect.y + 10
             self.displaySurface.blit(titulo, (titulo_x, titulo_y))
 
-            # Lista de dicas disponíveis
-            y_start = self.painellojarect.y + 50
+            # Lista de dicas disponíveis com espaçamento dinâmico
+            y = self.painellojarect.y + 50
             for i, dica in enumerate(self.dicas):
-                y = y_start + i * 15
                 color = self.highlight_color if i == self.selected_index else self.text_color
                 status = "(comprado)" if dica in self.compradas else f"- {dica['preco']} moedas"
                 texto = f"{dica['conceito']} {status}"
 
-                # Quebra de texto
-                linhas = self._quebrar_texto(texto, 32)  # 35 é o tamanho máximo de caracteres por linha
-                for j, linha in enumerate(linhas):
+                # Quebra de texto e desenho linha por linha
+                linhas = self._quebrar_texto(texto, 32)
+                for linha in linhas:
                     text_surf = self.font.render(linha, True, color)
-                    self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y + j * 20))
+                    self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y))
+                    y += 10  # altura por linha
+                  # espaço extra entre conceitos
 
             # Descrição da dica selecionada
             selected_dica = self.dicas[self.selected_index]
             linhas_desc = self._quebrar_texto(selected_dica['descricao'], 32)
-            y_desc_start = self.painellojarect.y + self.painellojarect.height - 40 - len(linhas_desc) * 20
-            for k, linha in enumerate(linhas_desc):
+            y_desc_start = y + 10  # inicia logo abaixo da lista
+            for linha in linhas_desc:
                 text_surf = self.font.render(linha, True, self.text_color)
-                self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y_desc_start + k * 20))
+                self.displaySurface.blit(text_surf, (self.painellojarect.x + 10, y_desc_start))
+                y_desc_start += 18  # altura por linha
 
         # Painel das dicas compradas
         if self.mostrar_compradas:
-            # Usa o mesmo fundo da loja
             self.displaySurface.blit(self.painelloja, self.painellojarect)
-            self.draw_compradas()  # draw_compradas também deve usar _quebrar_texto
+            self.draw_compradas()  # draw_compradas também já usa _quebrar_texto
 
 

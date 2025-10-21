@@ -166,8 +166,7 @@ class Hero(pygame.sprite.Sprite):
                         self.facingRight = True
                     self.currentState = 'RUN'
                     
-                    
-
+                
                     if self.yDir > 0.2:
                             self.currentState = 'FALL'
                            
@@ -282,7 +281,6 @@ class Hero(pygame.sprite.Sprite):
             self.attack_hitbox = None
             
         
-
         # Play animation until end of current animation is reached
         self.animationIndex += self.animationSpeed
         if self.animationIndex >= len(self.currentAnimation):
@@ -318,6 +316,8 @@ class Hero(pygame.sprite.Sprite):
         self.checkEnemyCollisions(level.bees)
 
         self.checkEnemyCollisions(level.robot)
+
+        self.checkEnemyCollisions(level.zombie)
 
         self.checkEnemyCollisions(level.skeleton)
 

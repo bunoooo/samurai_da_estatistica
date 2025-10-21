@@ -24,8 +24,11 @@ from Skeleton import *
 from Crownpc import *
 from Reapernpc import *
 from Zombie import *
+from PerguntaGrafico import *
 
 repositorio = Dialogos()
+
+
 
 
 class Tutorial():
@@ -63,6 +66,7 @@ class Tutorial():
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
+        self.zombie =  pygame.sprite.Group()
         # Dialogue
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(0), self.displaySurface)
 
@@ -267,7 +271,7 @@ class Level1():
         self.phase_text = AnimatedText("Fase 1: O Inicio da Jornada", self.font, (255, 255, 255), surface=self.displaySurface)
 
         self.cutscene_active = True
-        self.cutscene = Cutscene(self.displaySurface, font_path)
+        self.cutscene = Cutscene(self.displaySurface, font_path, multi_stage=True)
 
         dicas_estatisticas = [
     {
@@ -337,6 +341,7 @@ class Level1():
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
+        self.zombie =  pygame.sprite.Group()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -572,7 +577,7 @@ class Level1():
 
         if not confirm_exit:
                 self.hero.update(self)
-                print(self.hero.sprite.animationSpeed)
+                
         if self.cutscene_active:
             if self.cutscene.finished:
                 self.cutscene_active = False  # agora a fase 1 começa
@@ -639,6 +644,7 @@ class Level1():
                                    
     def draw(self):
                 # Desenha o fundo
+                
         if self.cutscene_active:
             self.cutscene.draw()
         else:          
@@ -761,6 +767,10 @@ class Level2():
         
         self.fase_id = fase_id
 
+        self.cutscene_active = True
+        self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
+       
+
         self.font = pygame.font.Font(font_path, 40)
         self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
 
@@ -855,6 +865,7 @@ class Level2():
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
+        self.zombie = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1142,68 +1153,79 @@ class Level2():
         if not confirm_exit:
                 self.hero.update(self)
 
+        if self.cutscene_active:
+            if self.cutscene.finished:
+                self.cutscene_active = False  # agora a fase 1 começa
+            return
+        else:
+        
 
             
 
-        if self.pergunta.acertou and self.portal.sprite is None:
-                 self.quest_system.complete_quest(3)
-                 self.portal.add(Portal((0,170)))
-            
-        if self.npcloja.sprite.show_interaction:
-                self.quest_system.complete_quest(2)
-                self.hero.sprite.falou_com_npcloja = False    
-
-
-        if self.hero.sprite.falou_com_npc:
-                self.quest_system.complete_quest(1)
-                self.hero.sprite.falou_com_npc = False
-
-        keys = pygame.key.get_pressed()
-        if self.portal.sprite is not None:
-                self.portal.update()
-                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
-                    if keys[pygame.K_h]:
-                        print("Portal ativado!")
-                        self.verificar_prox_fase = "next_level"
-
-        if (self.dialogue_box and not self.dialogue_box.text_active and
-                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
-
-                self.pergunta.handle_input()
-
-                self.robot.update(self)
-                self.Coin.update()
-                self.potion.update()
-
+            if self.pergunta.acertou and self.portal.sprite is None:
+                    self.quest_system.complete_quest(3)
+                    self.portal.add(Portal((0,300)))
                 
-            # Atualiza NPCs e loja sempre, se existirem
-        if self.npcrobot.sprite:
-                self.npcrobot.update(self)
-        if self.npcloja.sprite:
-                self.npcloja.update(self)
-            
-        self.camera.update(self.hero.sprite)
-        self.phase_text.update()
-        self.dialogue_box.update()
-        self.loja.handle_input()
-
-            # Teleporte quando errou
-        if self.pergunta.errou and not self.ja_teletransportou:
-                self.hero.sprite.teleport(0, 250)
-                # Adiciona inimigos adicionais
-                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
-                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
-                self.ja_teletransportou = True
-                # Reseta o erro para não teletransportar várias vezes
-                self.pergunta.errou = False
+            if self.npcloja.sprite.show_interaction:
+                    self.quest_system.complete_quest(2)
+                    self.hero.sprite.falou_com_npcloja = False    
 
 
-            # Resetar o teleporte caso ele saia da área
-        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
-                self.ja_teletransportou = False
+            if self.hero.sprite.falou_com_npc:
+                    self.quest_system.complete_quest(1)
+                    self.hero.sprite.falou_com_npc = False
+
+            keys = pygame.key.get_pressed()
+            if self.portal.sprite is not None:
+                    self.portal.update()
+                    if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                        if keys[pygame.K_h]:
+                            print("Portal ativado!")
+                            self.verificar_prox_fase = "next_level"
+
+            if (self.dialogue_box and not self.dialogue_box.text_active and
+                    self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                    self.pergunta.handle_input()
+
+                    self.robot.update(self)
+                    self.Coin.update()
+                    self.potion.update()
+
+                    
+                # Atualiza NPCs e loja sempre, se existirem
+            if self.npcrobot.sprite:
+                    self.npcrobot.update(self)
+            if self.npcloja.sprite:
+                    self.npcloja.update(self)
+                
+            self.camera.update(self.hero.sprite)
+            self.phase_text.update()
+            self.dialogue_box.update()
+            self.loja.handle_input()
+
+                # Teleporte quando errou
+            if self.pergunta.errou and not self.ja_teletransportou:
+                    self.hero.sprite.teleport(0, 250)
+                    # Adiciona inimigos adicionais
+                    self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                    self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                    self.ja_teletransportou = True
+                    # Reseta o erro para não teletransportar várias vezes
+                    self.pergunta.errou = False
+
+
+                # Resetar o teleporte caso ele saia da área
+            if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                    self.ja_teletransportou = False
                                    
     def draw(self):
                 # Desenha o fundo         
+        if self.cutscene_active:
+            self.cutscene.draw2()
+        else:  
+
+
             self.background.draw3(self.displaySurface)
             
 
@@ -1318,91 +1340,87 @@ class Level2():
         # Desenha a tela
         self.draw()
 
-
 class Level3():
-    def __init__(self, displaySurface, fase_id=3):
-       
-        self.ja_teletransportou = False
 
+    def __init__(self, displaySurface, fase_id=3):
+
+        self.ja_teletransportou = False
         self.verificar_prox_fase = None
-        
         self.displaySurface = displaySurface
-        
         self.fase_id = fase_id
+        
+        self.cutscene_active = True
+        self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
+        
 
         self.font = pygame.font.Font(font_path, 40)
-        self.phase_text = AnimatedText("Fase 3: A volta dos mortos", self.font, (255, 255, 255), surface=self.displaySurface)
-
-        dicas_estatisticas = [ 
+        self.phase_text = AnimatedText(
+            "Fase 3: A volta dos mortos",
+            self.font,
+            (255, 255, 255),
+            surface=self.displaySurface
+        )
+        dicas_estatisticas = [
     {
-        "conceito": "Tratamento A ",
-        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "conceito": "Ritual de Purificação Violenta",
+        "descricao": "Neutraliza a maldição sobre mortes violentas.",
         "descricao_completa": (
-            "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
-            "e há risco moderado de efeitos colaterais. "
-            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+            "Este ritual é poderoso para almas perdidas em mortes violentas. "
+            "Reduz drasticamente o efeito da maldição, permitindo que o ceifador colete a maioria das almas. "
+            "Requer materiais raros e custa tempo para ser realizado, mas é altamente eficaz."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Excelente escolha! A maioria das almas perdidas pela maldição foi recuperada."
+        )
+    },
+    {
+        "conceito": "Ritual de Proteção Acidental",
+        "descricao": "Reduz os efeitos da maldição sobre acidentes.",
+        "descricao_completa": (
+            "Protege as almas que morrem em acidentes repentinos. "
+            "Efetivo, mas não resolve casos de mortes violentas ou naturais."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Você conseguiu proteger algumas almas de acidentes, mas essa não é a principal fonte de almas da maldição."
+        )
+    },
+    {
+        "conceito": "Ritual da Harmonia Natural",
+        "descricao": "Reequilibra o fluxo de almas em mortes naturais.",
+        "descricao_completa": (
+            "Este ritual é voltado para almas de mortes naturais, restaurando o fluxo normal e permitindo coleta eficiente. "
+            "Não afeta mortes violentas ou acidentes."
         ),
         "preco": 2,
         "feedback": (
-            "Apesar de ser popular e rápido, sua eficácia é baixa. "
-            "Não é o ideal para controlar uma epidemia com segurança."
+            "As almas de mortes naturais agora podem ser coletadas, mas essa não é a principal fonte de almas da maldição."
         )
     },
     {
-        "conceito": "Tratamento B ",
-        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "conceito": "Poção de Cura de Doença",
+        "descricao": "Minimiza a maldição sobre mortes por doença.",
         "descricao_completa": (
-            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
-            "de que parte das informações foi manipulada por Erradon. "
-            "Também há risco de efeitos colaterais não totalmente documentados."
+            "Aplica efeitos mágicos para reduzir a maldição sobre almas que morreram por doença. "
+            "Não influencia mortes violentas ou acidentais."
         ),
-        "preco": 3,
+        "preco": 2,
         "feedback": (
-            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
-        )
-    },
-    {
-        "conceito": "Tratamento C",
-        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
-        "descricao_completa": (
-            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
-            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
-        ),
-        "preco": 3,
-        "feedback": (
-            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
-            "É uma escolha estratégica e segura para conter a epidemia."
-        )
-    },
-    {
-        "conceito": "Tratamento D ",
-        "descricao": "Práticas naturais sem comprovação científica.",
-        "descricao_completa": (
-            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30 porcento. "
-            "Muitos acreditam nele devido a boatos espalhados por Erradon."
-        ),
-        "preco": 1,
-        "feedback": (
-            "Baixa eficácia e forte influência de desinformação. "
-            "Não é uma escolha racional para conter uma epidemia."
+            "As almas perdidas por doença podem ser coletadas,  mas essa não é a principal fonte de almas da maldição."
         )
     }
 ]
-
         quests = [
-            {"id": 1, "text": "Fale com o chefe da vila", "done": False},
+            {"id": 1, "text": "Fale com o ceifador do cemiterio", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
-            {"id": 3 , "text": "Resolva o problema do chefe" , "done" : False},
-            {"id": 4 , "text": "Entre no portal" , "done" : False}
+            {"id": 3, "text": "Resolva o problema do ceifador", "done": False},
+            {"id": 4, "text": "Entre no portal", "done": False}
         ]
-        
-        self.quest_system = QuestSystem(quests, self.displaySurface )
-         # Carregar o arquivo TMX
 
+        self.quest_system = QuestSystem(quests, self.displaySurface)
+
+        # Carregar o arquivo TMX
         self.levelData = load_pygame(LEVELS_PATH + "Level1/level3.tmx")
 
         # Instanciar classes
@@ -1424,13 +1442,366 @@ class Level3():
         self.skeleton = pygame.sprite.Group()
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
-      
+        self.zombie =  pygame.sprite.Group()
 
+        # Carrega tiles
+        for layer_name, group in [("Platforms", self.platformTiles),
+                                  ("Background", self.othersprites),
+                                  ("Background2", self.other2sprites),
+                                  ("Parede", self.paredesprites)]:
+            layer = self.levelData.get_layer_by_name(layer_name)
+            for x, y, tileSurface in layer.tiles():
+                group.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        # Dialogue box
+        self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
+
+        # Inimigos
+        skeleton_positions = [
+            (60,210,60,270), (350,495,40,450), (400,305,400,650), (300,495,650,900),
+            (500,495,550,950), (200,495,50,550), (950,258,910,1100), (1250,210,1200,1400),
+            (900,495,950,1400), (1100,495,1150,1400)
+        ]
+        for x, y, left, right in skeleton_positions:
+            self.skeleton.add(Skeleton((x, y), moveRight=True, limit_left=left, limit_right=right))
+
+        self.reaper.add(ReaperNpc((1855,505), faceRight=False))
+        self.npcloja.add(LojaNpc((700,215), faceRight=True))
+
+        # Moedas e poções
+        for pos in [(120,115),(150,115),(80,370),(50,370),(540,200),(510,200),(1040,200),(1010,200),(1250,140),(1280,140)]:
+            self.Coin.add(Coin(pos))
+        for pos in [(1800,490),(1600,490),(225,385)]:
+            self.potion.add(Potion(pos))
+
+        # Hero
+        self.hero.add(Hero((185, 400), faceRight=True))
+
+        # Loja
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
+
+        # Pergunta nova
+        self.pergunta = PerguntaGrafico(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.reaper.sprite,
+            pergunta="O gráfico mostra onde a maldição está mais forte, Qual ritual da loja vai me ajudar a coletar a maior quantidade de almas?",
+            grafico_path = graficos_path + "almas_perdidas.png",
+            loja=self.loja,
+            correta_conceito = "Ritual de Purificação Violenta"
+        )
+
+        # HUD
+        vida_rect = (0,0,12,12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png", vida_rect, contorno_path=hud_path + "vida_hud.png")
+
+        # Câmera
+        self.camera = Camera(self.levelData.width * TILESIZE, self.levelData.height * TILESIZE)
+
+        # Teleporte
+        self.teleport_zone = pygame.Rect(
+            self.reaper.sprite.hitbox.rect.x - 50,
+            self.reaper.sprite.hitbox.rect.y -100,
+            self.reaper.sprite.hitbox.rect.width + 100,
+            self.reaper.sprite.hitbox.rect.height + 100
+        )
+
+    # --- Função reset --- #
+    def reset(self):
+        # Limpa todos os grupos
+        for group in [self.hero, self.platformTiles, self.paredesprites, self.othersprites, self.other2sprites,
+                      self.bees, self.robot, self.Coin, self.potion, self.npcrobot, self.npcloja, self.portal]:
+            group.empty()
+
+        # Recarrega tiles
+        for layer_name, group in [("Platforms", self.platformTiles),
+                                  ("Background", self.othersprites),
+                                  ("Background2", self.other2sprites),
+                                  ("Parede", self.paredesprites)]:
+            layer = self.levelData.get_layer_by_name(layer_name)
+            for x, y, tileSurface in layer.tiles():
+                group.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        # Recria inimigos
+        skeleton_positions = [
+            (60,210,60,270), (350,495,40,450), (400,305,400,650), (300,495,650,900),
+            (500,495,550,950), (200,495,50,550), (950,258,910,1100), (1250,210,1200,1400),
+            (900,495,950,1400), (1100,495,1150,1400)
+        ]
+        for x, y, left, right in skeleton_positions:
+            self.skeleton.add(Skeleton((x, y), moveRight=True, limit_left=left, limit_right=right))
+
+        self.reaper.add(ReaperNpc((1855,505), faceRight=False))
+        self.npcloja.add(LojaNpc((700,215), faceRight=True))
+
+        # Moedas e poções
+        for pos in [(120,115),(150,115),(80,370),(50,370),(540,200),(510,200),(1040,200),(1010,200),(1250,140),(1280,140)]:
+            self.Coin.add(Coin(pos))
+        for pos in [(1800,490),(1600,490),(225,385)]:
+            self.potion.add(Potion(pos))
+
+        # Hero
+        self.hero.add(Hero((170,250), faceRight=True))
+
+        # HUD
+        vida_rect = (0,0,12,12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png", vida_rect, contorno_path=hud_path + "vida_hud.png")
+
+        # Loja e pergunta
+        dicas_estatisticas = [d for d in self.loja.dicas]
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100,50))
+        
+        # Pergunta nova
+        self.pergunta = PerguntaGrafico(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.reaper.sprite,
+            pergunta="O gráfico mostra onde a maldição está mais forte, Qual ritual da loja vai me ajudar a coletar a maior quantidade de almas?",
+            grafico_path = graficos_path + "almas_perdidas.png",
+            loja=self.loja,
+            correta_conceito = "Ritual de Purificação Violenta"
+        )
+        # Teleporte
+        self.teleport_zone = pygame.Rect(
+            self.reaper.sprite.hitbox.rect.x - 50,
+            self.reaper.sprite.hitbox.rect.y -100,
+            self.reaper.sprite.hitbox.rect.width + 100,
+            self.reaper.sprite.hitbox.rect.height + 100
+        )
+
+        self.ja_teletransportou = False
+        self.pergunta.acertou = None
+        self.pergunta.errou = None
+
+    # --- Função update --- #
+    def update(self, confirm_exit=False):
+        if not confirm_exit:
+            self.hero.update(self)
+        if self.cutscene_active:
+            if self.cutscene.finished:
+                self.cutscene_active = False  # agora a fase 1 começa
+            return
+        else:
+
+            # Pergunta acertada libera portal
+            if self.pergunta.acertou and self.portal.sprite is None:
+                self.quest_system.complete_quest(3)
+                self.portal.add(Portal((0,450)))
+
+            # Quest da loja
+            if self.npcloja.sprite.show_interaction:
+                self.quest_system.complete_quest(2)
+                self.hero.sprite.falou_com_npcloja = False
+
+            # Quest do NPC
+            if self.hero.sprite.falou_com_npc:
+                self.quest_system.complete_quest(1)
+                self.hero.sprite.falou_com_npc = False
+
+            # Portal
+            keys = pygame.key.get_pressed()
+            if self.portal.sprite is not None:
+                self.portal.update()
+                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                    if keys[pygame.K_h]:
+                        print("Portal ativado!")
+                        self.verificar_prox_fase = "next_level"
+
+            # Atualiza lógica de jogo
+            if self.dialogue_box and not self.dialogue_box.text_active and \
+            self.loja and not self.loja.active and not self.loja.mostrar_compradas:
+                self.pergunta.handle_input()
+                self.robot.update(self)
+                self.Coin.update()
+                self.potion.update()
+                self.skeleton.update(self)
+
+            if self.reaper.sprite:
+                self.reaper.update(self)
+            if self.npcloja.sprite:
+                self.npcloja.update(self)
+
+            self.camera.update(self.hero.sprite)
+            self.phase_text.update()
+            self.dialogue_box.update()
+            self.loja.handle_input()
+
+            # Teleporte quando errou
+            if self.pergunta.errou and not self.ja_teletransportou:
+                self.hero.sprite.teleport(0, 250)
+                self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
+                self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
+                self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
+
+                self.ja_teletransportou = True
+                self.pergunta.errou = False
+
+            # Resetar teleporte se sair da zona
+            if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                self.ja_teletransportou = False
+
+    # --- Função draw --- #
+    def draw(self):
+
+        if self.cutscene_active:
+            self.cutscene.draw3()
+        else:  
+
+            self.background.draw4(self.displaySurface)
+
+            for group in [self.platformTiles, self.othersprites, self.other2sprites, self.paredesprites]:
+                for tile in group:
+                    pos = self.camera.apply(tile)
+                    self.displaySurface.blit(tile.image, pos)
+
+            for coin in self.Coin:
+                pos = self.camera.apply(coin)
+                self.displaySurface.blit(coin.image, pos)
+
+            for potion in self.potion:
+                pos = self.camera.apply(potion)
+                self.displaySurface.blit(potion.image, pos)
+
+            # Herói
+            pos = self.camera.apply(self.hero.sprite)
+            self.displaySurface.blit(self.hero.sprite.image, pos)
+
+            # Portal
+            if self.portal.sprite is not None:
+                pos = self.camera.apply(self.portal.sprite)
+                self.displaySurface.blit(self.portal.sprite.image, pos)
+                self.portal.sprite.draw(self.displaySurface, self.camera)
+
+            # Robôs
+            for robot in self.robot:
+                pos = self.camera.apply(robot)
+                self.displaySurface.blit(robot.image, pos)
+
+            # Skeletons
+            for skeleton in self.skeleton:
+                pos = self.camera.apply(skeleton)
+                self.displaySurface.blit(skeleton.image, pos)
+                skeleton.draw_hitbox(self.displaySurface)
+
+            # Reaper NPC
+            pos = self.camera.apply(self.reaper.sprite)
+            self.displaySurface.blit(self.reaper.sprite.image, pos)
+            self.reaper.sprite.draw(self.displaySurface, self.camera)
+
+            # Loja NPC
+            pos1 = self.camera.apply(self.npcloja.sprite)
+            self.displaySurface.blit(self.npcloja.sprite.image, pos1)
+            self.npcloja.sprite.draw(self.displaySurface, self.camera)
+
+            # HUD e texto da fase
+            self.hud.draw(self.displaySurface)
+            self.phase_text.draw()
+
+            self.dialogue_box.draw_box()
+            self.dialogue_box.draw_text()
+
+            self.quest_system.draw()
+            self.loja.draw()
+            self.pergunta.draw()
+
+    # --- Função run --- #
+    def run(self, confirm_exit=False):
+        self.update(confirm_exit=confirm_exit)
+        self.draw()
+
+
+class Level4():
+    def __init__(self, displaySurface, fase_id=3):
+       
+        self.ja_teletransportou = False
+
+        self.verificar_prox_fase = None
+        
+        self.displaySurface = displaySurface
+        
+        self.fase_id = fase_id
+
+        self.cutscene_active = True
+        self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
+        
+
+        self.font = pygame.font.Font(font_path, 40)
+        self.phase_text = AnimatedText("Fase 4: Virus CognoZombi", self.font, (255, 255, 255), surface=self.displaySurface)
+        
+        dicas_estatisticas = [
+    {
+        "conceito": "Distrito Hélios",
+        "descricao": "Crescimento precoce e forte.",
+        "descricao_completa": (
+            "O gráfico mostra que o Distrito Hélios teve aumento rápido de infectados nos primeiros dias. "
+            "Isso indica que a origem da epidemia provavelmente começou aqui. "
+            "É crucial agir rápido, mas o surto inicial é intenso."
+        ),
+        "preco": 3,
+        "feedback": "tendência indica provável ponto de origem da epidemia."
+    },
+    {
+        "conceito": "Distrito Nébula",
+        "descricao": "Pico súbito suspeito.",
+        "descricao_completa": (
+            "O gráfico apresenta um pico repentino de infectados no Distrito Nébula, "
+            "mas este dado foi manipulado por Erradon para confundir a análise. "
+            "Não é confiável como ponto de origem da epidemia."
+        ),
+        "preco": 2,
+        "feedback": "Dados manipulados tornam este distrito suspeito, mas não é o início real da epidemia."
+    },
+    {
+        "conceito": "Distrito Void",
+        "descricao": "Crescimento lento e estável.",
+        "descricao_completa": (
+            "O gráfico mostra crescimento baixo e constante no Distrito Void. "
+            "Embora os dados sejam confiáveis, a tendência não indica a origem da epidemia."
+        ),
+        "preco": 1,
+        "feedback": "Apesar de confiável, a tendência mostra que não é o ponto inicial da epidemia."
+    }
+]
+
+
+        quests = [
+            {"id": 1, "text": "Fale com o dr da cidade", "done": False},
+            {"id": 2, "text": "Encontre o mercador", "done": False},
+            {"id": 3 , "text": "Resolva o problema do dr" , "done" : False},
+            {"id": 4 , "text": "Entre no portal" , "done" : False}
+        ]
+        
+        self.quest_system = QuestSystem(quests, self.displaySurface )
+         # Carregar o arquivo TMX
+
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level4.tmx")
+
+        # Instanciar classes
+        self.background = Background()
+
+        # Criar grupos de sprites
+        self.hero = pygame.sprite.GroupSingle()
+        self.platformTiles = pygame.sprite.Group()
+        self.othersprites = pygame.sprite.Group()
+        self.other2sprites = pygame.sprite.Group()
+        self.other3sprites = pygame.sprite.Group()
+        self.paredesprites = pygame.sprite.Group()
+        self.bees = pygame.sprite.Group()
+        self.robot = pygame.sprite.Group()
+        self.Coin = pygame.sprite.Group()
+        self.potion = pygame.sprite.Group()
+        self.npcrobot = pygame.sprite.GroupSingle()
+        self.npcloja = pygame.sprite.GroupSingle()
+        self.portal = pygame.sprite.GroupSingle()
+        self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
+        self.zombie =  pygame.sprite.Group()
+        self.reaper = pygame.sprite.GroupSingle()
+      
         layer = self.levelData.get_layer_by_name('Platforms')
         for x, y, tileSurface in layer.tiles():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
             self.platformTiles.add(tile)
-        
         
         other = self.levelData.get_layer_by_name('Background')
         for x, y, tileSurface in other.tiles():
@@ -1442,6 +1813,12 @@ class Level3():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
             self. other2sprites.add(tile)
 
+        other3 = self.levelData.get_layer_by_name('Predio')
+        for x, y, tileSurface in  other3.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other3sprites.add(tile)
+
+        
         parede = self.levelData.get_layer_by_name('Parede')
         for x, y, tileSurface in parede.tiles():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
@@ -1449,38 +1826,35 @@ class Level3():
 
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
        
-
-
-        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
-
-        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
-
-        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
-
-        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
+        self.zombie.add(Zombie((120,305), moveRight=True,limit_left= 50, limit_right= 250))
         
-        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
+        self.zombie.add(Zombie((100,305), moveRight=True,limit_left= 0, limit_right= 300))
+     
+        self.zombie.add(Zombie((900,260), moveRight=True,limit_left= 700, limit_right= 950))
 
-        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
-
-
-        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
-
-        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
-
-        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
-        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
+        self.zombie.add(Zombie((700,450), moveRight=True,limit_left= 700, limit_right= 950))
 
 
-        self.reaper.add(ReaperNpc((1855,505) , faceRight= False))
+        self.zombie.add(Zombie((1200,515), moveRight=True,limit_left= 1250, limit_right= 1400))
+        
+        self.zombie.add(Zombie((1200,405), moveRight=True,limit_left= 1150, limit_right= 1350))
 
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+        self.zombie.add(Zombie((1500,240), moveRight=True,limit_left= 1500, limit_right= 1700))
+        
+        self.zombie.add(Zombie((1600,435), moveRight=True,limit_left= 1600, limit_right= 1800))
+        self.zombie.add(Zombie((1600,515), moveRight=True,limit_left= 1600, limit_right= 1850))
+        
+        
+
+        self.crow.add(CrowNpc((100,515) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((1840,292) , faceRight= False))
        
-        self.Coin.add(Coin((120,115)))
-        self.Coin.add(Coin((150,115)))
+        self.Coin.add(Coin((120,235)))
+        self.Coin.add(Coin((150,235)))
         
-        self.Coin.add(Coin((80,370)))
-        self.Coin.add(Coin((50,370)))
+        self.Coin.add(Coin((80,470)))
+        self.Coin.add(Coin((50,470)))
         
         
         self.Coin.add(Coin((540,200)))
@@ -1493,29 +1867,25 @@ class Level3():
         self.Coin.add(Coin((1250,140)))
         self.Coin.add(Coin((1280,140)))
 
-
-
-
         self.potion.add(Potion((1800,490)))
 
         self.potion.add(Potion((1600,490)))
 
-        self.potion.add(Potion((225,385)))
+        self.potion.add(Potion((370,315)))
     
-                
         self.hero.add(Hero((185, 400), faceRight=True))
        
 
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
   
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaGrafico(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
-            npc=self.reaper.sprite,
-            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
+            npc=self.crow.sprite,
+            pergunta="Jack, olhando os dados, qual distrito indica a origem da epidemia?",
+            grafico_path = graficos_path + "grafico_zumbis.png",
             loja=self.loja,
-            correta_conceito="Tratamento C",
-            pos=(100, 100)
+            correta_conceito = "Distrito Hélios"
         )
 
        
@@ -1529,25 +1899,26 @@ class Level3():
         
 
         self.teleport_zone = pygame.Rect(
-        self.reaper.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
-        self.reaper.sprite.hitbox.rect.y -100,   # aumenta para cima
-        self.reaper.sprite.hitbox.rect.width + 100,  # aumenta largura
-        self.reaper.sprite.hitbox.rect.height + 100  # aumenta altura
+        self.crow.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
+        self.crow.sprite.hitbox.rect.y -100,   # aumenta para cima
+        self.crow.sprite.hitbox.rect.width + 100,  # aumenta largura
+        self.crow.sprite.hitbox.rect.height + 100  # aumenta altura
     )
-
     def reset(self):
         # Limpa todos os grupos de sprites
         self.hero.empty()
         self.platformTiles.empty()
         self.paredesprites.empty()
         self.othersprites.empty()
-        self.bees.empty()
-        self.robot.empty()
-        self.Coin.empty()
-        self.potion.empty()
-        self.npcrobot.empty()
+        self.other2sprites.empty()
+        self.other3sprites.empty()
+        self.zombie.empty()
+        self.crow.empty()
         self.npcloja.empty()
         self.portal.empty()
+        self.Coin.empty()
+        self.potion.empty()
+        self.robot.empty()
 
         # Recarrega camadas do mapa
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -1562,175 +1933,202 @@ class Level3():
         for x, y, tileSurface in other2.tiles():
             self.other2sprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
+        other3 = self.levelData.get_layer_by_name('Predio')
+        for x, y, tileSurface in other3.tiles():
+            self.other3sprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
         parede = self.levelData.get_layer_by_name('Parede')
         for x, y, tileSurface in parede.tiles():
             self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
-       
-        # Recria inimigos
-        
-        
+        # Recria inimigos (zumbis)
+        self.zombie.add(Zombie((120,305), moveRight=True, limit_left=50, limit_right=250))
+        self.zombie.add(Zombie((100,305), moveRight=True, limit_left=0, limit_right=300))
+        self.zombie.add(Zombie((900,260), moveRight=True, limit_left=700, limit_right=950))
+        self.zombie.add(Zombie((700,450), moveRight=True, limit_left=700, limit_right=950))
+        self.zombie.add(Zombie((1200,515), moveRight=True, limit_left=1250, limit_right=1400))
+        self.zombie.add(Zombie((1200,405), moveRight=True, limit_left=1150, limit_right=1350))
+        self.zombie.add(Zombie((1500,240), moveRight=True, limit_left=1500, limit_right=1700))
+        self.zombie.add(Zombie((1600,435), moveRight=True, limit_left=1600, limit_right=1800))
+        self.zombie.add(Zombie((1600,515), moveRight=True, limit_left=1600, limit_right=1850))
 
-        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
+        # Recria NPCs
+        self.crow.add(CrowNpc((100,515), faceRight=False))
+        self.npcloja.add(LojaNpc((1840,292), faceRight=False))
 
-        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
-
-        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
-
-        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
-        
-        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
-
-        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
-
-
-        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
-
-        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
-
-        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
-        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
-
-
-        self.reaper.add(ReaperNpc((1855,505) , faceRight= False))
-
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
-       
-        self.Coin.add(Coin((120,115)))
-        self.Coin.add(Coin((150,115)))
-        
-        self.Coin.add(Coin((80,370)))
-        self.Coin.add(Coin((50,370)))
-        
-        
-        self.Coin.add(Coin((540,200)))
-        self.Coin.add(Coin((510,200)))
-        
-        self.Coin.add(Coin((1040,200)))
-        self.Coin.add(Coin((1010,200)))
-
-
-        self.Coin.add(Coin((1250,140)))
-        self.Coin.add(Coin((1280,140)))
-
+        # Recria moedas e poções
+        self.Coin.add(Coin((120,235))); self.Coin.add(Coin((150,235)))
+        self.Coin.add(Coin((80,470))); self.Coin.add(Coin((50,470)))
+        self.Coin.add(Coin((540,200))); self.Coin.add(Coin((510,200)))
+        self.Coin.add(Coin((1040,200))); self.Coin.add(Coin((1010,200)))
+        self.Coin.add(Coin((1250,140))); self.Coin.add(Coin((1280,140)))
 
         self.potion.add(Potion((1800,490)))
-
         self.potion.add(Potion((1600,490)))
-
-        self.potion.add(Potion((225,385)))
-      
+        self.potion.add(Potion((370,315)))
 
         # Recria herói
-        self.hero.add(Hero((170, 250), faceRight=True))
+        self.hero.add(Hero((185, 400), faceRight=True))
 
+        # Recria HUD
         vida_rect = (0, 0, 12, 12)
-        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png", vida_rect,
+                    contorno_path=hud_path + "vida_hud.png")
 
-        # Recria loja e pergunta para garantir estado inicial
+        # Recria loja e pergunta
         dicas_estatisticas = [
             {
-                "conceito": "Média", 
-                "descricao": "A soma dos valores dividida pelo total.", 
-                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
+                "conceito": "Distrito Hélios",
+                "descricao": "Crescimento precoce e forte.",
+                "descricao_completa": (
+                    "O gráfico mostra que o Distrito Hélios teve aumento rápido de infectados nos primeiros dias. "
+                    "Isso indica que a origem da epidemia provavelmente começou aqui. "
+                    "É crucial agir rápido, mas o surto inicial é intenso."
+                ),
+                "preco": 3,
+                "feedback": "tendência indica provável ponto de origem da epidemia."
+            },
+            {
+                "conceito": "Distrito Nébula",
+                "descricao": "Pico súbito suspeito.",
+                "descricao_completa": (
+                    "O gráfico apresenta um pico repentino de infectados no Distrito Nébula, "
+                    "mas este dado foi manipulado por Erradon para confundir a análise. "
+                    "Não é confiável como ponto de origem da epidemia."
+                ),
                 "preco": 2,
-                "feedback": "A média resume todos os valores em um único número representativo."
+                "feedback": "Dados manipulados tornam este distrito suspeito, mas não é o início real da epidemia."
+            },
+            {
+                "conceito": "Distrito Void",
+                "descricao": "Crescimento lento e estável.",
+                "descricao_completa": (
+                    "O gráfico mostra crescimento baixo e constante no Distrito Void. "
+                    "Embora os dados sejam confiáveis, a tendência não indica a origem da epidemia."
+                ),
+                "preco": 1,
+                "feedback": "Apesar de confiável, a tendência mostra que não é o ponto inicial da epidemia."
             }
         ]
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
-        self.pergunta = PerguntaResposta(
+
+        self.loja = LojaSimples(
+            self.hero.sprite,
+            self.displaySurface,
+            self.npcloja.sprite,
+            dicas_estatisticas,
+            pos=(100, 50)
+        )
+
+        self.pergunta = PerguntaGrafico(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
-            npc= self.reaper.sprite,
-            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            npc=self.crow.sprite,
+            pergunta="Jack, olhando os dados, qual distrito indica a origem da epidemia?",
+            grafico_path=graficos_path + "grafico_zumbis.png",
             loja=self.loja,
-            correta_conceito="Média",
-            pos=(100, 100)
+            correta_conceito="Distrito Hélios"
         )
 
         # Recria zona de teleporte
         self.teleport_zone = pygame.Rect(
-             self.reaper.sprite.hitbox.rect.x - 50,
-             self.reaper.sprite.hitbox.rect.y - 100,
-             self.reaper.sprite.hitbox.rect.width + 100,
-             self.reaper.sprite.hitbox.rect.height + 100
+            self.crow.sprite.hitbox.rect.x - 50,
+            self.crow.sprite.hitbox.rect.y - 100,
+            self.crow.sprite.hitbox.rect.width + 100,
+            self.crow.sprite.hitbox.rect.height + 100
         )
 
-        # Reseta flags
+        # Reseta estados
         self.ja_teletransportou = False
         self.pergunta.acertou = None
         self.pergunta.errou = None
 
+ 
     def update(self, confirm_exit=False):
     # Atualiza o herói sempre
-
         if not confirm_exit:
-                self.hero.update(self)
-
-
-        if self.pergunta.acertou and self.portal.sprite is None:
-                 self.quest_system.complete_quest(3)
-                 self.portal.add(Portal((0,170)))
+                    self.hero.update(self)
+        if self.cutscene_active:
+            if self.cutscene.finished:
+                self.cutscene_active = False  # agora a fase 1 começa
+            return
+        else:
             
-        if self.npcloja.sprite.show_interaction:
-                self.quest_system.complete_quest(2)
-                self.hero.sprite.falou_com_npcloja = False    
-
-
-        if self.hero.sprite.falou_com_npc:
-                self.quest_system.complete_quest(1)
-                self.hero.sprite.falou_com_npc = False
-
-        keys = pygame.key.get_pressed()
-        if self.portal.sprite is not None:
-                self.portal.update()
-                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
-                    if keys[pygame.K_h]:
-                        print("Portal ativado!")
-                        self.verificar_prox_fase = "next_level"
-
-        if (self.dialogue_box and not self.dialogue_box.text_active and
-                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
-
-                self.pergunta.handle_input()
-
-                self.robot.update(self)
-                self.Coin.update()
-                self.potion.update()
-                self.skeleton.update(self)
-
+            if self.pergunta.acertou and self.portal.sprite is None:
+                    self.quest_system.complete_quest(3)
+                    self.portal.add(Portal((0,510)))
                 
-            # Atualiza NPCs e loja sempre, se existirem
-        if self.reaper.sprite:
-                self.reaper.update(self)
-        if self.npcloja.sprite:
-                self.npcloja.update(self)
-            
-        self.camera.update(self.hero.sprite)
-        self.phase_text.update()
-        self.dialogue_box.update()
-        self.loja.handle_input()
-
-            # Teleporte quando errou
-        if self.pergunta.errou and not self.ja_teletransportou:
-                self.hero.sprite.teleport(0, 250)
-                # Adiciona inimigos adicionais
-                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
-                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
-                self.ja_teletransportou = True
-                # Reseta o erro para não teletransportar várias vezes
-                self.pergunta.errou = False
+            if self.npcloja.sprite.show_interaction:
+                    self.quest_system.complete_quest(2)
+                    self.hero.sprite.falou_com_npcloja = False    
 
 
-            # Resetar o teleporte caso ele saia da área
-        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
-                self.ja_teletransportou = False
-                                   
+            if self.hero.sprite.falou_com_npc:
+                    self.quest_system.complete_quest(1)
+                    self.hero.sprite.falou_com_npc = False
+
+            keys = pygame.key.get_pressed()
+            if self.portal.sprite is not None:
+                    self.portal.update()
+                    if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                        if keys[pygame.K_h]:
+                            print("Portal ativado!")
+                            self.verificar_prox_fase = "next_level"
+
+            if (self.dialogue_box and not self.dialogue_box.text_active and
+                    self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                    self.pergunta.handle_input()
+
+                    self.Coin.update()
+                    self.potion.update()
+                    self.zombie.update(self)
+
+                    
+                # Atualiza NPCs e loja sempre, se existirem
+            if self.crow.sprite:
+                    self.crow.update(self)
+            if self.npcloja.sprite:
+                    self.npcloja.update(self)
+                
+            self.camera.update(self.hero.sprite)
+            self.phase_text.update()
+            self.dialogue_box.update()
+            self.loja.handle_input()
+
+                # Teleporte quando errou
+            if self.pergunta.errou and not self.ja_teletransportou:
+                    self.hero.sprite.teleport(0, 250)
+                    # Adiciona inimigos adicionais
+                    self.zombie.add(Zombie((1500,240), moveRight=True, limit_left=1500, limit_right=1700))
+                    self.zombie.add(Zombie((1600,435), moveRight=True, limit_left=1600, limit_right=1800))
+                    self.zombie.add(Zombie((1600,515), moveRight=True, limit_left=1600, limit_right=1850))
+                    self.ja_teletransportou = True
+                    # Reseta o erro para não teletransportar várias vezes
+                    self.pergunta.errou = False
+
+
+                # Resetar o teleporte caso ele saia da área
+            if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                    self.ja_teletransportou = False
+                                    
     def draw(self):
+            
+        if self.cutscene_active:
+            self.cutscene.draw4()
+        else:  
                 # Desenha o fundo         
-            self.background.draw4(self.displaySurface)
+            self.background.draw(self.displaySurface)
             
 
+            for tile in self.other3sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            for tile in self.other2sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            
             # Desenha as camadas com o deslocamento da câmera
             for tile in self.platformTiles:
                 pos = self.camera.apply(tile)
@@ -1749,18 +2147,11 @@ class Level3():
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
 
-            for tile in self.other2sprites:
-                pos = self.camera.apply(tile)
-                self.displaySurface.blit(tile.image, pos)
-
-
+           
             for tile in self.paredesprites:
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
-                pygame.draw.rect(
-                self.displaySurface, (255, 255, 0),
-                tile.rect.move(pos.left - tile.rect.left, pos.top - tile.rect.top), 1
-                )
+              
 
             
             for coin in self.Coin:
@@ -1786,23 +2177,17 @@ class Level3():
 
         
             # Desenha os robôs com seus rects
-            for robot in self.robot:
-                pos = self.camera.apply(robot)
-                self.displaySurface.blit(robot.image, pos)
+            for zombie in self.zombie:
+                pos = self.camera.apply(zombie)
+                self.displaySurface.blit(zombie.image, pos)
 
 
-            for skeleton in self.skeleton:
-                pos = self.camera.apply(skeleton)
-                self.displaySurface.blit(skeleton.image, pos)
-                skeleton.draw_hitbox(self.displaySurface)
-                
-            
-        
-            pos = self.camera.apply( self.reaper.sprite)
-            self.displaySurface.blit(self.reaper.sprite.image, pos)
-            self.reaper.sprite.draw(self.displaySurface, self.camera)
+            pos = self.camera.apply(self.crow.sprite)
+            self.displaySurface.blit(self.crow.sprite.image, pos)
+            self.crow.sprite.draw(self.displaySurface, self.camera)
 
             
+         
             pos1 = self.camera.apply(self.npcloja.sprite)
             self.displaySurface.blit(self.npcloja.sprite.image, pos1)
             self.npcloja.sprite.draw(self.displaySurface, self.camera)
@@ -1849,7 +2234,9 @@ class Level3():
         self.draw()
 
 
-class Level4():
+
+    
+class Level5():
     def __init__(self, displaySurface, fase_id=3):
        
         self.ja_teletransportou = False
@@ -1861,7 +2248,7 @@ class Level4():
         self.fase_id = fase_id
 
         self.font = pygame.font.Font(font_path, 40)
-        self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
+        self.phase_text = AnimatedText("Fase 5: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
 
         dicas_estatisticas = [ 
     {
@@ -1933,7 +2320,7 @@ class Level4():
         self.quest_system = QuestSystem(quests, self.displaySurface )
          # Carregar o arquivo TMX
 
-        self.levelData = load_pygame(LEVELS_PATH + "Level1/level4.tmx")
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level5.tmx")
 
         # Instanciar classes
         self.background = Background()
@@ -1972,7 +2359,7 @@ class Level4():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
             self. other2sprites.add(tile)
 
-        other3 = self.levelData.get_layer_by_name('Predio')
+        other3 = self.levelData.get_layer_by_name('Arvores')
         for x, y, tileSurface in  other3.tiles():
             tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
             self. other3sprites.add(tile)
@@ -2055,8 +2442,6 @@ class Level4():
         # Configura a câmera
         self.camera = Camera(self.levelData.width * TILESIZE, self.levelData.height * TILESIZE)
 
-        
-
         self.teleport_zone = pygame.Rect(
         self.crow.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
         self.crow.sprite.hitbox.rect.y -100,   # aumenta para cima
@@ -2098,8 +2483,6 @@ class Level4():
        
         # Recria inimigos
         
-        
-
         self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
 
         self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
@@ -2119,7 +2502,6 @@ class Level4():
 
         self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
         self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
-
 
         self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
 
@@ -2258,7 +2640,7 @@ class Level4():
                                    
     def draw(self):
                 # Desenha o fundo         
-            self.background.draw(self.displaySurface)
+            self.background.draw1(self.displaySurface)
             
 
             for tile in self.other3sprites:
@@ -2293,8 +2675,6 @@ class Level4():
                 pos = self.camera.apply(tile)
                 self.displaySurface.blit(tile.image, pos)
               
-
-            
             for coin in self.Coin:
                 pos = self.camera.apply(coin)
                 self.displaySurface.blit(coin.image, pos)
@@ -2375,9 +2755,6 @@ class Level4():
         self.draw()
 
 
-
-class Level5():
-    pass
 
 class Level6():
     pass

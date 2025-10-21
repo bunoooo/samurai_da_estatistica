@@ -30,6 +30,8 @@ zombie_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios 
 
 music_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Music_levels/"
 
+graficos_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/graficos/"
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 
