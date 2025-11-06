@@ -16,7 +16,8 @@ class MusicManager:
             2: self.path + "fase2.mp3",
             3: self.path + "fase3.mp3",
             4: self.path + "fase4.mp3",
-            5: self.path + "fase5.mp3"
+            5: self.path + "fase5.mp3",
+            6: self.path + "fase6.mp3"
         }
         self.volume = 0.2
 

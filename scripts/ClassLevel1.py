@@ -25,6 +25,9 @@ from Crownpc import *
 from Reapernpc import *
 from Zombie import *
 from PerguntaGrafico import *
+from Erradon import *
+from Samuraixadom import *
+from SamuraigirlNpc import *
 
 repositorio = Dialogos()
 
@@ -67,6 +70,9 @@ class Tutorial():
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
         self.zombie =  pygame.sprite.Group()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
         # Dialogue
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(0), self.displaySurface)
 
@@ -342,6 +348,9 @@ class Level1():
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
         self.zombie =  pygame.sprite.Group()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -774,66 +783,56 @@ class Level2():
         self.font = pygame.font.Font(font_path, 40)
         self.phase_text = AnimatedText("Fase 2: Cidade Vermelha", self.font, (255, 255, 255), surface=self.displaySurface)
 
-        dicas_estatisticas = [ 
+        dicas_estatisticas = [
     {
-        "conceito": "Tratamento A ",
-        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "conceito": "Poção de Vitalis",
+        "descricao": "Rápido e popular, resultados confiáveis.",
         "descricao_completa": (
-            "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
-            "e há risco moderado de efeitos colaterais. "
-            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+            "Aplicação rápida, média de cura 55 porcento. Intervalo de confiança: 50 porcento - 60 porcento. Resultados previsíveis e consistentes, apesar da taxa moderada. Escolha estratégica para quem prioriza segurança e rapidez."
         ),
         "preco": 2,
         "feedback": (
-            "Apesar de ser popular e rápido, sua eficácia é baixa. "
-            "Não é o ideal para controlar uma epidemia com segurança."
+            "Mesmo com média menor, o intervalo estreito garante previsibilidade. "
+            "A dispersão relativa é baixa, então os resultados são mais confiáveis."
         )
     },
     {
-        "conceito": "Tratamento B ",
-        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "conceito": "Elixir de Erradon",
+        "descricao": "Novo método, média mais alta, mas incerto.",
         "descricao_completa": (
-            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
-            "de que parte das informações foi manipulada por Erradon. "
-            "Também há risco de efeitos colaterais não totalmente documentados."
+            "Desenvolvido recentemente, média de cura 60 porcento. Intervalo de confiança: 40 porcento - 80 porcento. Alta incerteza nos resultados. Pode ser arriscado, mesmo com média maior. Exige avaliação cuidadosa antes de aplicação em larga escala."
         ),
         "preco": 3,
         "feedback": (
-            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
+            "A média é maior, mas o intervalo largo mostra grande incerteza. "
+            "A dispersão relativa é alta, o que significa que os resultados podem variar muito de caso a caso."
         )
     },
     {
-        "conceito": "Tratamento C",
-        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
+        "conceito": "Soro da Fortaleza",
+        "descricao": "Método sólido, ligeiramente mais lento, confiável.",
         "descricao_completa": (
-            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
-            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
+            "Usado em epidemias passadas, média de cura 58 porcento. Intervalo de confiança: 55 porcento - 61 porcento. Levemente menor que Elixir de Erradon, mas muito mais previsível."
         ),
         "preco": 3,
         "feedback": (
-            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
-            "É uma escolha estratégica e segura para conter a epidemia."
+            "Média razoável com intervalo estreito demonstra alta confiabilidade. "
+            "A dispersão relativa é baixa, tornando esta escolha mais segura apesar da média ligeiramente menor."
         )
     },
     {
-        "conceito": "Tratamento D ",
-        "descricao": "Práticas naturais sem comprovação científica.",
+        "conceito": "Infusão Tradicional",
+        "descricao": "Práticas naturais, pouco eficazes e instáveis.",
         "descricao_completa": (
-            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30 porcento. "
-            "Muitos acreditam nele devido a boatos espalhados por Erradon."
+            "Baseado em receitas tradicionais, média de cura 30 porcento. Intervalo de confiança: 20 porcento - 40 porcento. Alta chance de falha e baixa previsibilidade. Não recomendado para controlar a epidemia."
         ),
         "preco": 1,
         "feedback": (
-            "Baixa eficácia e forte influência de desinformação. "
-            "Não é uma escolha racional para conter uma epidemia."
+            "Baixa média e intervalo largo indicam resultados pouco confiáveis. "
+            "A dispersão relativa é alta, tornando a eficácia deste tratamento imprevisível."
         )
     }
 ]
-
         quests = [
             {"id": 1, "text": "Fale com o chefe da vila", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
@@ -866,6 +865,9 @@ class Level2():
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
         self.zombie = pygame.sprite.GroupSingle()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
       
 
         layer = self.levelData.get_layer_by_name('Platforms')
@@ -946,14 +948,16 @@ class Level2():
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
-            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
+            pergunta=(
+                "Qual tratamento oferece a melhor chance de controlar a epidemia, considerando a taxa média de cura e a confiabilidade dos resultados (intervalo de confiança)?"
+            ),
             loja=self.loja,
-            correta_conceito="Tratamento C",
+            correta_conceito="Soro da Fortaleza",
             pos=(100, 100)
-        )
+)
 
-       
 
+    
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
@@ -1053,65 +1057,58 @@ class Level2():
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
-        dicas_estatisticas = [ 
-    {
-        "conceito": "Tratamento A ",
-        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
-        "descricao_completa": (
-            "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
-            "e há risco moderado de efeitos colaterais. "
-            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
-        ),
-        "preco": 2,
-        "feedback": (
-            "Apesar de ser popular e rápido, sua eficácia é baixa. "
-            "Não é o ideal para controlar uma epidemia com segurança."
-        )
-    },
-    {
-        "conceito": "Tratamento B ",
-        "descricao": "Novo método, com dados promissores, mas origem incerta.",
-        "descricao_completa": (
-            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
-            "de que parte das informações foi manipulada por Erradon. "
-            "Também há risco de efeitos colaterais não totalmente documentados."
-        ),
-        "preco": 3,
-        "feedback": (
-            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
-        )
-    },
-    {
-        "conceito": "Tratamento C",
-        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
-        "descricao_completa": (
-            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
-            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
-        ),
-        "preco": 3,
-        "feedback": (
-            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
-            "É uma escolha estratégica e segura para conter a epidemia."
-        )
-    },
-    {
-        "conceito": "Tratamento D ",
-        "descricao": "Práticas naturais sem comprovação científica.",
-        "descricao_completa": (
-            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30 porcento. "
-            "Muitos acreditam nele devido a boatos espalhados por Erradon."
-        ),
-        "preco": 1,
-        "feedback": (
-            "Baixa eficácia e forte influência de desinformação. "
-            "Não é uma escolha racional para conter uma epidemia."
-        )
-    }
-]
+        dicas_estatisticas = [
+        {
+            "conceito": "Poção de Vitalis",
+            "descricao": "Rápido e popular, resultados confiáveis.",
+            "descricao_completa": (
+                "Aplicação rápida, média de cura 55 porcento. Intervalo de confiança: 50 porcento - 60 porcento. Resultados previsíveis e consistentes, apesar da taxa moderada. Escolha estratégica para quem prioriza segurança e rapidez."
+            ),
+            "preco": 2,
+            "feedback": (
+                "Mesmo com média menor, o intervalo estreito garante previsibilidade. "
+                "A dispersão relativa é baixa, então os resultados são mais confiáveis."
+            )
+        },
+        {
+            "conceito": "Elixir de Erradon",
+            "descricao": "Novo método, média mais alta, mas incerto.",
+            "descricao_completa": (
+                "Desenvolvido recentemente, média de cura 60 porcento. Intervalo de confiança: 40 porcento - 80 porcento. Alta incerteza nos resultados. Pode ser arriscado, mesmo com média maior. Exige avaliação cuidadosa antes de aplicação em larga escala."
+            ),
+            "preco": 3,
+            "feedback": (
+                "A média é maior, mas o intervalo largo mostra grande incerteza. "
+                "A dispersão relativa é alta, o que significa que os resultados podem variar muito de caso a caso."
+            )
+        },
+        {
+            "conceito": "Soro da Fortaleza",
+            "descricao": "Método sólido, ligeiramente mais lento, confiável.",
+            "descricao_completa": (
+                "Usado em epidemias passadas, média de cura 58 porcento. Intervalo de confiança: 55 porcento - 61 porcento. Levemente menor que Elixir de Erradon, mas muito mais previsível."
+            ),
+            "preco": 3,
+            "feedback": (
+                "Média razoável com intervalo estreito demonstra alta confiabilidade. "
+                "A dispersão relativa é baixa, tornando esta escolha mais segura apesar da média ligeiramente menor."
+            )
+        },
+        {
+            "conceito": "Infusão Tradicional",
+            "descricao": "Práticas naturais, pouco eficazes e instáveis.",
+            "descricao_completa": (
+                "Baseado em receitas tradicionais, média de cura 30 porcento. Intervalo de confiança: 20 porcento - 40 porcento. Alta chance de falha e baixa previsibilidade. Não recomendado para controlar a epidemia."
+            ),
+            "preco": 1,
+            "feedback": (
+                "Baixa média e intervalo largo indicam resultados pouco confiáveis. "
+                "A dispersão relativa é alta, tornando a eficácia deste tratamento imprevisível."
+            )
+        }
+    ]
+
+
         quests = [
             {"id": 1, "text": "Fale com o chefe da vila", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
@@ -1127,11 +1124,13 @@ class Level2():
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
-            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
+            pergunta=(
+                "Qual tratamento oferece a melhor chance de controlar a epidemia, considerando a taxa média de cura e a confiabilidade dos resultados (intervalo de confiança)?"
+            ),
             loja=self.loja,
-            correta_conceito="Tratamento C",
+            correta_conceito="Soro da Fortaleza",
             pos=(100, 100)
-        )
+)
 
 
         # Recria zona de teleporte
@@ -1340,6 +1339,7 @@ class Level2():
         # Desenha a tela
         self.draw()
 
+
 class Level3():
 
     def __init__(self, displaySurface, fase_id=3):
@@ -1443,6 +1443,9 @@ class Level3():
         self.crow = pygame.sprite.GroupSingle()
         self.reaper = pygame.sprite.GroupSingle()
         self.zombie =  pygame.sprite.Group()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
 
         # Carrega tiles
         for layer_name, group in [("Platforms", self.platformTiles),
@@ -1709,7 +1712,6 @@ class Level3():
         self.update(confirm_exit=confirm_exit)
         self.draw()
 
-
 class Level4():
     def __init__(self, displaySurface, fase_id=3):
        
@@ -1797,6 +1799,9 @@ class Level4():
         self.crow = pygame.sprite.GroupSingle()
         self.zombie =  pygame.sprite.Group()
         self.reaper = pygame.sprite.GroupSingle()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
       
         layer = self.levelData.get_layer_by_name('Platforms')
         for x, y, tileSurface in layer.tiles():
@@ -2343,6 +2348,9 @@ class Level5():
         self.crow = pygame.sprite.GroupSingle()
         self.zombie =  pygame.sprite.Group()
         self.reaper = pygame.sprite.GroupSingle()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
       
         layer = self.levelData.get_layer_by_name('Platforms')
         for x, y, tileSurface in layer.tiles():
@@ -2373,23 +2381,10 @@ class Level5():
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
        
      
-        self.zombie.add(Zombie((900,260), moveRight=True,limit_left= 700, limit_right= 950))
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
 
-        self.zombie.add(Zombie((700,450), moveRight=True,limit_left= 700, limit_right= 950))
-
-
-        self.zombie.add(Zombie((1200,515), moveRight=True,limit_left= 1250, limit_right= 1400))
         
-        self.zombie.add(Zombie((1200,405), moveRight=True,limit_left= 1150, limit_right= 1350))
-
-        self.zombie.add(Zombie((1500,240), moveRight=True,limit_left= 1500, limit_right= 1700))
-        
-        self.zombie.add(Zombie((1600,435), moveRight=True,limit_left= 1600, limit_right= 1800))
-        self.zombie.add(Zombie((1600,515), moveRight=True,limit_left= 1600, limit_right= 1850))
-        
-        
-
-        self.crow.add(CrowNpc((100,515) , faceRight= False))
+        self.samuraigirl.add(SamuraigirlNpc((173,481) , faceRight= False))
 
         self.npcloja.add(LojaNpc((700,215) , faceRight= True))
        
@@ -2409,9 +2404,6 @@ class Level5():
 
         self.Coin.add(Coin((1250,140)))
         self.Coin.add(Coin((1280,140)))
-
-
-
 
         self.potion.add(Potion((1800,490)))
 
@@ -2443,10 +2435,471 @@ class Level5():
         self.camera = Camera(self.levelData.width * TILESIZE, self.levelData.height * TILESIZE)
 
         self.teleport_zone = pygame.Rect(
-        self.crow.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
-        self.crow.sprite.hitbox.rect.y -100,   # aumenta para cima
-        self.crow.sprite.hitbox.rect.width + 100,  # aumenta largura
-        self.crow.sprite.hitbox.rect.height + 100  # aumenta altura
+        self.samuraigirl.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
+        self.samuraigirl.sprite.hitbox.rect.y -100,   # aumenta para cima
+        self.samuraigirl.sprite.hitbox.rect.width + 100,  # aumenta largura
+        self.samuraigirl.sprite.hitbox.rect.height + 100  # aumenta altura
+    )
+
+    def reset(self):
+        # Limpa todos os grupos de sprites
+        self.hero.empty()
+        self.platformTiles.empty()
+        self.paredesprites.empty()
+        self.othersprites.empty()
+        self.bees.empty()
+        self.robot.empty()
+        self.Coin.empty()
+        self.potion.empty()
+        self.npcrobot.empty()
+        self.npcloja.empty()
+        self.portal.empty()
+
+        # Recarrega camadas do mapa
+        layer = self.levelData.get_layer_by_name('Platforms')
+        for x, y, tileSurface in layer.tiles():
+            self.platformTiles.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+        
+        other = self.levelData.get_layer_by_name('Background')
+        for x, y, tileSurface in other.tiles():
+            self.othersprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in other2.tiles():
+            self.other2sprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+        parede = self.levelData.get_layer_by_name('Parede')
+        for x, y, tileSurface in parede.tiles():
+            self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
+
+       
+        # Recria inimigos
+        
+        
+
+        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+       
+        self.Coin.add(Coin((120,115)))
+        self.Coin.add(Coin((150,115)))
+        
+        self.Coin.add(Coin((80,370)))
+        self.Coin.add(Coin((50,370)))
+        
+        
+        self.Coin.add(Coin((540,200)))
+        self.Coin.add(Coin((510,200)))
+        
+        self.Coin.add(Coin((1040,200)))
+        self.Coin.add(Coin((1010,200)))
+
+
+        self.Coin.add(Coin((1250,140)))
+        self.Coin.add(Coin((1280,140)))
+
+
+        self.potion.add(Potion((1800,490)))
+
+        self.potion.add(Potion((1600,490)))
+
+        self.potion.add(Potion((225,385)))
+      
+
+        # Recria herói
+        self.hero.add(Hero((170, 250), faceRight=True))
+
+        vida_rect = (0, 0, 12, 12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
+
+        # Recria loja e pergunta para garantir estado inicial
+        dicas_estatisticas = [
+            {
+                "conceito": "Média", 
+                "descricao": "A soma dos valores dividida pelo total.", 
+                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
+                "preco": 2,
+                "feedback": "A média resume todos os valores em um único número representativo."
+            }
+        ]
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
+        self.pergunta = PerguntaResposta(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.samuraigirl.sprite,
+            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
+            loja=self.loja,
+            correta_conceito="Média",
+            pos=(100, 100)
+        )
+
+        # Recria zona de teleporte
+        self.teleport_zone = pygame.Rect(
+            self.samuraigirl.sprite.hitbox.rect.x - 50,
+            self.samuraigirl.sprite.hitbox.rect.y - 100,
+            self.samuraigirl.sprite.hitbox.rect.width + 100,
+            self.samuraigirl.sprite.hitbox.rect.height + 100
+        )
+
+        # Reseta flags
+        self.ja_teletransportou = False
+        self.pergunta.acertou = None
+        self.pergunta.errou = None
+
+    def update(self, confirm_exit=False):
+    # Atualiza o herói sempre
+
+        if not confirm_exit:
+                self.hero.update(self)
+
+        if self.pergunta.acertou and self.portal.sprite is None:
+                 self.quest_system.complete_quest(3)
+                 self.portal.add(Portal((0,170)))
+            
+        if self.npcloja.sprite.show_interaction:
+                self.quest_system.complete_quest(2)
+                self.hero.sprite.falou_com_npcloja = False    
+
+        if self.hero.sprite.falou_com_npc:
+                self.quest_system.complete_quest(1)
+                self.hero.sprite.falou_com_npc = False
+
+        keys = pygame.key.get_pressed()
+        if self.portal.sprite is not None:
+                self.portal.update()
+                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                    if keys[pygame.K_h]:
+                        print("Portal ativado!")
+                        self.verificar_prox_fase = "next_level"
+
+        if (self.dialogue_box and not self.dialogue_box.text_active and
+                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                self.pergunta.handle_input()
+
+                self.Coin.update()
+                self.potion.update()
+                self.samuraixamom.update(self)
+                
+            # Atualiza NPCs e loja sempre, se existirem
+        if self.samuraigirl.sprite:
+                self.samuraigirl.update(self)
+        if self.npcloja.sprite:
+                self.npcloja.update(self)
+            
+        self.camera.update(self.hero.sprite)
+        self.phase_text.update()
+        self.dialogue_box.update()
+        self.loja.handle_input()
+
+            # Teleporte quando errou
+        if self.pergunta.errou and not self.ja_teletransportou:
+                self.hero.sprite.teleport(0, 250)
+                # Adiciona inimigos adicionais
+                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                self.ja_teletransportou = True
+                # Reseta o erro para não teletransportar várias vezes
+                self.pergunta.errou = False
+
+
+            # Resetar o teleporte caso ele saia da área
+        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                self.ja_teletransportou = False
+                                   
+    def draw(self):
+                # Desenha o fundo         
+            self.background.draw1(self.displaySurface)
+            
+
+            for tile in self.other3sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            for tile in self.other2sprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+            
+            # Desenha as camadas com o deslocamento da câmera
+            for tile in self.platformTiles:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+        
+
+        # for r in self.hero.sprite.debug_platform_rects:
+                # r é relativo ao herói
+            #    rect_on_screen = r.copy()
+            #   rect_on_screen.topleft = (r.x - self.hero.sprite.rect.x + self.camera.apply(self.hero.sprite).x,
+            #                     r.y - self.hero.sprite.rect.y + self.camera.apply(self.hero.sprite).y)
+            #  pygame.draw.rect(self.displaySurface, (255, 0, 0), rect_on_screen, 2)
+
+            
+            for tile in self.othersprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+
+           
+            for tile in self.paredesprites:
+                pos = self.camera.apply(tile)
+                self.displaySurface.blit(tile.image, pos)
+              
+            for coin in self.Coin:
+                pos = self.camera.apply(coin)
+                self.displaySurface.blit(coin.image, pos)
+        
+        
+            for potion in self.potion:
+                pos = self.camera.apply(potion)
+                self.displaySurface.blit(potion.image, pos)
+
+            # Desenha o herói com o deslocamento da câmera
+            pos = self.camera.apply(self.hero.sprite)
+            self.displaySurface.blit(self.hero.sprite.image, pos)
+
+           
+            # Portal
+
+            if self.portal.sprite is not None:
+                pos = self.camera.apply(self.portal.sprite)
+                self.displaySurface.blit(self.portal.sprite.image, pos)
+                self.portal.sprite.draw(self.displaySurface, self.camera)
+
+        
+            # Desenha os robôs com seus rects
+            for samurai in self.samuraixamom:
+                pos = self.camera.apply(samurai)
+                self.displaySurface.blit(samurai.image, pos)
+
+
+            pos = self.camera.apply(self.samuraigirl.sprite)
+            self.displaySurface.blit(self.samuraigirl.sprite.image, pos)
+            self.samuraigirl.sprite.draw(self.displaySurface, self.camera)
+
+            
+         
+            pos1 = self.camera.apply(self.npcloja.sprite)
+            self.displaySurface.blit(self.npcloja.sprite.image, pos1)
+            self.npcloja.sprite.draw(self.displaySurface, self.camera)
+                
+
+            hitbox_rect = self.npcloja.sprite.hitbox.rect.copy()
+            hitbox_rect.topleft = (hitbox_rect.left + (pos1.left - self.npcloja.sprite.rect.left),
+                                    hitbox_rect.top + (pos1.top - self.npcloja.sprite.rect.top))
+
+                #pygame.draw.rect(self.displaySurface, (255, 0, 0), hitbox_rect, 2)
+                
+            
+            # HUD e texto da fase
+            self.hud.draw(self.displaySurface)
+            self.phase_text.draw()
+
+            
+            self.dialogue_box.draw_box()
+            self.dialogue_box.draw_text()
+
+            
+            self.quest_system.draw()
+
+
+
+            #rect_on_screen = self.teleport_zone.copy()
+            #rect_on_screen.topleft = (self.teleport_zone.x - self.hero.sprite.rect.x + self.camera.apply(self.hero.sprite).x,
+            #                           self.teleport_zone.y - self.hero.sprite.rect.y + self.camera.apply(self.hero.sprite).y)
+            #pygame.draw.rect(self.displaySurface, (255, 0, 0), rect_on_screen, 2)
+            
+
+            
+
+            self.loja.draw()
+            
+
+
+            self.pergunta.draw()    
+            
+    def run(self, confirm_exit=False):
+        # Atualiza a lógica do jogo
+        self.update(confirm_exit=confirm_exit)
+        # Desenha a tela
+        self.draw()
+
+
+
+class Level6():
+    def __init__(self, displaySurface, fase_id=3):
+       
+        self.ja_teletransportou = False
+
+        self.verificar_prox_fase = None
+        
+        self.displaySurface = displaySurface
+        
+        self.fase_id = fase_id
+
+        self.font = pygame.font.Font(font_path, 40)
+        self.phase_text = AnimatedText("Fase 6: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
+
+        dicas_estatisticas = [ 
+    {
+        "conceito": "Tratamento A ",
+        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "descricao_completa": (
+            "Este tratamento é fácil de distribuir e tem ação rápida. "
+            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
+            "e há risco moderado de efeitos colaterais. "
+            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Apesar de ser popular e rápido, sua eficácia é baixa. "
+            "Não é o ideal para controlar uma epidemia com segurança."
+        )
+    },
+    {
+        "conceito": "Tratamento B ",
+        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "descricao_completa": (
+            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
+            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
+            "de que parte das informações foi manipulada por Erradon. "
+            "Também há risco de efeitos colaterais não totalmente documentados."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
+        )
+    },
+    {
+        "conceito": "Tratamento C",
+        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
+        "descricao_completa": (
+            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
+            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
+            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
+            "É uma escolha estratégica e segura para conter a epidemia."
+        )
+    },
+    {
+        "conceito": "Tratamento D ",
+        "descricao": "Práticas naturais sem comprovação científica.",
+        "descricao_completa": (
+            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
+            "Sua taxa de sucesso real é estimada em 30 porcento. "
+            "Muitos acreditam nele devido a boatos espalhados por Erradon."
+        ),
+        "preco": 1,
+        "feedback": (
+            "Baixa eficácia e forte influência de desinformação. "
+            "Não é uma escolha racional para conter uma epidemia."
+        )
+    }
+]
+
+        quests = [
+            {"id": 1, "text": "Fale com o dr da cidade", "done": False},
+            {"id": 2, "text": "Encontre o mercador", "done": False},
+            {"id": 3 , "text": "Resolva o problema do dr" , "done" : False},
+            {"id": 4 , "text": "Entre no portal" , "done" : False}
+        ]
+        
+        self.quest_system = QuestSystem(quests, self.displaySurface )
+         # Carregar o arquivo TMX
+
+        self.levelData = load_pygame(LEVELS_PATH + "Level1/level6.tmx")
+
+        # Instanciar classes
+        self.background = Background()
+
+        # Criar grupos de sprites
+        self.hero = pygame.sprite.GroupSingle()
+        self.platformTiles = pygame.sprite.Group()
+        self.othersprites = pygame.sprite.Group()
+        self.other2sprites = pygame.sprite.Group()
+        self.other3sprites = pygame.sprite.Group()
+        self.paredesprites = pygame.sprite.Group()
+        self.bees = pygame.sprite.Group()
+        self.robot = pygame.sprite.Group()
+        self.Coin = pygame.sprite.Group()
+        self.potion = pygame.sprite.Group()
+        self.npcrobot = pygame.sprite.GroupSingle()
+        self.npcloja = pygame.sprite.GroupSingle()
+        self.portal = pygame.sprite.GroupSingle()
+        self.skeleton = pygame.sprite.Group()
+        self.crow = pygame.sprite.GroupSingle()
+        self.zombie =  pygame.sprite.Group()
+        self.reaper = pygame.sprite.GroupSingle()
+        self.erradon = pygame.sprite.GroupSingle()
+        self.samuraixamom = pygame.sprite.Group()
+        self.samuraigirl = pygame.sprite.GroupSingle()
+      
+        layer = self.levelData.get_layer_by_name('Platforms')
+        for x, y, tileSurface in layer.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.platformTiles.add(tile)
+        
+        other = self.levelData.get_layer_by_name('Background')
+        for x, y, tileSurface in other.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.othersprites.add(tile)
+
+        other2 = self.levelData.get_layer_by_name('Background2')
+        for x, y, tileSurface in  other2.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other2sprites.add(tile)
+
+        other3 = self.levelData.get_layer_by_name('Arvores')
+        for x, y, tileSurface in  other3.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self. other3sprites.add(tile)
+
+        
+        parede = self.levelData.get_layer_by_name('Parede')
+        for x, y, tileSurface in parede.tiles():
+            tile = Tile((x * TILESIZE, y * TILESIZE), tileSurface)
+            self.paredesprites.add(tile)
+
+        self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
+       
+     
+        
+        self.erradon.add(ErradonNpc((735,498) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+       
+
+    
+        self.hero.add(Hero((185, 400), faceRight=True))
+       
+
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
+  
+        self.pergunta = PerguntaResposta(
+            displaySurface=self.displaySurface,
+            hero=self.hero.sprite,
+            npc=self.erradon.sprite,
+            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
+            loja=self.loja,
+            correta_conceito="Tratamento C",
+            pos=(100, 100)
+        )
+
+       
+
+        vida_rect = (0, 0, 12, 12)
+        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
+
+        # Configura a câmera
+        self.camera = Camera(self.levelData.width * TILESIZE, self.levelData.height * TILESIZE)
+
+        self.teleport_zone = pygame.Rect(
+        self.erradon.sprite.hitbox.rect.x - 50,   # aumenta para esquerda
+        self.erradon.sprite.hitbox.rect.y -100,   # aumenta para cima
+        self.erradon.sprite.hitbox.rect.width + 100,  # aumenta largura
+        self.erradon.sprite.hitbox.rect.height + 100  # aumenta altura
     )
 
     def reset(self):
@@ -2613,8 +3066,8 @@ class Level5():
 
                 
             # Atualiza NPCs e loja sempre, se existirem
-        if self.crow.sprite:
-                self.crow.update(self)
+        if self.erradon.sprite:
+                self.erradon.update(self)
         if self.npcloja.sprite:
                 self.npcloja.update(self)
             
@@ -2703,9 +3156,9 @@ class Level5():
                 self.displaySurface.blit(zombie.image, pos)
 
 
-            pos = self.camera.apply(self.crow.sprite)
-            self.displaySurface.blit(self.crow.sprite.image, pos)
-            self.crow.sprite.draw(self.displaySurface, self.camera)
+            pos = self.camera.apply(self.erradon.sprite)
+            self.displaySurface.blit(self.erradon.sprite.image, pos)
+            self.erradon.sprite.draw(self.displaySurface, self.camera)
 
             
          
@@ -2754,7 +3207,3 @@ class Level5():
         # Desenha a tela
         self.draw()
 
-
-
-class Level6():
-    pass

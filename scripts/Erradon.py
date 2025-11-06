@@ -3,14 +3,14 @@ from Config import *
 from ClassSpriteSheet import SpriteSheet
 from HitboxEmemy import *
 
-NpcErradonSprites = [(x, 0, 48, 57) for x in range(0, 240, 48)]
+NpcErradonSprites = [(x, 0, 82, 104) for x in range(0, 1296, 162)]
 
 class ErradonNpc(pygame.sprite.Sprite):
     def __init__(self, position, faceRight=True, nome="Erradon"):
         super().__init__()
-        self.idleSpriteSheet = SpriteSheet(reaper_path + "HostileIdleReaper-Sheet.png", NpcErradonSprites)
+        self.idleSpriteSheet = SpriteSheet(erradon_path + "Idle.png", NpcErradonSprites)
         self.animationIndex = 0
-        self.animationSpeed = 0.1
+        self.animationSpeed = 0.07
         self.faceRight = faceRight
         self.currentAnimation = self.idleSpriteSheet.getSprites(flipped=not self.faceRight)
         self.image = self.currentAnimation[int(self.animationIndex)]
@@ -37,7 +37,7 @@ class ErradonNpc(pygame.sprite.Sprite):
 
         # Nome acima
         nome_surface = self.font.render(self.nome, True, (255, 255, 255))
-        nome_rect = nome_surface.get_rect(midbottom=(screen_pos.centerx, screen_pos.top +5))
+        nome_rect = nome_surface.get_rect(midbottom=(screen_pos.centerx, screen_pos.top +15))
         surface.blit(nome_surface, nome_rect)
 
         # Mensagem de interação

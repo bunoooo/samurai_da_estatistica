@@ -12,7 +12,8 @@ fases = [
     Level2,     # fase_id = 2
     Level3, 
     Level4, 
-    Level5   # fase_id = 3
+    Level5,
+    Level6   # fase_id = 3
 ]
 
 music = MusicManager()
@@ -27,9 +28,7 @@ def main():
     show_menu = True
     confirm_exit = False
     
-    
     result = None
-
 
     font = pygame.font.Font(font_path, 15)
 

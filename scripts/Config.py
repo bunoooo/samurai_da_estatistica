@@ -32,6 +32,12 @@ music_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios s
 
 graficos_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/graficos/"
 
+erradon_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/Evil wizard (erradon)/"
+
+samuraixamom_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/Levels/Tilesets/enemies_level5/"
+
+samuraigirl_path = "C:/Users/jukio/OneDrive/Área de Trabalho/python/samurai warrios scripts/SPRITES SAMURAI/samuraigirl/"
+
 # Window settings
 WINDOW_WIDTH, WINDOW_HEIGHT = 960, 540
 

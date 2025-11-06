@@ -321,11 +321,15 @@ class Hero(pygame.sprite.Sprite):
 
         self.checkEnemyCollisions(level.skeleton)
 
+        self.checkEnemyCollisions(level.samuraixamom)
+
         self.checkNpcCollisions(level.npcrobot)
 
         self.checkNpcCollisions(level.reaper)
 
         self.checkNpcCollisions(level.crow)
+
+        self.checkNpcCollisions(level.erradon)
 
         self.checkpower_apps(level.Coin)
 
@@ -479,7 +483,7 @@ class Hero(pygame.sprite.Sprite):
             platform.rect.x,
             platform.rect.y,
             platform.rect.width,
-            10  # altura do pedaço que você quer considerar como "chão"
+            10  
         )
             self.debug_platform_rects.append(top_rect)
             if self.foot_rect.colliderect(top_rect) and self.yDir >= 0:
