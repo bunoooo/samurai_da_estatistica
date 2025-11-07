@@ -42,7 +42,7 @@ class ErradonNpc(pygame.sprite.Sprite):
 
         # Mensagem de interação
         if self.show_interaction:
-            msg_pergunta = self.font.render("(P) Pergunta", True , (244,164,96))
+            msg_pergunta = self.font.render("(P) Enfrentar", True , (244,164,96))
             msg_pergunta_rect = msg_pergunta.get_rect(midbottom=(screen_pos.centerx, screen_pos.top - 15))
             surface.blit(msg_pergunta, msg_pergunta_rect)
 

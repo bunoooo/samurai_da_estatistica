@@ -2739,62 +2739,65 @@ class Level6():
         self.font = pygame.font.Font(font_path, 40)
         self.phase_text = AnimatedText("Fase 6: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
 
-        dicas_estatisticas = [ 
+        dicas_estatisticas = [
     {
-        "conceito": "Tratamento A ",
-        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "conceito": "Golpe da Precisão Cega",
+        "descricao": "Ataque rápido e repetitivo, sempre no mesmo ponto.",
         "descricao_completa": (
-            "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
-            "e há risco moderado de efeitos colaterais. "
-            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+            "Um golpe com alta consistência, mas pouca flexibilidade. "
+            "Acerta sempre o mesmo ponto, mesmo que o alvo mude. "
+            "É previsível e tende ao erro sistemático — o viés. "
+            "Ideal para quem busca estabilidade, mas arrisca a verdade."
         ),
-        "preco": 2,
+        "preco": 0,
         "feedback": (
-            "Apesar de ser popular e rápido, sua eficácia é baixa. "
-            "Não é o ideal para controlar uma epidemia com segurança."
+            "Seu ataque é estável, mas previsível. "
+            "Erradon se alimenta da rigidez — cuidado com o viés!"
         )
     },
     {
-        "conceito": "Tratamento B ",
-        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "conceito": "Golpe da Incerteza Selvagem",
+        "descricao": "Ataque imprevisível, muda de direção a cada instante.",
         "descricao_completa": (
-            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
-            "de que parte das informações foi manipulada por Erradon. "
-            "Também há risco de efeitos colaterais não totalmente documentados."
+            "Um golpe caótico e instável. Às vezes acerta em cheio, "
+            "outras vezes erra completamente. Tem baixa consistência, "
+            "mas grande alcance de possibilidades. "
+            "É dominado pela variância — energia sem controle."
         ),
-        "preco": 3,
+        "preco": 0,
         "feedback": (
-            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
+            "Ataques cheios de energia, mas sem foco. "
+            "Erradon se confunde, mas você também — cuidado com a variância!"
         )
     },
     {
-        "conceito": "Tratamento C",
-        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
+        "conceito": "Golpe do Ajuste Perfeito",
+        "descricao": "Golpe que tenta compensar todo erro anterior.",
         "descricao_completa": (
-            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
-            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
+            "Um golpe refinado e calculado para corrigir cada falha passada. "
+            "No entanto, ao tentar se adaptar a tudo, perde a generalidade. "
+            "Funciona bem contra um inimigo conhecido, mas falha em outros. "
+            "Representa o superajuste — aprender demais com o ruído."
         ),
-        "preco": 3,
+        "preco": 0,
         "feedback": (
-            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
-            "É uma escolha estratégica e segura para conter a epidemia."
+            "Você se adapta bem, mas talvez demais. "
+            "Erradon muda o padrão e o golpe perde sua força."
         )
     },
     {
-        "conceito": "Tratamento D ",
-        "descricao": "Práticas naturais sem comprovação científica.",
+        "conceito": "Golpe do Equilíbrio",
+        "descricao": "Combinação precisa entre constância e adaptação.",
         "descricao_completa": (
-            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30 porcento. "
-            "Muitos acreditam nele devido a boatos espalhados por Erradon."
+            "Um golpe que busca o ponto de menor erro possível. "
+            "Nem rígido demais, nem aleatório. "
+            "Cada movimento considera tanto o viés quanto a variância. "
+            "É o único ataque capaz de atingir o núcleo de Erradon."
         ),
-        "preco": 1,
+        "preco": 0,
         "feedback": (
-            "Baixa eficácia e forte influência de desinformação. "
-            "Não é uma escolha racional para conter uma epidemia."
+            "Perfeito equilíbrio! O golpe flui como um modelo ideal. "
+            "Erradon treme — este é o ataque certo para derrotá-lo!"
         )
     }
 ]
@@ -2868,7 +2871,7 @@ class Level6():
         
         self.erradon.add(ErradonNpc((735,498) , faceRight= False))
 
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+        self.npcloja.add(LojaNpc((400,505) , faceRight= True))
        
 
     
@@ -2878,15 +2881,18 @@ class Level6():
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
   
         self.pergunta = PerguntaResposta(
-            displaySurface=self.displaySurface,
-            hero=self.hero.sprite,
-            npc=self.erradon.sprite,
-            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
-            loja=self.loja,
-            correta_conceito="Tratamento C",
-            pos=(100, 100)
-        )
-
+        displaySurface=self.displaySurface,
+        hero=self.hero.sprite,
+        npc=self.erradon.sprite,
+        pergunta=(
+            "Jack percebe que seus golpes são firmes, mas sempre erram o centro. "
+            "Ele tenta variar seus ataques, mas agora acerta de forma inconsistente. "
+            "O que ele deve fazer para derrotar Erradon?"
+        ),
+        loja=self.loja,
+        correta_conceito="Golpe do Equilíbrio",
+        pos=(100, 100)
+    )
        
 
         vida_rect = (0, 0, 12, 12)

@@ -186,7 +186,59 @@ class Dialogos:
                     "Cada detalhe do gráfico será crucial.",
                     "Vamos descobrir a origem do Virus CognoZombi."
                 ])
-            ]
+            ],
+
+            6: [
+                ("Erradon", [
+                    "Finalmente nos encontramos, pequeno Jack.",
+                    "Sou Erradon, o senhor da distorção e da incerteza.",
+                    "Seus cálculos vacilam, seus golpes erram o alvo.",
+                    "Você luta contra o erro, mas o erro é parte de você!"
+                ]),
+                ("Jack", [
+                    "Você é quem espalha confusão entre as medidas.",
+                    "Faz o certo parecer duvidoso e o errado confiável.",
+                    "Suas ilusões distorcem o julgamento dos sábios.",
+                    "Mas eu aprendi a enxergar por trás dos desvios."
+                ]),
+                ("Erradon", [
+                    "Hahaha! E o que aprendeu, pequeno samurai?",
+                    "Cada tentativa sua gera novos erros e incertezas.",
+                    "Quanto mais ajusta, mais se afasta da verdade.",
+                    "Sua própria busca é o alimento da variância!"
+                ]),
+                ("Jack", [
+                    "Então é isso... você vive do excesso e do desequilíbrio.",
+                    "Não basta atacar com força, é preciso medir com clareza.",
+                    "Se eu for constante demais, caio no viés.",
+                    "Se variar demais, me perco no caos."
+                ]),
+                ("Erradon", [
+                    "Exato! Nenhum golpe pode escapar desse paradoxo.",
+                    "A precisão e o erro dançam lado a lado para sempre.",
+                    "Você jamais atingirá meu núcleo, Jack.",
+                    "Sou a incerteza viva!"
+                ]),
+                ("Jack", [
+                    "Talvez não precise escapar, apenas entender o ritmo.",
+                    "Seus extremos se anulam quando estão em harmonia.",
+                    "Então, existe um ponto onde a verdade se equilibra.",
+                    "É lá que meu golpe deve atingir..."
+                ]),
+                ("Erradon", [
+                    "O que está dizendo?! Ninguém jamais dominou isso!",
+                    "O equilíbrio destrói tanto o viés quanto a variância!",
+                    "Você não pode sustentar esse poder!",
+                    "Ele consumirá sua própria razão!"
+                ]),
+                ("Jack", [
+                    "Chamarei esse poder de *Golpe do Equilíbrio*.",
+                    "Nem força cega, nem instabilidade — apenas precisão justa.",
+                    "Com ele, atacarei no ponto onde o erro se dissolve.",
+                    "Prepare-se, Erradon... a batalha começa agora!"
+                ])
+                ]
+
         }
 
     def dialogo_fase(self, fase: int):
