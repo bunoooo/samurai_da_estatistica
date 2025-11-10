@@ -57,7 +57,7 @@ class LojaNpc(pygame.sprite.Sprite):
 
         # Mensagem de interação
         if self.show_interaction:
-            msg = self.font.render("(B) Abrir loja", True , (244,164,96))
+            msg = self.font.render("(B) Abrir loja", True , (255, 255, 255))
             msg_rect = msg.get_rect(midbottom=(screen_pos.centerx , screen_pos.top + 5))
             surface.blit(msg, msg_rect)
 

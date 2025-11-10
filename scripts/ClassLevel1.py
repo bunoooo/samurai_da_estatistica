@@ -2649,7 +2649,7 @@ class Level5():
 
             if self.pergunta.acertou and self.portal.sprite is None:
                     self.quest_system.complete_quest(3)
-                    self.portal.add(Portal((0,170)))
+                    self.portal.add(Portal((0,130)))
                 
             if self.npcloja.sprite.show_interaction:
                     self.quest_system.complete_quest(2)
@@ -2691,8 +2691,7 @@ class Level5():
             if self.pergunta.errou and not self.ja_teletransportou:
                     self.hero.sprite.teleport(0, 250)
                     # Adiciona inimigos adicionais
-                    self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
-                    self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                       
                     self.ja_teletransportou = True
                     # Reseta o erro para não teletransportar várias vezes
                     self.pergunta.errou = False

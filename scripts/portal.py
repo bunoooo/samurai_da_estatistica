@@ -50,6 +50,6 @@ class Portal(pygame.sprite.Sprite):
 
         # Mensagens de interação (exemplo)
         if self.portal_show_interaction:
-            msg_entrar = self.font.render("(H) Entrar", True, (49, 59, 114))
+            msg_entrar = self.font.render("(H) Entrar", True, (255, 255, 255))
             msg_entrar_rect = msg_entrar.get_rect(midbottom=(screen_pos.centerx, screen_pos.top - 5))
             surface.blit(msg_entrar, msg_entrar_rect)
