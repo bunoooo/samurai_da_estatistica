@@ -11,7 +11,7 @@ class AppearingTextBox:
         self.text_groups = text_groups  # cada grupo: (nome, [linhas])
         self.screen = screen
         self.font = pygame.font.Font(font_path, 12)
-        self.name_font = pygame.font.Font(font_path, 14)  # fonte maior pro nome
+        self.name_font = pygame.font.Font(font_path, 12)  # fonte maior pro nome
 
         # Cores e estilo da caixa
         self.text_color = BLACK

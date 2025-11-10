@@ -7,13 +7,13 @@ from Musicmanager import *
 
 # Lista de fases disponíveis
 fases = [
-    Tutorial,   # fase_id = 0
-    Level1,     # fase_id = 1
-    Level2,     # fase_id = 2
+    Tutorial,   
+    Level1,     
+    Level2,     
     Level3, 
     Level4, 
     Level5,
-    Level6   # fase_id = 3
+    Level6   
 ]
 
 music = MusicManager()

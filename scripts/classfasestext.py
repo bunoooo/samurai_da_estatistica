@@ -122,41 +122,45 @@ class Dialogos:
 
             3: [  #  Fase 3 — A Maldição das Almas Perdidas
                 ("Ceifador", [
-                    "Samurai... bem-vindo ao lugar onde até a morte perdeu o controle.",
-                    "Desde que a maldição começou, as almas que eu deveria colher não me escutam mais.",
-                    "Elas se perdem... e retornam como esqueletos.",
-                    "Tentei todos os rituais que conheço, mas nenhum funcionou."
+                    "Samurai... bem-vindo ao lugar onde até a morte perdeu força.",
+                    "Desde a maldição, as almas que eu colhia fugiram do meu chamado.",
+                    "Agora vagam perdidas, voltando como esqueletos amaldiçoados.",
+                    "Tentei todos os rituais, mas nenhum trouxe a ordem de volta."
                 ]),
-                ("Samurai", [
+                ("Jack", [
                     "Então a maldição está além da sua compreensão.",
                     "Diga-me, há algum padrão no modo como as almas se perdem?"
                 ]),
                 ("Ceifador", [
-                    "Talvez sim... um sábio me deixou este gráfico.",
-                    "Ele mostra quantas almas se perderam por tipo de causa da maldição.",
-                    "Mas esses números me confundem. Eu apenas sinto a dor delas...",
-                    "Não sei interpretar o que o gráfico revela."
+                    "Talvez sim... um sábio me deixou este antigo gráfico.",
+                    "Ele mostra quantas almas se perderam por tipo de maldição.",
+                    "Mas esses números me confundem, só sinto a dor delas.",
+                    "Não consigo entender o que o gráfico realmente revela."
                 ]),
-                ("Samurai", [
+                ("Jack", [
                     "Deixe-me ver...",
                     "Entendo. Cada barra representa uma causa possível da maldição.",
-                    "Se observarmos qual causa tem mais almas perdidas, saberemos onde agir primeiro."
+                    "Se observarmos qual causa tem mais almas perdidas, ",
+                    "saberemos onde agir primeiro."
                 ]),
                 ("Ceifador", [
-                    "Então devo escolher o ritual que enfraquece a causa mais devastadora?",
+                    "Então devo escolher o ritual que enfraquece a", 
+                    "causa mais devastadora?",
                     "Isso exigirá sabedoria... e talvez algumas moedas."
                 ]),
-                ("Samurai", [
-                    "Exato. Visitaremos a loja de rituais.",
-                    "Cada ritual foi feito para combater uma das causas possíveis da maldição.",
+                ("Jack", [
+                    "Exato. Visitarei a loja de rituais.",
+                    "Cada ritual foi feito para combater uma das causas ",
+                    "possíveis da maldição.",
                     "Mas apenas um reduzirá o maior número de almas perdidas."
                 ]),
                 ("Ceifador", [
                     "Então olhe bem o gráfico, Samurai.",
                     "Descubra o coração desta maldição...",
-                    "E compre o ritual certo antes que o silêncio da morte se torne eterno."
+                    "E compre o ritual certo antes que o silêncio da morte ",
+                    "se torne eterno."
                 ]),
-                ("Samurai", [
+                ("Jack", [
                     "Entendido. Onde há dados, há esperança.",
                     "Vou interpretar o gráfico e libertar as almas aprisionadas."
                 ])
@@ -187,6 +191,51 @@ class Dialogos:
                     "Vamos descobrir a origem do Virus CognoZombi."
                 ])
             ],
+
+          
+             5: [  # Fase 5 — O Retorno de Jack
+                    ("Rosa", [
+                        "Jack! Você voltou! Há boatos de que viajou pelo tempo...",
+                        "Mas algo terrível aconteceu enquanto esteve longe.",
+                        "Erradon espalhou a desinformação entre os estudiosos da vila.",
+                        "Agora todos andam confusos com gráficos e números sem sentido."
+                    ]),
+                    ("Jack", [
+                        "Erradon... então ele começou seus planos.",
+                        "Sempre soube que ele tentaria distorcer o conhecimento,",
+                        "não só os fatos. Mas o que exatamente ele fez desta vez,",
+                        "Rosa?"
+                    ]),
+                    ("Rosa", [
+                        "Criei um gráfico sobre o vento e o crescimento das flores da colina.",
+                        "Mas desde que Erradon interferiu, algo parece errado.",
+                        "O gráfico mostra uma relação forte, mas desconfio da escala.",
+                        "Talvez eu tenha caído em uma das armadilhas dele."
+                    ]),
+                    ("Jack", [
+                        "Deixe-me ver esse gráfico, Rosa. Hmm...",
+                        "Os pontos formam um padrão, mas perceba a escala vertical.",
+                        "Ela é irregular — parece que o vento influencia demais.",
+                        "Precisamos reconstruir e observar com cuidado a correlação."
+                    ]),
+                    ("Rosa", [
+                        "Então o erro não está apenas nos dados, mas na forma de mostrar.",
+                        "Acho que Erradon manipula os gráficos para enganar as pessoas.",
+                        "Pode me ensinar a reconhecer quando um gráfico está distorcido?"
+                    ]),
+                    ("Jack", [
+                        "Sim. Um gráfico honesto mostra a verdade dos dados,",
+                        "não o desejo do autor. Devemos verificar escalas, eixos,",
+                        "amostras e contextos. Só então veremos se há um padrão real",
+                        "ou apenas uma ilusão criada por Erradon."
+                    ]),
+                    ("Jack", [
+                        "Venha, Rosa. Vamos reconstruir este gráfico e revelar a verdade",
+                        "escondida entre os pontos dispersos."
+                    ])
+                ],
+
+          
 
             6: [
                 ("Erradon", [

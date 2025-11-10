@@ -1,50 +1,49 @@
 import matplotlib.pyplot as plt
+import numpy as np
 import os
 
-def gerar_grafico_zumbis(caminho_saida="assets/graficos/grafico_zumbis.png"):
+def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_fase5.png"):
     """
-    Gráfico da epidemia de zumbis com estilo futurista (600x400 px).
-    O Doutor analisa a tendência dos casos em cada distrito para descobrir a origem da infecção.
+    Gráfico de dispersão com escala distorcida (600x400 px).
+    Rosa criou este gráfico para estudar a relação entre o vento e o crescimento das flores,
+    mas Erradon manipulou a escala para gerar uma ilusão de correlação.
     """
 
-    # Dias da epidemia
-    dias = list(range(1, 11))
+    # Gera dados fictícios
+    np.random.seed(42)
+    vento = np.random.uniform(0, 20, 30)
+    crescimento = 2 * np.random.normal(5, 2, 30)  # sem correlação real
 
-    # Distritos futuristas da cidade
-    distrito_helios = [3, 5, 9, 14, 22, 32, 45, 60, 78, 90]  # tendência mais precoce → provável origem
-    distrito_nebula = [0, 0, 2, 3, 4, 6, 9, 13, 18, 25]      # normal
-    distrito_void = [0, 0, 1, 1, 2, 4, 5, 6, 8, 10]          # baixo crescimento
-
-    # Manipulação de Erradon: dado falso inserido para confundir o Doutor
-    distrito_nebula[7] = 35  # pico súbito (falso)
-
-    # Cria figura com tema escuro (tamanho exato 600x400 px)
-    plt.style.use("dark_background")
+    # Cria figura com aparência antiga
+    plt.style.use("seaborn-v0_8-muted")
     fig, ax = plt.subplots(figsize=(6, 4), dpi=100)
 
-    # Fundo e grade neon
-    fig.patch.set_facecolor("#0a0f16")
-    ax.set_facecolor("#0a0f16")
+    # Fundo envelhecido (bege claro)
+    fig.patch.set_facecolor("#f3e9d2")
+    ax.set_facecolor("#f3e9d2")
 
-    # Linhas de tendência com cores de neon
-    ax.plot(dias, distrito_helios, marker='o', color="#ff005c", linewidth=2, label="Distrito Hélios")
-    ax.plot(dias, distrito_nebula, marker='o', color="#00b3ff", linewidth=2, label="Distrito Nébula (dados alterados)")
-    ax.plot(dias, distrito_void, marker='o', color="#00ff99", linewidth=2, label="Distrito Void")
+    # Pontos no estilo clássico
+    ax.scatter(vento, crescimento, color="#5b3a29", edgecolors="#2b1d13", s=70)
 
-    # Efeitos visuais
-    ax.grid(True, linestyle="--", alpha=0.3, color="#00ffaa")
+    # Eixos manipulados — Erradon distorce a percepção!
+    ax.set_xlim(0, 20)
+    ax.set_ylim(0, 12)
+    ax.set_aspect(0.3)  # achatamento artificial — cria ilusão de tendência
 
-    # Títulos e eixos
-    ax.set_title("📊 Propagação da Epidemia de Zumbis — Cidade de Elysium", fontsize=13, color="#00eaff", pad=12)
-    ax.set_xlabel("Dia da Epidemia", color="#cccccc", fontsize=10)
-    ax.set_ylabel("Número de Infectados", color="#cccccc", fontsize=10)
+    # Título e rótulos com estilo antigo
+    ax.set_title("Crescimento das Flores x Velocidade do Vento", fontsize=13, color="#3b2f2f", pad=10)
+    ax.set_xlabel("Velocidade do Vento (km/h)", color="#4b3e2b", fontsize=11)
+    ax.set_ylabel("Altura das Flores (cm)", color="#4b3e2b", fontsize=11)
 
-    # Legenda
-    legenda = ax.legend(facecolor="#0f1620", edgecolor="#00ffaa", fontsize=9)
-    for text in legenda.get_texts():
-        text.set_color("#d9f9ff")
+    # Grade sutil e envelhecida
+    ax.grid(True, linestyle="--", alpha=0.4, color="#8c7b6b")
 
-    # Ajuste de margens e salvamento
+    # Moldura discreta
+    for spine in ax.spines.values():
+        spine.set_color("#6b594a")
+        spine.set_linewidth(1.2)
+
+    # Ajuste e salvamento
     plt.tight_layout()
 
     pasta_saida = os.path.dirname(caminho_saida)
@@ -54,8 +53,8 @@ def gerar_grafico_zumbis(caminho_saida="assets/graficos/grafico_zumbis.png"):
     plt.savefig(caminho_saida, dpi=100)
     plt.close(fig)
 
-    print(f"✅ Gráfico futurista salvo em: {os.path.abspath(caminho_saida)} (600x400 px)")
+    print(f"✅ Gráfico da Fase 5 salvo em: {os.path.abspath(caminho_saida)} (600x400 px)")
 
 
 if __name__ == "__main__":
-    gerar_grafico_zumbis()
+    gerar_grafico_fase5()

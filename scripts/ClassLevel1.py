@@ -2249,76 +2249,82 @@ class Level5():
         self.verificar_prox_fase = None
         
         self.displaySurface = displaySurface
+
+        self.cutscene_active = True
+        self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
         
         self.fase_id = fase_id
 
         self.font = pygame.font.Font(font_path, 40)
-        self.phase_text = AnimatedText("Fase 5: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
+        self.phase_text = AnimatedText("Fase 5: A volta de jack", self.font, (255, 255, 255), surface=self.displaySurface)
 
-        dicas_estatisticas = [ 
+        dicas_estatisticas_fase5 = [
     {
-        "conceito": "Tratamento A ",
-        "descricao": "Aplicação imediata e barata, amplamente conhecido pela população.",
+        "conceito": "Olhar da Escala Quebrada",
+        "descricao": "Detecta distorções nos eixos de um gráfico.",
         "descricao_completa": (
-            "Este tratamento é fácil de distribuir e tem ação rápida. "
-            "No entanto, sua taxa de sucesso é de apenas 55 porcento, "
-            "e há risco moderado de efeitos colaterais. "
-            "Muitas pessoas acreditam nele por tradição, não por evidência científica."
+            "Uma habilidade que foca apenas nas escalas e eixos. "
+            "Permite perceber manipulações visuais, mas ignora outros erros, "
+            "como amostras enviesadas ou correlações ilusórias. "
+            "Útil, mas insuficiente para revelar toda a verdade."
+        ),
+        "preco": 4,
+        "feedback": (
+            "Você corrigiu os eixos, mas ainda sente algo errado. "
+            "Há mais ilusões escondidas além da escala."
+        )
+    },
+    {
+        "conceito": "Visão da Correlação Falsa",
+        "descricao": "Distingue padrão real de coincidências visuais.",
+        "descricao_completa": (
+            "Uma técnica poderosa, mas limitada. "
+            "Ajuda a não confundir coincidência com causa, "
+            "porém ignora problemas de eixos e seleção de dados. "
+            "Ver o padrão é bom, mas entender o contexto é essencial."
         ),
         "preco": 2,
         "feedback": (
-            "Apesar de ser popular e rápido, sua eficácia é baixa. "
-            "Não é o ideal para controlar uma epidemia com segurança."
+            "Você entendeu que correlação não é causalidade, "
+            "mas o gráfico ainda parece distorcido — algo falta."
         )
     },
     {
-        "conceito": "Tratamento B ",
-        "descricao": "Novo método, com dados promissores, mas origem incerta.",
+        "conceito": "Filtro da Amostra Pura",
+        "descricao": "Remove dados extremos que distorcem a correlação.",
         "descricao_completa": (
-            "Tratamento desenvolvido recentemente em um laboratório desconhecido. "
-            "Os dados indicam uma taxa de sucesso de 80 porcento, mas há fortes indícios "
-            "de que parte das informações foi manipulada por Erradon. "
-            "Também há risco de efeitos colaterais não totalmente documentados."
+            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
+            "Excluir pontos fora do padrão pode mascarar a realidade. "
+            "Amostras limpas ajudam, mas não garantem interpretação correta."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Você limpou a amostra, mas ainda há confusão. "
+            "Erradon sorri — ele sabe que isso não basta."
+        )
+    },
+    {
+        "conceito": "Olho do Equilíbrio Gráfico",
+        "descricao": "Examina escalas, dados e amostras com olhar crítico e purificador.",
+        "descricao_completa": (
+            "Verifica se as escalas são proporcionais, se a amostra representa bem o fenômeno, "
+            "e aplica o tratamento adequado aos dados — removendo ruídos e outliers sem perder a essência do conjunto. "
+            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
+            "Excluir pontos fora do padrão pode mascarar a realidade. "
+            "O Olho do Equilíbrio ensina que compreender um gráfico exige harmonia entre clareza visual, integridade da amostra e cautela na interpretação. "
         ),
         "preco": 3,
         "feedback": (
-            "Os números parecem bons, mas a falta de confiabilidade dos dados torna esta opção arriscada."
-        )
-    },
-    {
-        "conceito": "Tratamento C",
-        "descricao": "Método conhecido, com aplicação mais lenta, mas resultados sólidos.",
-        "descricao_completa": (
-            "Este tratamento tem sido utilizado com sucesso em epidemias passadas. "
-            "Sua taxa de sucesso é de 90 porcento, porém o tempo de aplicação é maior "
-            "e requer organização logística. Os dados foram confirmados por múltiplas fontes confiáveis."
-        ),
-        "preco": 3,
-        "feedback": (
-            "Alta eficácia e dados confiáveis, apesar da aplicação mais lenta. "
-            "É uma escolha estratégica e segura para conter a epidemia."
-        )
-    },
-    {
-        "conceito": "Tratamento D ",
-        "descricao": "Práticas naturais sem comprovação científica.",
-        "descricao_completa": (
-            "Baseado em receitas e ervas tradicionais, este tratamento é amplamente divulgado em redes sociais. "
-            "Sua taxa de sucesso real é estimada em 30 porcento. "
-            "Muitos acreditam nele devido a boatos espalhados por Erradon."
-        ),
-        "preco": 1,
-        "feedback": (
-            "Baixa eficácia e forte influência de desinformação. "
-            "Não é uma escolha racional para conter uma epidemia."
+            "Você trata os dados, ajusta a escala e percebe a verdade oculta. "
+            "O gráfico ganha forma e sentido — a ilusão de Erradon se desfaz diante do equilíbrio."
         )
     }
 ]
 
         quests = [
-            {"id": 1, "text": "Fale com o dr da cidade", "done": False},
+            {"id": 1, "text": "Fale com o rosa na vila", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
-            {"id": 3 , "text": "Resolva o problema do dr" , "done" : False},
+            {"id": 3 , "text": "Resolva o problema da rosa" , "done" : False},
             {"id": 4 , "text": "Entre no portal" , "done" : False}
         ]
         
@@ -2381,29 +2387,50 @@ class Level5():
         self.dialogue_box = AppearingTextBox(repositorio.dialogo_fase(fase_id), self.displaySurface)
        
      
+
         self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
 
-        
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 710, limit_right= 950))
+
+        self.samuraixamom.add(Samuraixamom((900,485), moveRight=True,limit_left= 690, limit_right= 980))
+
+        self.samuraixamom.add(Samuraixamom((900,485), moveRight=True,limit_left= 700, limit_right= 950))
+
+
+        self.samuraixamom.add(Samuraixamom((200,290), moveRight=True,limit_left= 180, limit_right= 400))
+
+        self.samuraixamom.add(Samuraixamom((1200,370), moveRight=True,limit_left= 1100, limit_right= 1350))
+
+        self.samuraixamom.add(Samuraixamom((1600,495), moveRight=True,limit_left= 1600, limit_right= 1850))
+
+        self.samuraixamom.add(Samuraixamom((1500,495), moveRight=True,limit_left= 1400, limit_right= 1650))
+
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
+
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
+
+
+
         self.samuraigirl.add(SamuraigirlNpc((173,481) , faceRight= False))
 
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+        self.npcloja.add(LojaNpc((1800,265) , faceRight= False))
        
-        self.Coin.add(Coin((120,115)))
-        self.Coin.add(Coin((150,115)))
+        self.Coin.add(Coin((120,145)))
+        self.Coin.add(Coin((150,145)))
         
         self.Coin.add(Coin((80,370)))
         self.Coin.add(Coin((50,370)))
         
         
-        self.Coin.add(Coin((540,200)))
-        self.Coin.add(Coin((510,200)))
+        self.Coin.add(Coin((540,300)))
+        self.Coin.add(Coin((510,300)))
         
-        self.Coin.add(Coin((1040,200)))
-        self.Coin.add(Coin((1010,200)))
+        self.Coin.add(Coin((1040,300)))
+        self.Coin.add(Coin((1010,300)))
 
 
-        self.Coin.add(Coin((1250,140)))
-        self.Coin.add(Coin((1280,140)))
+        self.Coin.add(Coin((1250,280)))
+        self.Coin.add(Coin((1280,280)))
 
         self.potion.add(Potion((1800,490)))
 
@@ -2414,19 +2441,21 @@ class Level5():
         self.hero.add(Hero((185, 400), faceRight=True))
        
 
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas_fase5, pos=(100, 50))
   
-        self.pergunta = PerguntaResposta(
-            displaySurface=self.displaySurface,
-            hero=self.hero.sprite,
-            npc=self.crow.sprite,
-            pergunta="Com base nas probabilidades e nas informações fornecidas, qual tratamento oferece a melhor chance de controlar a epidemia com segurança, mesmo que demande mais tempo ou recursos?",
-            loja=self.loja,
-            correta_conceito="Tratamento C",
-            pos=(100, 100)
-        )
-
-       
+        self.pergunta = PerguntaGrafico(
+        displaySurface=self.displaySurface,
+        hero=self.hero.sprite,
+        npc=self.samuraigirl.sprite,
+        pergunta=(
+            "Rosa acredita que o vento faz as flores crescerem mais rápido, "
+            "mas algo parece errado neste gráfico... "
+            "Qual é o verdadeiro problema que você enxerga?"
+        ),
+        grafico_path = graficos_path + "grafico_dispersao_fase5.png",
+        loja=self.loja,
+        correta_conceito = "Olho do Equilíbrio Gráfico"
+    )
 
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
@@ -2513,16 +2542,73 @@ class Level5():
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
 
         # Recria loja e pergunta para garantir estado inicial
-        dicas_estatisticas = [
-            {
-                "conceito": "Média", 
-                "descricao": "A soma dos valores dividida pelo total.", 
-                "descricao_completa": "A média é uma medida de tendência central que representa o valor típico de um conjunto de dados...",
-                "preco": 2,
-                "feedback": "A média resume todos os valores em um único número representativo."
-            }
-        ]
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
+        dicas_estatisticas_fase5 = [
+    {
+        "conceito": "Olhar da Escala Quebrada",
+        "descricao": "Detecta distorções nos eixos de um gráfico.",
+        "descricao_completa": (
+            "Uma habilidade que foca apenas nas escalas e eixos. "
+            "Permite perceber manipulações visuais, mas ignora outros erros, "
+            "como amostras enviesadas ou correlações ilusórias. "
+            "Útil, mas insuficiente para revelar toda a verdade."
+        ),
+        "preco": 4,
+        "feedback": (
+            "Você corrigiu os eixos, mas ainda sente algo errado. "
+            "Há mais ilusões escondidas além da escala."
+        )
+    },
+    {
+        "conceito": "Visão da Correlação Falsa",
+        "descricao": "Distingue padrão real de coincidências visuais.",
+        "descricao_completa": (
+            "Uma técnica poderosa, mas limitada. "
+            "Ajuda a não confundir coincidência com causa, "
+            "porém ignora problemas de eixos e seleção de dados. "
+            "Ver o padrão é bom, mas entender o contexto é essencial."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Você entendeu que correlação não é causalidade, "
+            "mas o gráfico ainda parece distorcido — algo falta."
+        )
+    },
+    {
+        "conceito": "Filtro da Amostra Pura",
+        "descricao": "Remove dados extremos que distorcem a correlação.",
+        "descricao_completa": (
+            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
+            "Excluir pontos fora do padrão pode mascarar a realidade. "
+            "Amostras limpas ajudam, mas não garantem interpretação correta."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Você limpou a amostra, mas ainda há confusão. "
+            "Erradon sorri — ele sabe que isso não basta."
+        )
+    },
+    {
+        "conceito": "Olho do Equilíbrio Gráfico",
+        "descricao": "Examina escalas, dados e amostras com olhar crítico e purificador.",
+        "descricao_completa": (
+            "A habilidade definitiva da análise visual. "
+            "Não se deixa enganar por eixos distorcidos nem por correlações ilusórias. "
+            "Verifica se as escalas são proporcionais, se a amostra representa bem o fenômeno, "
+            "e aplica o tratamento adequado aos dados — removendo ruídos e outliers sem perder a essência do conjunto. "
+            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
+            "Excluir pontos fora do padrão pode mascarar a realidade. "
+            "O Olho do Equilíbrio ensina que compreender um gráfico exige harmonia entre clareza visual, integridade da amostra e cautela na interpretação. "
+            "Com esse olhar, Erradon não pode mais esconder suas manipulações."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Você trata os dados, ajusta a escala e percebe a verdade oculta. "
+            "O gráfico ganha forma e sentido — a ilusão de Erradon se desfaz diante do equilíbrio."
+        )
+    }
+]
+
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas_fase5, pos=(100, 50))
         self.pergunta = PerguntaResposta(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
@@ -2548,67 +2634,74 @@ class Level5():
 
     def update(self, confirm_exit=False):
     # Atualiza o herói sempre
-
-        if not confirm_exit:
-                self.hero.update(self)
-
-        if self.pergunta.acertou and self.portal.sprite is None:
-                 self.quest_system.complete_quest(3)
-                 self.portal.add(Portal((0,170)))
-            
-        if self.npcloja.sprite.show_interaction:
-                self.quest_system.complete_quest(2)
-                self.hero.sprite.falou_com_npcloja = False    
-
-        if self.hero.sprite.falou_com_npc:
-                self.quest_system.complete_quest(1)
-                self.hero.sprite.falou_com_npc = False
-
-        keys = pygame.key.get_pressed()
-        if self.portal.sprite is not None:
-                self.portal.update()
-                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
-                    if keys[pygame.K_h]:
-                        print("Portal ativado!")
-                        self.verificar_prox_fase = "next_level"
-
-        if (self.dialogue_box and not self.dialogue_box.text_active and
-                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
-
-                self.pergunta.handle_input()
-
-                self.Coin.update()
-                self.potion.update()
-                self.samuraixamom.update(self)
+        if self.cutscene_active:
+            if self.cutscene.finished:
+                self.cutscene_active = False  # agora a fase 1 começa
+            return
+        else:
                 
-            # Atualiza NPCs e loja sempre, se existirem
-        if self.samuraigirl.sprite:
-                self.samuraigirl.update(self)
-        if self.npcloja.sprite:
-                self.npcloja.update(self)
-            
-        self.camera.update(self.hero.sprite)
-        self.phase_text.update()
-        self.dialogue_box.update()
-        self.loja.handle_input()
+            if not confirm_exit:
+                    self.hero.update(self)
 
-            # Teleporte quando errou
-        if self.pergunta.errou and not self.ja_teletransportou:
-                self.hero.sprite.teleport(0, 250)
-                # Adiciona inimigos adicionais
-                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
-                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
-                self.ja_teletransportou = True
-                # Reseta o erro para não teletransportar várias vezes
-                self.pergunta.errou = False
+            if self.pergunta.acertou and self.portal.sprite is None:
+                    self.quest_system.complete_quest(3)
+                    self.portal.add(Portal((0,170)))
+                
+            if self.npcloja.sprite.show_interaction:
+                    self.quest_system.complete_quest(2)
+                    self.hero.sprite.falou_com_npcloja = False    
+
+            if self.hero.sprite.falou_com_npc:
+                    self.quest_system.complete_quest(1)
+                    self.hero.sprite.falou_com_npc = False
+
+            keys = pygame.key.get_pressed()
+            if self.portal.sprite is not None:
+                    self.portal.update()
+                    if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                        if keys[pygame.K_h]:
+                            print("Portal ativado!")
+                            self.verificar_prox_fase = "next_level"
+
+            if (self.dialogue_box and not self.dialogue_box.text_active and
+                    self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                    self.pergunta.handle_input()
+
+                    self.Coin.update()
+                    self.potion.update()
+                    self.samuraixamom.update(self)
+                    
+                # Atualiza NPCs e loja sempre, se existirem
+            if self.samuraigirl.sprite:
+                    self.samuraigirl.update(self)
+            if self.npcloja.sprite:
+                    self.npcloja.update(self)
+                
+            self.camera.update(self.hero.sprite)
+            self.phase_text.update()
+            self.dialogue_box.update()
+            self.loja.handle_input()
+
+                # Teleporte quando errou
+            if self.pergunta.errou and not self.ja_teletransportou:
+                    self.hero.sprite.teleport(0, 250)
+                    # Adiciona inimigos adicionais
+                    self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                    self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                    self.ja_teletransportou = True
+                    # Reseta o erro para não teletransportar várias vezes
+                    self.pergunta.errou = False
 
 
-            # Resetar o teleporte caso ele saia da área
-        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
-                self.ja_teletransportou = False
+                # Resetar o teleporte caso ele saia da área
+            if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                    self.ja_teletransportou = False
                                    
     def draw(self):
-                # Desenha o fundo         
+        if self.cutscene_active:
+            self.cutscene.draw5()
+        else:          # Desenha o fundo         
             self.background.draw1(self.displaySurface)
             
 

@@ -331,6 +331,8 @@ class Hero(pygame.sprite.Sprite):
 
         self.checkNpcCollisions(level.erradon)
 
+        self.checkNpcCollisions(level.samuraigirl)
+
         self.checkpower_apps(level.Coin)
 
         self.checkpower_apps_health(level.potion)

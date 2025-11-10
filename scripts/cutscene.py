@@ -10,6 +10,9 @@ class Cutscene:
         self.image = pygame.image.load(image_path + "Intro_04.png").convert_alpha()
         self.image = pygame.transform.scale(self.image, (500, 300))
 
+        self.image2 = pygame.image.load(image_path + "Ending_04.png").convert_alpha()
+        self.image = pygame.transform.scale(self.image, (500, 300))
+
         # Fonte
         if font_path:
             self.font = pygame.font.Font(font_path, 18)
@@ -70,6 +73,19 @@ class Cutscene:
             "Cada tratamento apresenta diferentes chances de sucesso e riscos."
             "Avalie cada tratamento com cuidado, compare probabilidades e efeitos colaterais."
             "Use seu conhecimento da Arte dos Dados para revelar a melhor escolha!"
+        )
+
+        self.text7 = (
+            "Após conquistar os ultimos fragmentos do tempo."
+            "Jack consegue retornar a sua antiga vila."
+            "Entretanto, erradon ja havia começado o seu plano."
+            "Cabe agora jack encontrar erradon e derrota-lo."
+            "Rosa, sua amiga de treino, está a espera de jack."
+
+        )
+
+        self.text8 = (
+            "Jack, "
         )
 
         # Controle
@@ -154,6 +170,19 @@ class Cutscene:
             text_rect = rendered.get_rect(center=(500, start_y + i * line_height))
             self.display.blit(rendered, text_rect)
 
+    def draw_image_with_text2(self):
+        img_rect = self.image2.get_rect(center=(500, 250))
+        self.display.blit(self.image2, img_rect)
+        self.active_text = self.text8
+        max_width = 700
+        lines = self.wrap_text(self.text8, max_width)
+        start_y = 400
+        line_height = self.font.get_linesize()
+        for i, line in enumerate(lines):
+            rendered = self.font.render(line, True, (255, 255, 255))
+            text_rect = rendered.get_rect(center=(500, start_y + i * line_height))
+            self.display.blit(rendered, text_rect)
+
     # --- Input ---
     def handle_input(self, event):
         if event.type == pygame.KEYDOWN and event.key in (pygame.K_RETURN, pygame.K_SPACE):
@@ -227,6 +256,15 @@ class Cutscene:
         self.display.fill((10, 10, 10))
         self.active_text = self.text5
         self.draw_scroll(self.text5)
+        if self.stage > 0:
+            self.finished = True
+        if not self.finished:
+            self.draw_hint()
+
+    def draw5(self):
+        self.display.fill((10, 10, 10))
+        self.active_text = self.text7
+        self.draw_scroll(self.text7)
         if self.stage > 0:
             self.finished = True
         if not self.finished:
