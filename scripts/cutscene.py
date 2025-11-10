@@ -11,7 +11,7 @@ class Cutscene:
         self.image = pygame.transform.scale(self.image, (500, 300))
 
         self.image2 = pygame.image.load(image_path + "Ending_04.png").convert_alpha()
-        self.image = pygame.transform.scale(self.image, (500, 300))
+        self.image2 = pygame.transform.scale(self.image2, (500, 300))
 
         # Fonte
         if font_path:
@@ -50,11 +50,11 @@ class Cutscene:
         )
 
         self.text4 = (
-            "Samurai... bem-vindo ao lugar onde até a morte perdeu o controle.",
-            "Desde que a maldição começou, as almas que eu deveria colher não me escutam mais.",
-            "Elas se perdem e retornam como esqueletos.",
-            "Deixe-me interpretar o gráfico para descobrir a causa principal da maldição.",
-            "Visitaremos a loja de rituais para escolher o mais eficaz.",
+            "Samurai, bem-vindo ao lugar onde até a morte perdeu o controle."
+            "Desde que a maldição começou, as almas que eu deveria colher não me escutam mais."
+            "Elas se perdem e retornam como esqueletos."
+            "Deixe-me interpretar o gráfico para descobrir a causa principal da maldição."
+            "Visitaremos a loja de rituais para escolher o mais eficaz."
             "Onde há dados, há esperança. Libertaremos as almas aprisionadas!"
         )
 
@@ -85,7 +85,29 @@ class Cutscene:
         )
 
         self.text8 = (
-            "Jack, "
+            "Após ajudar rosa, jack descobre sem querer a posição de errado." 
+            "Agora, só o resta enfretar erradon com arte dos dados aprendida."
+        )
+
+        self.text9 = (
+            "Jack enfrenta Erradon, sentindo a tensão no ar e a força do inimigo. "
+            "Cada golpe é testado, mas ele mantém o foco, equilibrando precisão e adaptação. "
+            "No ápice do confronto, Jack aplica o Golpe do Equilíbrio e finalmente derrota Erradon."
+        )
+
+    
+
+        self.text10 = (
+            "O vento sopra suave sobre os campos onde antes reinava o caos. "
+            "O Samurai compreende, enfim, que sua verdadeira arma nunca foi a espada, mas o conhecimento. "
+            "Após enfrentar epidemias, maldições e a ignorância, ele aprendeu que a Estatística é a arte de enxergar o invisível "
+            "e transformar incerteza em sabedoria. "
+            "Agora, em paz, guarda sua lâmina e segue como lenda — o Samurai da Estatística."
+        )
+
+        self.text11 = (
+            "Obrigado por Jogar!."
+            "Desenvolvido por Bruno Paz."
         )
 
         # Controle
@@ -175,7 +197,7 @@ class Cutscene:
         self.display.blit(self.image2, img_rect)
         self.active_text = self.text8
         max_width = 700
-        lines = self.wrap_text(self.text8, max_width)
+        lines = self.wrap_text(self.text9, max_width)
         start_y = 400
         line_height = self.font.get_linesize()
         for i, line in enumerate(lines):
@@ -184,38 +206,58 @@ class Cutscene:
             self.display.blit(rendered, text_rect)
 
     # --- Input ---
-    def handle_input(self, event):
+    def handle_input(self, event, final_cutscene=False):
         if event.type == pygame.KEYDOWN and event.key in (pygame.K_RETURN, pygame.K_SPACE):
-
-            # Cutscene múltipla
-            if self.multi_stage:
+            
+            # Escolhe quais textos usar
+            if final_cutscene:
+                # Cutscene final
                 if self.stage == 0:
-                    if self.char_index < len(self.text1):
-                        self.char_index = len(self.text1)
-                    else:
-                        self.stage = 1
-                        self.char_index = 0
-
+                    current_text = self.text9
                 elif self.stage == 1:
-                    self.stage = 2
-                    self.char_index = 0
-
+                    current_text = self.text10
                 elif self.stage == 2:
-                    if self.char_index < len(self.text3):
-                        self.char_index = len(self.text3)
+                    current_text = self.text11
+                else:
+                    current_text = ""
+            else:
+                # Cutscene normal
+                if self.multi_stage:
+                    if self.stage == 0:
+                        current_text = self.text1
+                    elif self.stage == 1:
+                        current_text = self.text2
+                    elif self.stage == 2:
+                        current_text = self.text3
+                    else:
+                        current_text = ""
+                else:
+                    current_text = getattr(self, "active_text", self.text1)
+
+            # Se o texto ainda não terminou de aparecer, não avançamos o estágio
+            if self.char_index < len(current_text):
+                self.char_index = len(current_text)  # mostra todo texto imediatamente
+            else:
+                # Avança estágio ou termina
+                if final_cutscene:
+                    self.stage += 1
+                    self.char_index = 0
+                    if self.stage > 2:
+                        self.finished = True
+                else:
+                    if self.multi_stage:
+                        self.stage += 1
+                        self.char_index = 0
+                        if self.stage > 2:
+                            self.finished = True
                     else:
                         self.finished = True
 
-            # Cutscene simples
-            else:
-                current_text = getattr(self, "active_text", self.text1)
-                if self.char_index < len(current_text):
-                    self.char_index = len(current_text)
-                else:
-                    self.finished = True
-                    self.stage = 1
 
-    # --- Draw geral ---
+
+
+
+        # --- Draw geral ---
     def draw(self):
         self.display.fill((10, 10, 10))
         if self.multi_stage:
@@ -267,5 +309,33 @@ class Cutscene:
         self.draw_scroll(self.text7)
         if self.stage > 0:
             self.finished = True
+        if not self.finished:
+            self.draw_hint()
+
+    def draw6(self):
+        self.display.fill((10, 10, 10))
+        self.active_text = self.text8
+        self.draw_scroll(self.text8)
+        if self.stage > 0:
+            self.finished = True
+        if not self.finished:
+            self.draw_hint()
+
+    def draw_final(self):
+        self.display.fill((10, 10, 10))
+        if self.multi_stage:
+            if self.stage == 0:
+                self.draw_image_with_text2()
+            
+            elif self.stage == 1:
+                self.active_text = self.text10
+                self.draw_scroll(self.text10)
+                
+            elif self.stage == 2:
+                self.active_text = self.text11
+                self.draw_scroll(self.text11)
+        else:
+            self.draw_scroll(self.active_text)
+
         if not self.finished:
             self.draw_hint()

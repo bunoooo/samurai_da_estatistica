@@ -2645,8 +2645,6 @@ class Level5():
             return
         else:
                 
-           
-
             if self.pergunta.acertou and self.portal.sprite is None:
                     self.quest_system.complete_quest(3)
                     self.portal.add(Portal((0,130)))
@@ -2832,6 +2830,14 @@ class Level6():
         
         self.fase_id = fase_id
 
+        self.cutscene_active = True
+
+        self.cutscene_final_active = False
+
+        self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
+
+        self.cutscene_final = Cutscene(self.displaySurface, font_path , multi_stage=True)
+
         self.font = pygame.font.Font(font_path, 40)
         self.phase_text = AnimatedText("Fase 6: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
 
@@ -2899,16 +2905,16 @@ class Level6():
 ]
 
         quests = [
-            {"id": 1, "text": "Fale com o dr da cidade", "done": False},
+            {"id": 1, "text": "Fale com erradon", "done": False},
             {"id": 2, "text": "Encontre o mercador", "done": False},
-            {"id": 3 , "text": "Resolva o problema do dr" , "done" : False},
-            {"id": 4 , "text": "Entre no portal" , "done" : False}
+            {"id": 3 , "text": "Derrote erradon" , "done" : False},
         ]
         
         self.quest_system = QuestSystem(quests, self.displaySurface )
          # Carregar o arquivo TMX
 
         self.levelData = load_pygame(LEVELS_PATH + "Level1/level6.tmx")
+
 
         # Instanciar classes
         self.background = Background()
@@ -3038,59 +3044,11 @@ class Level6():
        
         # Recria inimigos
         
-        self.skeleton.add(Skeleton((60,210), moveRight=True,limit_left= 60, limit_right= 270))
-
-        self.skeleton.add(Skeleton((350,495), moveRight=True,limit_left= 40, limit_right= 450))
-
-        self.skeleton.add(Skeleton((400,305), moveRight=True,limit_left= 400, limit_right= 650))
-
-        self.skeleton.add(Skeleton((300,495), moveRight=True,limit_left= 650, limit_right= 900))
         
-        self.skeleton.add(Skeleton((500,495), moveRight=True,limit_left= 550, limit_right= 950))
-
-        self.skeleton.add(Skeleton((200,495), moveRight=True,limit_left= 50, limit_right= 550))
-
-
-        self.skeleton.add(Skeleton((950,258), moveRight=True,limit_left= 910, limit_right= 1100))
-
-        self.skeleton.add(Skeleton((1250,210), moveRight=True,limit_left= 1200, limit_right= 1400))
-
-        self.skeleton.add(Skeleton((900,495), moveRight=True,limit_left= 950, limit_right= 1400))
-        self.skeleton.add(Skeleton((1100,495), moveRight=True,limit_left= 1150, limit_right= 1400))
-
-        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
-
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
        
-        self.Coin.add(Coin((120,115)))
-        self.Coin.add(Coin((150,115)))
-        
-        self.Coin.add(Coin((80,370)))
-        self.Coin.add(Coin((50,370)))
-        
-        
-        self.Coin.add(Coin((540,200)))
-        self.Coin.add(Coin((510,200)))
-        
-        self.Coin.add(Coin((1040,200)))
-        self.Coin.add(Coin((1010,200)))
+    
 
-
-        self.Coin.add(Coin((1250,140)))
-        self.Coin.add(Coin((1280,140)))
-
-
-
-
-        self.potion.add(Potion((1800,490)))
-
-        self.potion.add(Potion((1600,490)))
-
-        self.potion.add(Potion((225,385)))
       
-
-        # Recria herói
-        self.hero.add(Hero((170, 250), faceRight=True))
 
         vida_rect = (0, 0, 12, 12)
         self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
@@ -3131,70 +3089,92 @@ class Level6():
 
     def update(self, confirm_exit=False):
     # Atualiza o herói sempre
-
         if not confirm_exit:
                 self.hero.update(self)
 
 
-        if self.pergunta.acertou and self.portal.sprite is None:
-                 self.quest_system.complete_quest(3)
-                 self.portal.add(Portal((0,170)))
-            
-        if self.npcloja.sprite.show_interaction:
-                self.quest_system.complete_quest(2)
-                self.hero.sprite.falou_com_npcloja = False    
-
-
-        if self.hero.sprite.falou_com_npc:
-                self.quest_system.complete_quest(1)
-                self.hero.sprite.falou_com_npc = False
-
-        keys = pygame.key.get_pressed()
-        if self.portal.sprite is not None:
-                self.portal.update()
-                if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
-                    if keys[pygame.K_h]:
-                        print("Portal ativado!")
-                        self.verificar_prox_fase = "next_level"
-
-        if (self.dialogue_box and not self.dialogue_box.text_active and
-                self.loja and not self.loja.active and not self.loja.mostrar_compradas):
-
-                self.pergunta.handle_input()
-
-                self.Coin.update()
-                self.potion.update()
-                self.zombie.update(self)
-
+        
+        
+        if self.cutscene_final_active:
+            if self.cutscene_final.finished:
+                self.cutscene_final_active = False
                 
-            # Atualiza NPCs e loja sempre, se existirem
-        if self.erradon.sprite:
-                self.erradon.update(self)
-        if self.npcloja.sprite:
-                self.npcloja.update(self)
-            
-        self.camera.update(self.hero.sprite)
-        self.phase_text.update()
-        self.dialogue_box.update()
-        self.loja.handle_input()
+            return
 
-            # Teleporte quando errou
-        if self.pergunta.errou and not self.ja_teletransportou:
-                self.hero.sprite.teleport(0, 250)
-                # Adiciona inimigos adicionais
-                self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
-                self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
-                self.ja_teletransportou = True
-                # Reseta o erro para não teletransportar várias vezes
-                self.pergunta.errou = False
+        if self.cutscene_active:
+            if self.cutscene.finished:
+                self.cutscene_active = False  # agora a fase 1 começa
+            return
+        else:
+        
+       
+            if self.pergunta.acertou and not self.cutscene_final_active:
+                self.cutscene_final_active = True
+           
+           
+            if self.npcloja.sprite.show_interaction:
+                    self.quest_system.complete_quest(2)
+                    self.hero.sprite.falou_com_npcloja = False    
 
 
-            # Resetar o teleporte caso ele saia da área
-        if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
-                self.ja_teletransportou = False
-                                   
+            if self.hero.sprite.falou_com_npc:
+                    self.quest_system.complete_quest(1)
+                    self.hero.sprite.falou_com_npc = False
+
+            keys = pygame.key.get_pressed()
+            if self.portal.sprite is not None:
+                    self.portal.update()
+                    if self.hero.sprite.rect.colliderect(self.portal.sprite.rect):
+                        if keys[pygame.K_h]:
+                            print("Portal ativado!")
+                            self.verificar_prox_fase = "next_level"
+
+            if (self.dialogue_box and not self.dialogue_box.text_active and
+                    self.loja and not self.loja.active and not self.loja.mostrar_compradas):
+
+                    self.pergunta.handle_input()
+
+                    self.Coin.update()
+                    self.potion.update()
+                    self.zombie.update(self)
+
+                    
+                # Atualiza NPCs e loja sempre, se existirem
+            if self.erradon.sprite:
+                    self.erradon.update(self)
+            if self.npcloja.sprite:
+                    self.npcloja.update(self)
+                
+            self.camera.update(self.hero.sprite)
+            self.phase_text.update()
+            self.dialogue_box.update()
+            self.loja.handle_input()
+
+                # Teleporte quando errou
+            if self.pergunta.errou and not self.ja_teletransportou:
+                    self.hero.sprite.teleport(0, 250)
+                    # Adiciona inimigos adicionais
+                    self.robot.add(Robot((800, 255), moveRight=True, limit_left=700, limit_right=900))
+                    self.robot.add(Robot((900, 445), moveRight=True, limit_left=1000, limit_right=1100))
+                    self.ja_teletransportou = True
+                    # Reseta o erro para não teletransportar várias vezes
+                    self.pergunta.errou = False
+
+
+                # Resetar o teleporte caso ele saia da área
+            if self.ja_teletransportou and not self.hero.sprite.hitbox.colliderect(self.teleport_zone):
+                    self.ja_teletransportou = False
+                                    
     def draw(self):
-                # Desenha o fundo         
+       
+        if self.cutscene_final_active:
+            self.cutscene_final.draw_final()
+            return
+
+
+        elif self.cutscene_active:
+            self.cutscene.draw6()
+        else:            # Desenha o fundo         
             self.background.draw1(self.displaySurface)
             
 

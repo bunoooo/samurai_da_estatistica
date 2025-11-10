@@ -110,9 +110,15 @@ def main():
                             ]
 
                 # --- Passa eventos para cutscene ---
-                if current_level is not None and hasattr(current_level, "cutscene_active"):
+                if current_level is not None and hasattr(current_level, "cutscene_active") :
                     if current_level.cutscene_active:
                         current_level.cutscene.handle_input(event)
+                    
+                if current_level is not None and hasattr(current_level , "cutscene_final_active"):
+                        if current_level.cutscene_final_active:
+                            current_level.cutscene.handle_input(event, final_cutscene=True)
+                        if current_level.cutscene_final.finished:
+                                 show_menu = True
 
                 # --- Eventos do menu ---
                 if show_menu and not confirm_exit:
