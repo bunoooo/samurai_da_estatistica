@@ -2634,14 +2634,18 @@ class Level5():
 
     def update(self, confirm_exit=False):
     # Atualiza o herói sempre
+        
+        
+        if not confirm_exit:
+                    self.hero.update(self)
+        
         if self.cutscene_active:
             if self.cutscene.finished:
                 self.cutscene_active = False  # agora a fase 1 começa
             return
         else:
                 
-            if not confirm_exit:
-                    self.hero.update(self)
+           
 
             if self.pergunta.acertou and self.portal.sprite is None:
                     self.quest_system.complete_quest(3)
