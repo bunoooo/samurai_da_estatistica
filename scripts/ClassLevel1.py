@@ -28,6 +28,7 @@ from PerguntaGrafico import *
 from Erradon import *
 from Samuraixadom import *
 from SamuraigirlNpc import *
+from cutscene_final import *
 
 repositorio = Dialogos()
 
@@ -2836,7 +2837,7 @@ class Level6():
 
         self.cutscene = Cutscene(self.displaySurface, font_path , multi_stage=False)
 
-        self.cutscene_final = Cutscene(self.displaySurface, font_path , multi_stage=True)
+        self.cutscene_final = Cutscene_final(self.displaySurface, font_path , multi_stage=True)
 
         self.font = pygame.font.Font(font_path, 40)
         self.phase_text = AnimatedText("Fase 6: Batalha final", self.font, (255, 255, 255), surface=self.displaySurface)
@@ -3168,7 +3169,7 @@ class Level6():
     def draw(self):
        
         if self.cutscene_final_active:
-            self.cutscene_final.draw_final()
+            self.cutscene_final.draw()
             return
 
 
