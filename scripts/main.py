@@ -118,7 +118,18 @@ def main():
                             if current_level.cutscene_final_active:
                                 current_level.cutscene_final.handle_input(event)
                                 if current_level.cutscene_final.finished:
+                                
                                     show_menu = True
+                                    current_level = None
+                                    menu.state = "principal"
+                                    menu.selected_index = 0
+                                    menu.buttons = [
+                                        ("entrar", menu.entrar_text_rect),
+                                        ("tutorial", menu.tutorial_rect),
+                                        ("fases", menu.fases_rect),
+                                        ("sair", menu.sair_rect),
+                                    ]
+                                    music.tocar_musica(0)  # música do menu
 
                 # --- Eventos do menu ---
                 if show_menu and not confirm_exit:
