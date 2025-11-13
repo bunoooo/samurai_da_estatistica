@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 
 NpcLojaSprites = [(31, 48, 88, 67),
                    (175, 48, 88, 67),

@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 class Cutscene:
     def __init__(self, display, font_path=None, multi_stage=None):

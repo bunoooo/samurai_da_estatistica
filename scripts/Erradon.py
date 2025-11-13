@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 
 NpcErradonSprites = [(x, 0, 82, 104) for x in range(0, 1296, 162)]
 

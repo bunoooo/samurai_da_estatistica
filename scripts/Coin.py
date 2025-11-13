@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 # Frames da moeda no spritesheet
 CoinSprites = [(x, 0, 8, 8) for x in range(0, 144,8)]
 

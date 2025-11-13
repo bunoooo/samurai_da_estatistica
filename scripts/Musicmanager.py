@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 
 class MusicManager:

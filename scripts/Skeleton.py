@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 
 # --- SPRITESHEETS CONFIG --- #
 SkeletonSpritesWalk = [(x, 0, 32, 57) for x in range(0, 416, 32)]

@@ -1,9 +1,12 @@
 import pygame
-from Config import *
-from ClassLevel1 import *
-from ClassMenu import Menu
-from AnimatedText import *
-from Musicmanager import *
+from scripts.Config import *
+from scripts.Musicmanager import *
+from scripts.ClassMenu import Menu
+from scripts.ClassLevel1 import *
+from scripts.AnimatedText import *
+
+
+
 
 # Lista de fases disponíveis
 fases = [

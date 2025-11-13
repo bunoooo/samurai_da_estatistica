@@ -1,8 +1,8 @@
 import pygame
-from Config import *
-from ParallaxMenuBackground import StaticMenuBackground
-from ClassLevel1 import *
-from ClassHero import Hero
+from scripts.Config import *
+from scripts.ParallaxMenuBackground import StaticMenuBackground
+from scripts.ClassLevel1 import *
+from scripts.ClassHero import Hero
 
 class Menu:
     def __init__(self, surface, start_game_callback, font_path=font_path, font_size=24):

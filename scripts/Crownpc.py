@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 
 NpcCrowSprites = [(15, 16, 34, 55),
                    (80, 16, 34, 55),

@@ -1,8 +1,8 @@
 import pygame
 from pytmx.util_pygame import load_pygame
-from Config import LEVELS_PATH, TILESIZE
-from ClassBackground import Background
-from ClassHero import Hero
+from scripts.Config import LEVELS_PATH, TILESIZE
+from scripts.ClassBackground import Background
+from scripts.ClassHero import Hero
 
 class StaticMenuBackground:
     def __init__(self, surface):

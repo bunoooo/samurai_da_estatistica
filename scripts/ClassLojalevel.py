@@ -1,6 +1,6 @@
 import pygame
-from Config import *
-from ClassLoja import *
+from scripts.Config import *
+from scripts.ClassLoja import *
 
 class LojaSimples:
     def __init__(self, hero, displaySurface, npc, dicas, pos=(50, 50)):

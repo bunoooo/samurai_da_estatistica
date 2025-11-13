@@ -1,6 +1,6 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
 
 
 beeSprites = [

@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import *
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import *
+from scripts.HitboxEmemy import *
 
 
 class Portal(pygame.sprite.Sprite):

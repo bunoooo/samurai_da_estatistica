@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 class AnimatedText:
     def __init__(self, text, font, color, surface, speed=0.5, duration=180):

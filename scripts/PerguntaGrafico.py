@@ -1,6 +1,6 @@
 import pygame
 import io
-from Config import *
+from scripts.Config import *
 
 class PerguntaGrafico:
     def __init__(self, displaySurface, hero, npc, pergunta, grafico_func=None, grafico_path=None,

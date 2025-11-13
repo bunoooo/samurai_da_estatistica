@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 class PerguntaResposta:
     def __init__(self, displaySurface, hero, npc, pergunta, loja, correta_conceito, pos=(100, 100)):

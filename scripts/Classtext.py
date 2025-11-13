@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 # Cores
 BLACK = (0, 0, 0)

@@ -1,0 +1,2353 @@
+('C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+ 'scripts\\build\\main\\main.pkg',
+ {'BINARY': True,
+  'DATA': True,
+  'EXECUTABLE': True,
+  'EXTENSION': True,
+  'PYMODULE': True,
+  'PYSOURCE': True,
+  'PYZ': False,
+  'SPLASH': True,
+  'SYMLINK': False},
+ [('pyi-contents-directory _internal', '', 'OPTION'),
+  ('PYZ-00.pyz',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\PYZ-00.pyz',
+   'PYZ'),
+  ('struct',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\localpycs\\struct.pyc',
+   'PYMODULE'),
+  ('pyimod01_archive',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\localpycs\\pyimod01_archive.pyc',
+   'PYMODULE'),
+  ('pyimod02_importers',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\localpycs\\pyimod02_importers.pyc',
+   'PYMODULE'),
+  ('pyimod03_ctypes',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\localpycs\\pyimod03_ctypes.pyc',
+   'PYMODULE'),
+  ('pyimod04_pywin32',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\localpycs\\pyimod04_pywin32.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\loader\\pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgres',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_pkgres.py',
+   'PYSOURCE'),
+  ('pyi_rth_setuptools',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_setuptools.py',
+   'PYSOURCE'),
+  ('main',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\main.py',
+   'PYSOURCE'),
+  ('python313.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\python313.dll',
+   'BINARY'),
+  ('SDL2_mixer.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
+   'BINARY'),
+  ('libogg-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libogg-0.dll',
+   'BINARY'),
+  ('libtiff-5.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libtiff-5.dll',
+   'BINARY'),
+  ('zlib1.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\zlib1.dll',
+   'BINARY'),
+  ('libwebp-7.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libwebp-7.dll',
+   'BINARY'),
+  ('SDL2_image.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('libmodplug-1.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libmodplug-1.dll',
+   'BINARY'),
+  ('freetype.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\freetype.dll',
+   'BINARY'),
+  ('libjpeg-9.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
+   'BINARY'),
+  ('libopus-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libopus-0.dll',
+   'BINARY'),
+  ('SDL2.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2.dll',
+   'BINARY'),
+  ('portmidi.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\portmidi.dll',
+   'BINARY'),
+  ('SDL2_ttf.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_ttf.dll',
+   'BINARY'),
+  ('libopusfile-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libopusfile-0.dll',
+   'BINARY'),
+  ('libpng16-16.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libpng16-16.dll',
+   'BINARY'),
+  ('numpy.libs\\msvcp140-23ebcc0b37c8e3d074511f362feac48b.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\msvcp140-23ebcc0b37c8e3d074511f362feac48b.dll',
+   'BINARY'),
+  ('numpy.libs\\libscipy_openblas64_-c16e4918366c6bc1f1cd71e28ca36fc0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy.libs\\libscipy_openblas64_-c16e4918366c6bc1f1cd71e28ca36fc0.dll',
+   'BINARY'),
+  ('unicodedata.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\unicodedata.pyd',
+   'EXTENSION'),
+  ('_lzma.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_lzma.pyd',
+   'EXTENSION'),
+  ('_bz2.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_bz2.pyd',
+   'EXTENSION'),
+  ('_decimal.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_decimal.pyd',
+   'EXTENSION'),
+  ('_hashlib.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_hashlib.pyd',
+   'EXTENSION'),
+  ('select.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\select.pyd',
+   'EXTENSION'),
+  ('_socket.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_socket.pyd',
+   'EXTENSION'),
+  ('_overlapped.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_overlapped.pyd',
+   'EXTENSION'),
+  ('_ssl.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_ssl.pyd',
+   'EXTENSION'),
+  ('_queue.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_queue.pyd',
+   'EXTENSION'),
+  ('_ctypes.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_ctypes.pyd',
+   'EXTENSION'),
+  ('_multiprocessing.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_multiprocessing.pyd',
+   'EXTENSION'),
+  ('pyexpat.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\pyexpat.pyd',
+   'EXTENSION'),
+  ('_asyncio.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_asyncio.pyd',
+   'EXTENSION'),
+  ('_wmi.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_wmi.pyd',
+   'EXTENSION'),
+  ('pygame\\transform.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\transform.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\surface.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\surface.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\rect.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\rect.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\bufferproxy.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\bufferproxy.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\color.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\color.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('_elementtree.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\_elementtree.pyd',
+   'EXTENSION'),
+  ('numpy\\_core\\_multiarray_tests.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_core\\_multiarray_tests.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\_core\\_multiarray_umath.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\_core\\_multiarray_umath.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md__mypyc.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\charset_normalizer\\md__mypyc.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('charset_normalizer\\md.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\charset_normalizer\\md.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('psutil\\_psutil_windows.pyd',
+   'C:\\Users\\jukio\\AppData\\Roaming\\Python\\Python313\\site-packages\\psutil\\_psutil_windows.pyd',
+   'EXTENSION'),
+  ('win32\\win32pdh.pyd',
+   'C:\\Users\\jukio\\AppData\\Roaming\\Python\\Python313\\site-packages\\win32\\win32pdh.pyd',
+   'EXTENSION'),
+  ('numpy\\linalg\\_umath_linalg.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\linalg\\_umath_linalg.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\mtrand.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\mtrand.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_sfc64.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_sfc64.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_philox.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_philox.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_pcg64.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_pcg64.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_mt19937.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_mt19937.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\bit_generator.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\bit_generator.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_generator.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_generator.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_bounded_integers.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_bounded_integers.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\random\\_common.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\random\\_common.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('numpy\\fft\\_pocketfft_umath.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\numpy\\fft\\_pocketfft_umath.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('yaml\\_yaml.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\yaml\\_yaml.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\imageext.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\imageext.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\scrap.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\scrap.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\mixer.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\mixer.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\mixer_music.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\mixer_music.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\font.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\font.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\_freetype.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\_freetype.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\time.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\time.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\pixelarray.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\pixelarray.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\mask.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\mask.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\pixelcopy.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\pixelcopy.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\mouse.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\mouse.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\key.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\key.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\joystick.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\joystick.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\image.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\image.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\event.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\event.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\draw.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\draw.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\display.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\display.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\math.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\math.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\surflock.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\surflock.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\rwobject.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\rwobject.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\constants.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\constants.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('pygame\\base.cp313-win_amd64.pyd',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\base.cp313-win_amd64.pyd',
+   'EXTENSION'),
+  ('api-ms-win-crt-locale-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-locale-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-process-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-process-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-stdio-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-stdio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-string-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-filesystem-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-filesystem-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-math-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-math-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-time-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-time-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-environment-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-environment-l1-1-0.dll',
+   'BINARY'),
+  ('VCRUNTIME140.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140.dll',
+   'BINARY'),
+  ('api-ms-win-crt-runtime-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-runtime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-convert-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-convert-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-conio-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-conio-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-heap-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-heap-l1-1-0.dll',
+   'BINARY'),
+  ('pygame\\SDL2.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2.dll',
+   'BINARY'),
+  ('pygame\\libjpeg-9.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libjpeg-9.dll',
+   'BINARY'),
+  ('pygame\\zlib1.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\zlib1.dll',
+   'BINARY'),
+  ('api-ms-win-crt-utility-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-utility-l1-1-0.dll',
+   'BINARY'),
+  ('pygame\\libogg-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libogg-0.dll',
+   'BINARY'),
+  ('pygame\\libopus-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libopus-0.dll',
+   'BINARY'),
+  ('api-ms-win-crt-private-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-crt-private-l1-1-0.dll',
+   'BINARY'),
+  ('libcrypto-3.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libcrypto-3.dll',
+   'BINARY'),
+  ('libssl-3.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libssl-3.dll',
+   'BINARY'),
+  ('libffi-8.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\DLLs\\libffi-8.dll',
+   'BINARY'),
+  ('VCRUNTIME140_1.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\VCRUNTIME140_1.dll',
+   'BINARY'),
+  ('python3.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\python3.dll',
+   'BINARY'),
+  ('pywin32_system32\\pywintypes313.dll',
+   'C:\\Users\\jukio\\AppData\\Roaming\\Python\\Python313\\site-packages\\pywin32_system32\\pywintypes313.dll',
+   'BINARY'),
+  ('pygame\\SDL2_image.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_image.dll',
+   'BINARY'),
+  ('pygame\\libpng16-16.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\libpng16-16.dll',
+   'BINARY'),
+  ('pygame\\SDL2_mixer.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_mixer.dll',
+   'BINARY'),
+  ('pygame\\SDL2_ttf.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\SDL2_ttf.dll',
+   'BINARY'),
+  ('pygame\\freetype.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\freetype.dll',
+   'BINARY'),
+  ('ucrtbase.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\ucrtbase.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-2-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-file-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processenvironment-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-processenvironment-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-timezone-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-timezone-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-datetime-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-datetime-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-errorhandling-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-errorhandling-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-localization-l1-2-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-localization-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-profile-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-profile-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-1.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-processthreads-l1-1-1.dll',
+   'BINARY'),
+  ('api-ms-win-core-debug-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-debug-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-rtlsupport-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-fibers-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-fibers-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-console-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-console-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-util-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-util-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-interlocked-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-interlocked-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-sysinfo-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-sysinfo-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-memory-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-memory-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-string-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-string-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-handle-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-handle-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-synch-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l2-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-file-l2-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-namedpipe-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-namedpipe-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-file-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-file-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-processthreads-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-processthreads-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-synch-l1-2-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-synch-l1-2-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-libraryloader-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-libraryloader-l1-1-0.dll',
+   'BINARY'),
+  ('api-ms-win-core-heap-l1-1-0.dll',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\api-ms-win-core-heap-l1-1-0.dll',
+   'BINARY'),
+  ('Levels\\Level1\\1_Industrial_Tileset_1.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\1_Industrial_Tileset_1.tsx',
+   'DATA'),
+  ('Levels\\Level1\\1_Industrial_Tileset_1B.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\1_Industrial_Tileset_1B.tsx',
+   'DATA'),
+  ('Levels\\Level1\\2_Industrial_Tileset_1_Background.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\2_Industrial_Tileset_1_Background.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Flag.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Flag.tsx',
+   'DATA'),
+  ('Levels\\Level1\\GUI_1x.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\GUI_1x.tsx',
+   'DATA'),
+  ('Levels\\Level1\\GUI_1xXX.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\GUI_1xXX.tsx',
+   'DATA'),
+  ('Levels\\Level1\\GUI_2x.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\GUI_2x.tsx',
+   'DATA'),
+  ('Levels\\Level1\\GUI_4x.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\GUI_4x.tsx',
+   'DATA'),
+  ('Levels\\Level1\\GUI_4x_sliced.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\GUI_4x_sliced.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Level6.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Level6.tmx',
+   'DATA'),
+  ('Levels\\Level1\\Objects.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Objects.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Props.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Props.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Tiles.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Tiles.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Tileset.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Tileset.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Tileset1.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Tileset1.tsx',
+   'DATA'),
+  ('Levels\\Level1\\Trees.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\Trees.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Buildings_alpha.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Buildings_alpha.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Green-Tree_alpha.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Green-Tree_alpha.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Props-Rocks_alpha.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Props-Rocks_alpha.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Red-Tree_alpha.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Red-Tree_alpha.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Tiles_alpha.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Tiles_alpha.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\Tileset.tsx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\Tileset.tsx',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\sem título.tiled-project',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\sem título.tiled-project',
+   'DATA'),
+  ('Levels\\Level1\\conjunto de tiles\\sem título.tiled-session',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\conjunto de tiles\\sem título.tiled-session',
+   'DATA'),
+  ('Levels\\Level1\\level.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level1.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level1.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level1_ajustado.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level1_ajustado.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level2.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level2.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level2_ajustado.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level2_ajustado.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level3.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level3.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level4.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level4.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level5.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level5.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level_ajustado.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level_ajustado.tmx',
+   'DATA'),
+  ('Levels\\Level1\\level_embedded..tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\level_embedded..tmx',
+   'DATA'),
+  ('Levels\\Level1\\tutorial_map.tmx',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Level1\\tutorial_map.tmx',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\ataque_sem_hit.flac',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\ataque_sem_hit.flac',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\ataquecomhit.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\ataquecomhit.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\ataquecomhit1.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\ataquecomhit1.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\ataquecomhit2.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\ataquecomhit2.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\ataquesemhit.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\ataquesemhit.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\curar_vida.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\curar_vida.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\hurt.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\hurt.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\hurt.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\hurt.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\hurt1.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\hurt1.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\jump.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\jump.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\jump_end.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\jump_end.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\pegar_moeda.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\pegar_moeda.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\animacao\\run.wav',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\animacao\\run.wav',
+   'DATA'),
+  ('Levels\\Music_levels\\fase1.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase1.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\fase2.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase2.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\fase3.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase3.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\fase4.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase4.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\fase5.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase5.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\fase6.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\fase6.mp3',
+   'DATA'),
+  ('Levels\\Music_levels\\tutorial.mp3',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Music_levels\\tutorial.mp3',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Background\\3.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Flag.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Flag.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Objects.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Objects.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Props.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Props\\Props.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Tileset\\Tileset.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel '
+   'Art\\Tileset\\Tileset.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Trees\\Trees.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Autumn Forest 2D Pixel Art\\Trees\\Trees.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level1_tiles\\1_Industrial_Tileset_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level1_tiles\\1_Industrial_Tileset_1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level2_tiles\\box.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level2_tiles\\box.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level2_tiles\\building1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level2_tiles\\building1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level2_tiles\\building2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level2_tiles\\building2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level2_tiles\\ener lines.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level2_tiles\\ener lines.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level2_tiles\\platform.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level2_tiles\\platform.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Background_0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Background_0.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Background_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Background_1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Grass_background_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Grass_background_1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Grass_background_2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Grass_background_2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Salt.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Salt.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\Tiles.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\Tiles.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level3_tiles\\brush.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level3_tiles\\brush.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\1-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\1-sheet.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\10.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\10.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\11-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\11-sheet.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\11.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\11.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\12.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\12.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\13.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\13.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\14.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\14.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\15-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\15-sheet.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\15.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\15.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\16.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\16.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\17.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\17.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\18.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\18.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\19.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\19.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\20.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\20.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\21.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\21.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\22.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\22.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\23.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\23.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\24.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\24.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\3.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\4.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\5.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\6.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\7.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\8.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\8.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\9.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\9.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\Box1-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\Box1-sheet.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\Pointer1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\Pointer1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\Pointer2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\Pointer2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\Pointer3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\Pointer3.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\Tileset.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\Tileset.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\arvorest.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\arvorest.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\bush.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\bush.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\forest.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\forest.png',
+   'DATA'),
+  ('Levels\\Tilesets\\Level4_tiles\\oak_woods_tileset.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\Level4_tiles\\oak_woods_tileset.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\10.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\10.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\11.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\11.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\6.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\7.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\8.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\8.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\9.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\9.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack01.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack01.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack02.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack02.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack03.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack03.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack04.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack04.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack05.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack05.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack06.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack06.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack07.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack07.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack08.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack08.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack09.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack09.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack10.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack10.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack11.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack11.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack12.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack12.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack13.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack13.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack14.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack14.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack15.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack15.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack16.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack16.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack17.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack17.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack18.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack18.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack3.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack4.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack5.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack6.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack7.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack8.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack8.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Attack9.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Attack9.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Dead.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Dead.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Dead.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Dead.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Hit.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Hit.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Hit.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Hit.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Idle.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Idle.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Idle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Idle.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton React.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton React.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton React.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton React.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Walk.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Walk.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level2\\Skeleton Walk.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level2\\Skeleton Walk.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level4\\Idle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level4\\Idle.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level4\\Run.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level4\\Run.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level4\\Walk.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level4\\Walk.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\0.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\2.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\3.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\4.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\5.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\6.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\ATTACK 1 (FLAMING SWORD).png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\ATTACK 1 (FLAMING SWORD).png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\ATTACK 1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\ATTACK 1.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\DarkSamurai (64x64).png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\DarkSamurai (64x64).png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\DarkSamurai.aseprite',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\DarkSamurai.aseprite',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\DarkSamurai.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\DarkSamurai.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\IDLE (FLAMING SWORD).png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\IDLE (FLAMING SWORD).png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\IDLE.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\IDLE.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\RUN (FLAMING SWORD).png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\RUN (FLAMING SWORD).png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\RUN.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\RUN.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\SHOUT.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\SHOUT.png',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\nikita-kurochkin-retro-shinobi-idle-1.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\nikita-kurochkin-retro-shinobi-idle-1.gif',
+   'DATA'),
+  ('Levels\\Tilesets\\enemies_level5\\nikita-kurochkin-spr-shinobi-run.gif',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\Levels\\Tilesets\\enemies_level5\\nikita-kurochkin-spr-shinobi-run.gif',
+   'DATA'),
+  ('SPRITES SAMURAI\\0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\0.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\4.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\5.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\6.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\7.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Buildings.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Buildings.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Hive.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Hive.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Interior-01.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Interior-01.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Props-Rocks.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Props-Rocks.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Tiles.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Tiles.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Assets\\Tree-Assets.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Assets\\Tree-Assets.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\0.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\4.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\5.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\6.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\7.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\Death.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\Death.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Evil wizard (erradon)\\Idle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Evil wizard (erradon)\\Idle.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet-Black.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet-Black.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet-White.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet-White.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Hit-Vanish\\Hit-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet-White.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet-White.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet-export-Back.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet-export-Back.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Idle\\Idle-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet-Black.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet-Black.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet-White.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet-White.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Run\\Run-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-Sheet-White.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-Sheet-White.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-SheetBlack.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Boar\\Walk\\Walk-Base-SheetBlack.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Small Bee\\Attack\\Attack-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Small Bee\\Attack\\Attack-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Small Bee\\Fly\\Fly-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Small Bee\\Fly\\Fly-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Small Bee\\Hit\\Hit-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Small Bee\\Hit\\Hit-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Snail\\Dead-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Snail\\Dead-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Snail\\Hide-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Snail\\Hide-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Snail\\all.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Snail\\all.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Mob\\Snail\\walk-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Mob\\Snail\\walk-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Background.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Background.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Dark-Tree.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Dark-Tree.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Golden-Tree.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Golden-Tree.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Green-Tree.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Green-Tree.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Red-Tree.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Red-Tree.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\Trees\\Yellow-Tree.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\Trees\\Yellow-Tree.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Background.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Background.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Background_0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Background_0.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Background_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Background_1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Background_forest.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Background_forest.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Grass_background_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Grass_background_1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Grass_background_2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Grass_background_2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\Overlay.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\Overlay.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\b1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\b1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\b2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\b2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\b3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\b3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\b4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\b4.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\b5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\b5.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\background_factory.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\background_factory.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\background_layer_1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\background_layer_1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\background_layer_2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\background_layer_2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\background_layer_3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\background_layer_3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\background_ship.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\background_ship.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\far-mountains.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\far-mountains.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\mountains.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\mountains.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\red.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\red.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\red1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\red1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\red2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\red2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\red3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\red3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\background\\trees.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\background\\trees.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_attack.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_attack.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_damage.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_damage.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_death1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_death1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_death2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_death2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_idle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_idle.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_jump.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_jump.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\crow\\crow_walk.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\crow\\crow_walk.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\cutscenes\\Ending_04.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\cutscenes\\Ending_04.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\cutscenes\\Intro_04.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\cutscenes\\Intro_04.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\f0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\f0.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\f1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\f1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\j0.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\j0.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\j1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\j1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\loja_sprites\\idle_loja.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\loja_sprites\\idle_loja.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\SpinningCoin.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\SpinningCoin.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\coin_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\coin_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\exit_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\exit_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\health_medium.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\health_medium.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\icon_perso_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\icon_perso_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\life_icon.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\life_icon.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\lojahud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\lojahud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\map.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\map.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\perguntarespostahud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\perguntarespostahud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\potion_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\potion_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\potion_hud1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\potion_hud1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\tempo_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\tempo_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\texto_exit.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\texto_exit.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\texto_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\texto_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\vida_hud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\vida_hud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\HUD\\vida_icon.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\HUD\\vida_icon.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\TrueType\\Kaph-Italic.ttf',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\TrueType\\Kaph-Italic.ttf',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\TrueType\\Kaph-Regular.ttf',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\TrueType\\Kaph-Regular.ttf',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\TrueType\\ThaleahFat.ttf',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\TrueType\\ThaleahFat.ttf',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\TrueType\\go3v2.ttf',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\TrueType\\go3v2.ttf',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\bg_far_clouds.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\bg_far_clouds.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\bg_near_clouds.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\bg_near_clouds.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\bg_sky.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\bg_sky.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\entrar.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\entrar.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\fundo_titulo.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\fundo_titulo.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\fundo_titulo_edit.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\fundo_titulo_edit.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\map.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\map.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\plx-1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\plx-1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\plx-2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\plx-2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\plx-3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\plx-3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\plx-4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\plx-4.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\plx-5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\plx-5.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sair.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sair.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\BackgroundTrees.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\BackgroundTrees.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Clouds.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Clouds.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Fuji.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Fuji.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Gras.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Gras.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Ground.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Ground.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\House.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\House.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Back.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Back.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Front.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Front.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Middle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Mountain_Middle.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Shrine_Multiple.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Shrine_Multiple.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Shrine_Single.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Shrine_Single.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Sky.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Sky.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\sakura\\Trees.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\sakura\\Trees.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\testehud.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\testehud.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\titulo.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\titulo.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\titulo1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\titulo1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\titulo12.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\titulo12.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\menu_img\\tutorial.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\menu_img\\tutorial.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\AIR ATTACK.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\AIR ATTACK.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\ATTACK 1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\ATTACK 1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\ATTACK 2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\ATTACK 2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\ATTACK 3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\ATTACK 3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\ATTACK1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\ATTACK1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\CLIMBING.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\CLIMBING.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\DASH.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\DASH.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\DEATH.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\DEATH.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\DEFEND.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\DEFEND.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\HEALING NO EFFECT.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\HEALING NO EFFECT.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\HEALING.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\HEALING.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\HURT.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\HURT.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\HURT1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\HURT1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\IDLE.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\IDLE.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\IDLE1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\IDLE1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\JUMP-FALL.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\JUMP-FALL.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\JUMP-START.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\JUMP-START.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\JUMP-TRANSITION.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\JUMP-TRANSITION.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\JUMP.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\JUMP.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\RUN.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\RUN.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\RUN1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\RUN1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\SPECIAL ATTACK.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\SPECIAL ATTACK.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\THROW.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\THROW.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\WALK.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\WALK.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\WALL CONTACT.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\WALL CONTACT.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\WALL JUMP.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\WALL JUMP.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\oldsamurai\\WALL SLIDE.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\oldsamurai\\WALL SLIDE.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile4.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile4.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile5.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile6.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile6.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile7.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile7.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\portal\\tile8.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\portal\\tile8.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\reaper\\HostileIdleReaper-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\reaper\\HostileIdleReaper-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\robot\\Anim_Robot_Walk1_v1.1_spritesheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\robot\\Anim_Robot_Walk1_v1.1_spritesheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\robot\\npc1-Sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\robot\\npc1-Sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\robot\\npc_robot.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\robot\\npc_robot.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Attack1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Attack1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Attack2.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Attack2.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Attack3.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Attack3.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Death-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Death-sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Death.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Death.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Going Down.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Going Down.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Going Up.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Going Up.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\HURT11.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\HURT11.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Hurt.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Hurt.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Idle-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Idle-sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Idle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Idle.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Run-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Run-sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\Run.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\Run.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\ATTACK 1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\ATTACK 1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Attack1.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Attack1.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Death-sheet.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Death-sheet.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Death.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Death.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Going Down.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Going Down.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Going Up.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Going Up.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\Hurt.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\Hurt.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\IDLE.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\IDLE.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samurai warrior 3\\old\\RUN.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samurai warrior 3\\old\\RUN.png',
+   'DATA'),
+  ('SPRITES SAMURAI\\samuraigirl\\SeveredFangIdle.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\SPRITES SAMURAI\\samuraigirl\\SeveredFangIdle.png',
+   'DATA'),
+  ('graficos\\almas_perdidas.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\graficos\\almas_perdidas.png',
+   'DATA'),
+  ('graficos\\exemplo_grafico.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\graficos\\exemplo_grafico.png',
+   'DATA'),
+  ('graficos\\grafico_dispersao_fase5.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\graficos\\grafico_dispersao_fase5.png',
+   'DATA'),
+  ('graficos\\grafico_zumbis.png',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\graficos\\grafico_zumbis.png',
+   'DATA'),
+  ('scripts\\04_LevelLoading.pyproj',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\04_LevelLoading.pyproj',
+   'DATA'),
+  ('scripts\\AnimatedText.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\AnimatedText.py',
+   'DATA'),
+  ('scripts\\ClassBackground.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassBackground.py',
+   'DATA'),
+  ('scripts\\ClassBee.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassBee.py',
+   'DATA'),
+  ('scripts\\ClassHero.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassHero.py',
+   'DATA'),
+  ('scripts\\ClassLevel1.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassLevel1.py',
+   'DATA'),
+  ('scripts\\ClassLoja.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassLoja.py',
+   'DATA'),
+  ('scripts\\ClassLojalevel.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassLojalevel.py',
+   'DATA'),
+  ('scripts\\ClassMenu.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassMenu.py',
+   'DATA'),
+  ('scripts\\ClassNpcRobot.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassNpcRobot.py',
+   'DATA'),
+  ('scripts\\ClassPerguntaresposta.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassPerguntaresposta.py',
+   'DATA'),
+  ('scripts\\ClassQuestSystem.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassQuestSystem.py',
+   'DATA'),
+  ('scripts\\ClassRobot.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassRobot.py',
+   'DATA'),
+  ('scripts\\ClassSpriteSheet.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassSpriteSheet.py',
+   'DATA'),
+  ('scripts\\ClassTile.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ClassTile.py',
+   'DATA'),
+  ('scripts\\Classtext.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Classtext.py',
+   'DATA'),
+  ('scripts\\Coin.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Coin.py',
+   'DATA'),
+  ('scripts\\Config.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Config.py',
+   'DATA'),
+  ('scripts\\Crownpc.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Crownpc.py',
+   'DATA'),
+  ('scripts\\Erradon.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Erradon.py',
+   'DATA'),
+  ('scripts\\HUD.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\HUD.py',
+   'DATA'),
+  ('scripts\\HitboxEmemy.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\HitboxEmemy.py',
+   'DATA'),
+  ('scripts\\Musicmanager.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Musicmanager.py',
+   'DATA'),
+  ('scripts\\ParallaxMenuBackground.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\ParallaxMenuBackground.py',
+   'DATA'),
+  ('scripts\\PerguntaGrafico.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\PerguntaGrafico.py',
+   'DATA'),
+  ('scripts\\Potion.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Potion.py',
+   'DATA'),
+  ('scripts\\Reapernpc.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Reapernpc.py',
+   'DATA'),
+  ('scripts\\Resetscreen.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Resetscreen.py',
+   'DATA'),
+  ('scripts\\SamuraigirlNpc.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\SamuraigirlNpc.py',
+   'DATA'),
+  ('scripts\\Samuraixadom.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Samuraixadom.py',
+   'DATA'),
+  ('scripts\\Skeleton.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Skeleton.py',
+   'DATA'),
+  ('scripts\\Zombie.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\Zombie.py',
+   'DATA'),
+  ('scripts\\__pycache__\\AnimatedText.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\AnimatedText.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassBackground.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassBackground.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassBee.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassBee.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassHero.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassHero.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassLevel1.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassLevel1.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassLoja.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassLoja.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassLojalevel.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassLojalevel.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassMenu.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassMenu.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassNpcRobot.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassNpcRobot.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassPerguntaresposta.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassPerguntaresposta.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassQuestSystem.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassQuestSystem.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassRobot.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassRobot.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassSpriteSheet.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassSpriteSheet.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ClassTile.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ClassTile.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Classtext.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Classtext.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Coin.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Coin.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Config.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Config.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Crownpc.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Crownpc.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Erradon.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Erradon.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\HUD.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\HUD.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\HitboxEmemy.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\HitboxEmemy.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Musicmanager.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Musicmanager.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\ParallaxMenuBackground.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\ParallaxMenuBackground.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\PerguntaGrafico.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\PerguntaGrafico.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Potion.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Potion.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Reapernpc.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Reapernpc.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\SamuraigirlNpc.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\SamuraigirlNpc.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Samuraixadom.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Samuraixadom.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Skeleton.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Skeleton.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Tutorial.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Tutorial.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\Zombie.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\Zombie.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\camera.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\camera.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\classfasestext.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\classfasestext.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\cutscene.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\cutscene.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\cutscene_final.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\cutscene_final.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\__pycache__\\portal.cpython-313.pyc',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\__pycache__\\portal.cpython-313.pyc',
+   'DATA'),
+  ('scripts\\camera.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\camera.py',
+   'DATA'),
+  ('scripts\\classfasestext.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\classfasestext.py',
+   'DATA'),
+  ('scripts\\cutscene.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\cutscene.py',
+   'DATA'),
+  ('scripts\\cutscene_final.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\cutscene_final.py',
+   'DATA'),
+  ('scripts\\grafico.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\grafico.py',
+   'DATA'),
+  ('scripts\\portal.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\portal.py',
+   'DATA'),
+  ('scripts\\test.py',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\scripts\\test.py',
+   'DATA'),
+  ('pygame\\pygame_icon.bmp',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\pygame_icon.bmp',
+   'DATA'),
+  ('pygame\\freesansbold.ttf',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\pygame\\freesansbold.ttf',
+   'DATA'),
+  ('setuptools\\_vendor\\jaraco\\text\\Lorem ipsum.txt',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\jaraco\\text\\Lorem '
+   'ipsum.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\top_level.txt',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\INSTALLER',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\LICENSE',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\METADATA',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\METADATA',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\REQUESTED',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\RECORD',
+   'DATA'),
+  ('setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\WHEEL',
+   'C:\\Users\\jukio\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\setuptools\\_vendor\\importlib_metadata-8.0.0.dist-info\\WHEEL',
+   'DATA'),
+  ('base_library.zip',
+   'C:\\Users\\jukio\\OneDrive\\Área de Trabalho\\python\\samurai warrios '
+   'scripts\\build\\main\\base_library.zip',
+   'DATA')],
+ 'python313.dll',
+ False,
+ False,
+ False,
+ [],
+ None,
+ None,
+ None)

@@ -1,7 +1,7 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
-from HitboxEmemy import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
+from scripts.HitboxEmemy import *
 # Frames da moeda no spritesheet
 
 PotionSprites = [(0, 0, 8, 8), (8, 0, 8, 8), (16, 0, 8, 8), (24, 0, 8, 8)]

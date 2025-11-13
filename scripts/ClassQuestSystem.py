@@ -1,5 +1,5 @@
 import pygame
-from Config import *
+from scripts.Config import *
 
 WHITE = (255, 255, 255)
 GRAY = (160, 160, 160)

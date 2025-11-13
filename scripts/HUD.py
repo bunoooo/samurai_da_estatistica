@@ -1,6 +1,6 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import *
+from scripts.Config import *
+from scripts.ClassSpriteSheet import *
 
 CoinSprites = [(0, 0, 8, 8)]
 PotionSprites = [(0, 0, 8, 8)]

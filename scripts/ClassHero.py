@@ -1,10 +1,10 @@
 import pygame
-from Config import *
-from ClassSpriteSheet import SpriteSheet
+from scripts.Config import *
+from scripts.ClassSpriteSheet import SpriteSheet
 import random
-from Classtext import *
-from ClassPerguntaresposta import *
-from Musicmanager import *
+from scripts.Classtext import *
+from scripts.ClassPerguntaresposta import *
+from scripts.Musicmanager import *
 
 music = MusicManager()
 
