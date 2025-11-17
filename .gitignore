@@ -1,0 +1,16 @@
+# IGNORAR BUILD
+dist/
+build/
+
+# IGNORAR ARQUIVOS PESADOS
+*.exe
+*.zip
+*.pkg
+*.dll
+
+# IGNORAR CACHE PYTHON
+__pycache__/
+*.pyc
+
+# IGNORAR ARQUIVOS DO PYINSTALLER
+*.spec

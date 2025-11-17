@@ -1,0 +1,197 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level1.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Todos os Ficheiros (*)",
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Tiles.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/1_Industrial_Tileset_1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/2_Industrial_Tileset_1_Background.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Flag.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_1x.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_4x.tsx": {
+            "scaleInDock": 0.33,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_4x_sliced.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Objects.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Props.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tileset.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tileset1.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Trees.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx": {
+            "scale": 1,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 480.5,
+                "y": 254.5
+            }
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Flag": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Objects": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Props": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Props-Rocks": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Tiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Tileset": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx#Trees": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level1.tmx": {
+            "expandedObjectLayers": [
+                6,
+                7
+            ],
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 837.9999999999999,
+                "y": 349.33333333333337
+            }
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level1.tmx#Tiles_alpha": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level2.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 1200,
+                "y": 304.5
+            }
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx": {
+            "scale": 0.5,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 706,
+                "y": 271
+            }
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx#Buildings_alpha": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx#Green-Tree_alpha": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx#Props-Rocks_alpha": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx#Red-Tree_alpha": {
+            "scaleInDock": 1
+        },
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx#Tiles_alpha": {
+            "scaleInDock": 1
+        },
+        "Red-Tree_alpha.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Tiles_alpha.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/SPRITES SAMURAI/menu_img",
+    "last.externalTilesetPath": "C:/Users/jukio/Downloads/Cryo's Mini GUI/GUI/Sliced",
+    "last.imagePath": "C:/Users/jukio/Downloads/Cryo's Mini GUI/GUI",
+    "map.height": 34,
+    "map.lastUsedExportFilter": "Todos os Ficheiros (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 60,
+    "openFiles": [
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_1x.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tileset1.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level1.tmx"
+    ],
+    "project": "sem título.tiled-project",
+    "recentFiles": [
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_1x.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level.tmx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level_embedded..tmx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tileset1.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/level1.tmx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/2_Industrial_Tileset_1_Background.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/1_Industrial_Tileset_1.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/GUI_4x.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Tileset.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Objects.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Props.tsx",
+        "C:/Users/jukio/OneDrive/Área de Trabalho/python/SAMURAI WARRIOR/PyGameDev-main/MagicForest/Levels/Level1/Flag.tsx"
+    ],
+    "resizeMap.removeObjects": false,
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFilter": "Todos os Ficheiros (*)",
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.margin": 0,
+    "tileset.spacing": 0,
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
