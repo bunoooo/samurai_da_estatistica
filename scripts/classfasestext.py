@@ -193,50 +193,46 @@ class Dialogos:
             ],
 
           
-             5: [  # Fase 5 — O Retorno de Jack
-                    ("Rosa", [
-                        "Jack! Você voltou! Há boatos de que viajou pelo tempo...",
-                        "Mas algo terrível aconteceu enquanto esteve longe.",
-                        "Erradon espalhou a desinformação entre os estudiosos da vila.",
-                        "Agora todos andam confusos com gráficos e números sem sentido."
-                    ]),
-                    ("Jack", [
-                        "Erradon... então ele começou seus planos.",
-                        "Sempre soube que ele tentaria distorcer o conhecimento,",
-                        "não só os fatos. Mas o que exatamente ele fez desta vez,",
-                        "Rosa?"
-                    ]),
-                    ("Rosa", [
-                        "Criei um gráfico sobre o vento e o crescimento das flores da colina.",
-                        "Mas desde que Erradon interferiu, algo parece errado.",
-                        "O gráfico mostra uma relação forte, mas desconfio da escala.",
-                        "Talvez eu tenha caído em uma das armadilhas dele."
-                    ]),
-                    ("Jack", [
-                        "Deixe-me ver esse gráfico, Rosa. Hmm...",
-                        "Os pontos formam um padrão, mas perceba a escala vertical.",
-                        "Ela é irregular — parece que o vento influencia demais.",
-                        "Precisamos reconstruir e observar com cuidado a correlação."
-                    ]),
-                    ("Rosa", [
-                        "Então o erro não está apenas nos dados, mas na forma de mostrar.",
-                        "Acho que Erradon manipula os gráficos para enganar as pessoas.",
-                        "Pode me ensinar a reconhecer quando um gráfico está distorcido?"
-                    ]),
-                    ("Jack", [
-                        "Sim. Um gráfico honesto mostra a verdade dos dados,",
-                        "não o desejo do autor. Devemos verificar escalas, eixos,",
-                        "amostras e contextos. Só então veremos se há um padrão real",
-                        "ou apenas uma ilusão criada por Erradon."
-                    ]),
-                    ("Jack", [
-                        "Venha, Rosa. Vamos reconstruir este gráfico e revelar a verdade",
-                        "escondida entre os pontos dispersos."
-                    ])
-                ],
-
+             5:  [
+    ("Rosa", [
+        "Jack! Você voltou! Há boatos de que viajou pelo tempo...",
+        "Mas algo terrível aconteceu enquanto esteve longe.",
+        "Erradon espalhou desinformação entre os estudiosos da vila.",
+        "Agora todos andam confusos com gráficos e números sem sentido."
+    ]),
+    ("Jack", [
+        "Erradon... então ele começou seus planos.",
+        "Sempre soube que ele tentaria distorcer o conhecimento,",
+        "não só os fatos. Mas o que exatamente ele fez desta vez, Rosa?"
+    ]),
+    ("Rosa", [
+        "Eu criei um gráfico sobre o vento e o crescimento das flores da colina.",
+        "Mas desde que Erradon interferiu, algo parece errado.",
+        "O gráfico parece sugerir uma relação forte, mas a escala está estranha.",
+        "Talvez eu tenha caído em uma das ilusões dele."
+    ]),
+    ("Jack", [
+        "Deixe-me ver esse gráfico, Rosa. Hmm...",
+        "Repare como o eixo Y está bem comprimido enquanto o eixo X é muito maior.",
+        "Essa diferença de escala cria a falsa impressão de uma tendência.",
+        "Mas se olharmos só os pontos, não existe padrão real."
+    ]),
+    ("Rosa", [
+        "Então o problema não é nos dados em si, e sim na forma como o gráfico foi mostrado!",
+        "Erradon deve ter manipulado a escala para enganar as pessoas!",
+        "Como posso aprender a identificar quando um gráfico está distorcido?"
+    ]),
+    ("Jack", [
+        "Um gráfico honesto mostra a verdade dos dados.",
+        "Devemos sempre verificar as escalas, a dispersão, a amostra e o contexto.",
+        "Só assim descobrimos se há de fato um padrão ou se é apenas uma ilusão visual."
+    ]),
+    ("Jack", [
+        "Venha, Rosa. Vamos reconstruir este gráfico e revelar a verdade",
+        "escondida entre esses pontos dispersos."
+    ])
+],
           
-
             6: [
                 ("Erradon", [
                     "Finalmente nos encontramos, pequeno Jack.",

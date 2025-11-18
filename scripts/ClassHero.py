@@ -3,7 +3,7 @@ from scripts.Config import *
 from scripts.ClassSpriteSheet import SpriteSheet
 import random
 from scripts.Classtext import *
-from scripts.ClassPerguntaresposta import *
+from scripts.ClassPerguntaResposta1 import *
 from scripts.Musicmanager import *
 
 music = MusicManager()

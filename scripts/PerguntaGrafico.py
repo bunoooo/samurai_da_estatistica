@@ -52,6 +52,8 @@ class PerguntaGrafico:
         # Listas
         self.opcoes = []
         self.feedbacks = []
+        self.feedback_images = []  
+
 
     def _carregar_grafico_imagem(self, path):
         image = pygame.image.load(path).convert_alpha()
@@ -70,12 +72,15 @@ class PerguntaGrafico:
         if self.loja is None or not hasattr(self.loja, "compradas") or not self.loja.compradas:
             self.opcoes = ["(Nenhum conceito disponível)"]
             self.feedbacks = ["Não há conceitos comprados para responder esta pergunta."]
+            self.feedback_images = [None]
         else:
             self.opcoes = [d['conceito'] for d in self.loja.compradas]
             self.feedbacks = [d['feedback'] for d in self.loja.compradas]
+            self.feedback_images = [d.get("imagem") for d in self.loja.compradas]
 
         if self.selected_index >= len(self.opcoes):
             self.selected_index = 0
+
 
     def handle_input(self):
         keys = pygame.key.get_pressed()
@@ -90,10 +95,9 @@ class PerguntaGrafico:
         if not self.active:
             return
 
-        # --- Se estiver no modo feedback, Enter fecha a pergunta ---
         if self.feedback_mode:
             if keys[pygame.K_RETURN] and not self.enter_pressed_last_frame:
-                # Reset total para próxima pergunta
+                # Reset completo
                 self.active = False
                 self.feedback_mode = False
                 self.selected_index = 0
@@ -103,17 +107,17 @@ class PerguntaGrafico:
             self.enter_pressed_last_frame = keys[pygame.K_RETURN]
             return
 
-        # Navegação
         if keys[pygame.K_UP] and not self.up_pressed_last_frame:
             self.selected_index = max(0, self.selected_index - 1)
+
         if keys[pygame.K_DOWN] and not self.down_pressed_last_frame:
             self.selected_index = min(len(self.opcoes) - 1, self.selected_index + 1)
 
-        # Seleção
         if keys[pygame.K_RETURN] and not self.enter_pressed_last_frame:
             self.feedback_mode = True
             self.index_resposta = self.selected_index
             opcao_escolhida = self.opcoes[self.index_resposta]
+
             if opcao_escolhida == "(Nenhum conceito disponível)":
                 self.acertou = None
                 self.errou = None
@@ -133,21 +137,56 @@ class PerguntaGrafico:
         if not self.active:
             return
 
-        # Desenha painel de fundo
         self.displaySurface.blit(self.painel, self.painel_rect)
         start_x = self.painel_rect.left + 30
         start_y = self.painel_rect.top + 30
 
-        # --- Se estiver mostrando feedback ---
+        # =====================
+        # MODO FEEDBACK
+        # =====================
         if self.feedback_mode and self.index_resposta is not None:
             feedback_text = self.feedbacks[self.index_resposta]
-            linhas_feedback = self._quebrar_texto(feedback_text, self.painel_rect.width - 60)
+            linhas_feedback = self._quebrar_texto(feedback_text, self.painel_rect.width - 220)
 
             for i, linha in enumerate(linhas_feedback):
                 y = start_y + i * 25
                 self.displaySurface.blit(self.font.render(linha, True, self.text_color), (start_x, y))
 
-            # Resultado (acertou/errou)
+            img_path = None
+            try:
+                img_path = self.feedback_images[self.index_resposta]
+            except:
+                img_path = None
+
+            if img_path:
+                try:
+                    img = pygame.image.load(img_path).convert_alpha()
+
+                    # --- Alinhamento vertical com gráfico ---
+                    if self.grafico_surface:
+                        grafico_rect = self.grafico_surface.get_rect(
+                            midtop=(self.painel_rect.centerx,
+                                    self.painel_rect.top + 30 +
+                                    (len(self._quebrar_texto(self.pergunta, self.painel_rect.width - 60)) * 25) + 10)
+                        )
+                        y_alinhado = grafico_rect.top
+
+                        # --- AJUSTE PEDIDO: REDIMENSIONAR PARA TER A MESMA ALTURA DO GRÁFICO ---
+                        h_grafico = self.grafico_surface.get_height()
+                        w_img, h_img = img.get_size()
+                        nova_largura = int(w_img * (h_grafico / h_img))
+                        img = pygame.transform.smoothscale(img, (nova_largura, h_grafico))
+                    else:
+                        y_alinhado = start_y
+
+                    img_rect = img.get_rect()
+                    img_rect.midtop = (self.painel_rect.right - 350, y_alinhado + 50)
+
+                    self.displaySurface.blit(img, img_rect)
+                except:
+                    pass
+
+            # Resultado
             if self.acertou is not None:
                 resultado_texto = "Você acertou!" if self.acertou else "Você errou!"
                 self.displaySurface.blit(
@@ -155,12 +194,15 @@ class PerguntaGrafico:
                     (start_x, start_y + len(linhas_feedback) * 25 + 10)
                 )
 
-            # Instrução para continuar
+            # Continuar
             sair_surf = self.font.render("Pressione Enter para continuar...", True, self.highlight_color)
             self.displaySurface.blit(sair_surf, (start_x + 290, self.painel_rect.bottom - 40))
             return
 
-        # --- Pergunta ---
+        # =====================
+        # MODO PERGUNTA
+        # =====================
+
         linhas_pergunta = self._quebrar_texto(self.pergunta, self.painel_rect.width - 60)
         for i, linha in enumerate(linhas_pergunta):
             y = start_y + i * 25
@@ -168,21 +210,24 @@ class PerguntaGrafico:
 
         altura_pergunta = len(linhas_pergunta) * 25
 
-        # --- Gráfico logo abaixo da pergunta ---
+        # Gráfico
         if self.grafico_surface:
-            grafico_rect = self.grafico_surface.get_rect(midtop=(self.painel_rect.centerx, start_y + altura_pergunta + 10))
+            grafico_rect = self.grafico_surface.get_rect(
+                midtop=(self.painel_rect.centerx, start_y + altura_pergunta + 10))
             self.displaySurface.blit(self.grafico_surface, grafico_rect)
 
-        # --- Opções ---
-        offset_y = start_y + altura_pergunta + (self.grafico_surface.get_height() + 20 if self.grafico_surface else 40)
+        graf_h = (self.grafico_surface.get_height() if self.grafico_surface else 0)
+        offset_y = start_y + altura_pergunta + (graf_h + 20 if graf_h else 40)
+
+        # Opções
         for i, opcao in enumerate(self.opcoes):
             y = offset_y + i * 25
-            color = self.highlight_color if i == self.selected_index else self.text_color
-            self.displaySurface.blit(self.font.render(f"{i+1}. {opcao}", True, color), (start_x + 10, y))
+            cor = self.highlight_color if i == self.selected_index else self.text_color
+            self.displaySurface.blit(self.font.render(f"{i + 1}. {opcao}", True, cor), (start_x + 10, y))
 
-        # --- Instruções ---
         instrucoes = self.font.render("Selecione uma opção e pressione Enter", True, self.highlight_color)
         self.displaySurface.blit(instrucoes, (start_x + 290, self.painel_rect.bottom - 40))
+
 
     def _quebrar_texto(self, texto, max_width):
         palavras = texto.split(" ")

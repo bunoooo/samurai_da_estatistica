@@ -85,7 +85,7 @@ class Cutscene:
         )
 
         self.text8 = (
-            "Após ajudar rosa, jack descobre sem querer a posição de errado." 
+            "Após ajudar rosa, jack descobre sem querer a posição de erradon." 
             "Agora, só o resta enfretar erradon com arte dos dados aprendida."
         )
 
@@ -96,7 +96,6 @@ class Cutscene:
         )
 
     
-
         self.text10 = (
             "O vento sopra suave sobre os campos onde antes reinava o caos. "
             "O Samurai compreende, enfim, que sua verdadeira arma nunca foi a espada, mas o conhecimento. "

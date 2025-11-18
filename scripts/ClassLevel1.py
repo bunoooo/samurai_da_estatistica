@@ -17,7 +17,7 @@ from scripts.classfasestext import *
 from scripts.ClassLoja import *
 from scripts.ClassLojalevel import *
 from scripts.ClassQuestSystem import *
-from scripts.ClassPerguntaresposta import *
+from scripts.ClassPerguntaResposta1 import *
 from scripts.cutscene import *
 from scripts.portal import *
 from scripts.Skeleton import *
@@ -29,6 +29,8 @@ from scripts.Erradon import *
 from scripts.Samuraixadom import *
 from scripts.SamuraigirlNpc import *
 from scripts.cutscene_final import *
+
+
 
 repositorio = Dialogos()
 
@@ -135,7 +137,7 @@ class Tutorial():
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
 
         # Pergunta baseada em conceito da loja
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
@@ -315,7 +317,14 @@ class Level1():
         "descricao_completa": "Probabilidade é a medida numérica da chance de ocorrência de um evento dentro de um conjunto de possibilidades. É um conceito fundamental em estatística e análise de risco, usado para modelar incertezas e tomar decisões baseadas em chances relativas.",
         "preco": 1,
         "feedback": "A probabilidade informa a chance de um evento ocorrer, mas não descreve um valor central de consumo."
-    }
+    },
+    {
+    "conceito": "Coeficiente de Variação",
+    "descricao": "Relação entre o desvio padrão e a média.",
+    "descricao_completa": "O coeficiente de variação compara a dispersão dos dados com o valor médio, mostrando proporcionalmente o quanto os valores variam em relação à média. É útil para comparar variabilidade entre conjuntos de dados com escalas diferentes.",
+    "preco": 3,
+    "feedback": "O coeficiente de variação mostra a variação relativa aos valores médios, mas não indica o valor central do consumo."
+}
 ]
 
         quests = [
@@ -425,7 +434,7 @@ class Level1():
 
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
   
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
@@ -556,11 +565,18 @@ class Level1():
         "descricao_completa": "Probabilidade é a medida numérica da chance de ocorrência de um evento dentro de um conjunto de possibilidades. É um conceito fundamental em estatística e análise de risco, usado para modelar incertezas e tomar decisões baseadas em chances relativas.",
         "preco": 1,
         "feedback": "A probabilidade informa a chance de um evento ocorrer, mas não descreve um valor central de consumo."
-    }
+    },
+    {
+    "conceito": "Coeficiente de Variação",
+    "descricao": "Relação entre o desvio padrão e a média.",
+    "descricao_completa": "O coeficiente de variação compara a dispersão dos dados com o valor médio, mostrando proporcionalmente o quanto os valores variam em relação à média. É útil para comparar variabilidade entre conjuntos de dados com escalas diferentes.",
+    "preco": 3,
+    "feedback": "O coeficiente de variação mostra a variação relativa aos valores médios, mas não indica o valor central do consumo."
+}
 ]
   
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
@@ -945,7 +961,7 @@ class Level2():
 
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
   
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
@@ -1121,7 +1137,7 @@ class Level2():
         self.quest_system = QuestSystem(quests, self.displaySurface )
 
 
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,
@@ -1366,9 +1382,7 @@ class Level3():
         "conceito": "Ritual de Purificação Violenta",
         "descricao": "Neutraliza a maldição sobre mortes violentas.",
         "descricao_completa": (
-            "Este ritual é poderoso para almas perdidas em mortes violentas. "
-            "Reduz drasticamente o efeito da maldição, permitindo que o ceifador colete a maioria das almas. "
-            "Requer materiais raros e custa tempo para ser realizado, mas é altamente eficaz."
+            "Este ritual é poderoso para almas perdidas em mortes violentas. Reduz drasticamente o efeito da maldição, permitindo que o ceifador colete a maioria das almas. Requer materiais raros e custa tempo para ser realizado, mas é altamente eficaz."
         ),
         "preco": 3,
         "feedback": (
@@ -1379,8 +1393,7 @@ class Level3():
         "conceito": "Ritual de Proteção Acidental",
         "descricao": "Reduz os efeitos da maldição sobre acidentes.",
         "descricao_completa": (
-            "Protege as almas que morrem em acidentes repentinos. "
-            "Efetivo, mas não resolve casos de mortes violentas ou naturais."
+            "Protege as almas que morrem em acidentes repentinos. Efetivo, mas não resolve casos de mortes violentas ou naturais."
         ),
         "preco": 3,
         "feedback": (
@@ -1391,8 +1404,7 @@ class Level3():
         "conceito": "Ritual da Harmonia Natural",
         "descricao": "Reequilibra o fluxo de almas em mortes naturais.",
         "descricao_completa": (
-            "Este ritual é voltado para almas de mortes naturais, restaurando o fluxo normal e permitindo coleta eficiente. "
-            "Não afeta mortes violentas ou acidentes."
+            "Este ritual é voltado para almas de mortes naturais, restaurando o fluxo normal e permitindo coleta eficiente. Não afeta mortes violentas ou acidentes."
         ),
         "preco": 2,
         "feedback": (
@@ -1403,8 +1415,7 @@ class Level3():
         "conceito": "Poção de Cura de Doença",
         "descricao": "Minimiza a maldição sobre mortes por doença.",
         "descricao_completa": (
-            "Aplica efeitos mágicos para reduzir a maldição sobre almas que morreram por doença. "
-            "Não influencia mortes violentas ou acidentais."
+            "Aplica efeitos mágicos para reduzir a maldição sobre almas que morreram por doença. Não influencia mortes violentas ou acidentais."
         ),
         "preco": 2,
         "feedback": (
@@ -1734,38 +1745,26 @@ class Level4():
         dicas_estatisticas = [
     {
         "conceito": "Distrito Hélios",
-        "descricao": "Crescimento precoce e forte.",
-        "descricao_completa": (
-            "O gráfico mostra que o Distrito Hélios teve aumento rápido de infectados nos primeiros dias. "
-            "Isso indica que a origem da epidemia provavelmente começou aqui. "
-            "É crucial agir rápido, mas o surto inicial é intenso."
-        ),
+        "descricao": "Primeiro distrito a apresentar aumento real.",
+        "descricao_completa": "O Distrito Hélios é o único que começa a subir nos primeiros dias da epidemia. O início da curva aparece antes dos demais distritos. Isso indica que ele é o ponto mais provável de origem.",
         "preco": 3,
-        "feedback": "tendência indica provável ponto de origem da epidemia."
+        "feedback": "Boa leitura do início da curva! Hélios é o primeiro distrito a apresentar crescimento."
     },
     {
         "conceito": "Distrito Nébula",
-        "descricao": "Pico súbito suspeito.",
-        "descricao_completa": (
-            "O gráfico apresenta um pico repentino de infectados no Distrito Nébula, "
-            "mas este dado foi manipulado por Erradon para confundir a análise. "
-            "Não é confiável como ponto de origem da epidemia."
-        ),
+        "descricao": "Picos tardios e suspeitos.",
+        "descricao_completa": "O Distrito Nébula permanece estável no início. Seu pico surge apenas mais tarde e parece manipulado. Picos tardios não indicam origem de uma epidemia.",
         "preco": 2,
-        "feedback": "Dados manipulados tornam este distrito suspeito, mas não é o início real da epidemia."
+        "feedback": "Nébula tem picos chamativos, mas acontece tarde demais para ser origem."
     },
     {
         "conceito": "Distrito Void",
-        "descricao": "Crescimento lento e estável.",
-        "descricao_completa": (
-            "O gráfico mostra crescimento baixo e constante no Distrito Void. "
-            "Embora os dados sejam confiáveis, a tendência não indica a origem da epidemia."
-        ),
+        "descricao": "Crescimento leve e mais tardio.",
+        "descricao_completa": "O Distrito Void apresenta aumento apenas depois que outros distritos já estavam crescendo. Crescimentos tardios não são típicos do ponto inicial de uma epidemia. Por isso, Void não indica origem.",
         "preco": 1,
-        "feedback": "Apesar de confiável, a tendência mostra que não é o ponto inicial da epidemia."
+        "feedback": "Void cresce tarde, então não é um bom candidato para origem."
     }
 ]
-
 
         quests = [
             {"id": 1, "text": "Fale com o dr da cidade", "done": False},
@@ -1983,39 +1982,28 @@ class Level4():
 
         # Recria loja e pergunta
         dicas_estatisticas = [
-            {
-                "conceito": "Distrito Hélios",
-                "descricao": "Crescimento precoce e forte.",
-                "descricao_completa": (
-                    "O gráfico mostra que o Distrito Hélios teve aumento rápido de infectados nos primeiros dias. "
-                    "Isso indica que a origem da epidemia provavelmente começou aqui. "
-                    "É crucial agir rápido, mas o surto inicial é intenso."
-                ),
-                "preco": 3,
-                "feedback": "tendência indica provável ponto de origem da epidemia."
-            },
-            {
-                "conceito": "Distrito Nébula",
-                "descricao": "Pico súbito suspeito.",
-                "descricao_completa": (
-                    "O gráfico apresenta um pico repentino de infectados no Distrito Nébula, "
-                    "mas este dado foi manipulado por Erradon para confundir a análise. "
-                    "Não é confiável como ponto de origem da epidemia."
-                ),
-                "preco": 2,
-                "feedback": "Dados manipulados tornam este distrito suspeito, mas não é o início real da epidemia."
-            },
-            {
-                "conceito": "Distrito Void",
-                "descricao": "Crescimento lento e estável.",
-                "descricao_completa": (
-                    "O gráfico mostra crescimento baixo e constante no Distrito Void. "
-                    "Embora os dados sejam confiáveis, a tendência não indica a origem da epidemia."
-                ),
-                "preco": 1,
-                "feedback": "Apesar de confiável, a tendência mostra que não é o ponto inicial da epidemia."
-            }
-        ]
+    {
+        "conceito": "Distrito Hélios",
+        "descricao": "Primeiro distrito a apresentar aumento real.",
+        "descricao_completa": "O Distrito Hélios é o único que começa a subir nos primeiros dias da epidemia. O início da curva aparece antes dos demais distritos. Isso indica que ele é o ponto mais provável de origem.",
+        "preco": 3,
+        "feedback": "Boa leitura do início da curva! Hélios é o primeiro distrito a apresentar crescimento."
+    },
+    {
+        "conceito": "Distrito Nébula",
+        "descricao": "Picos tardios e suspeitos.",
+        "descricao_completa": "O Distrito Nébula permanece estável no início. Seu pico surge apenas mais tarde e parece manipulado. Picos tardios não indicam origem de uma epidemia.",
+        "preco": 2,
+        "feedback": "Nébula tem picos chamativos, mas acontece tarde demais para ser origem."
+    },
+    {
+        "conceito": "Distrito Void",
+        "descricao": "Crescimento leve e mais tardio.",
+        "descricao_completa": "O Distrito Void apresenta aumento apenas depois que outros distritos já estavam crescendo. Crescimentos tardios não são típicos do ponto inicial de uma epidemia. Por isso, Void não indica origem.",
+        "preco": 1,
+        "feedback": "Void cresce tarde, então não é um bom candidato para origem."
+    }
+]
 
         self.loja = LojaSimples(
             self.hero.sprite,
@@ -2239,9 +2227,7 @@ class Level4():
         # Desenha a tela
         self.draw()
 
-
-
-    
+ 
 class Level5():
     def __init__(self, displaySurface, fase_id=3):
        
@@ -2262,62 +2248,57 @@ class Level5():
         dicas_estatisticas_fase5 = [
     {
         "conceito": "Olhar da Escala Quebrada",
-        "descricao": "Detecta distorções nos eixos de um gráfico.",
+        "descricao": "Percebe quando a escala de um gráfico está distorcida.",
         "descricao_completa": (
-            "Uma habilidade que foca apenas nas escalas e eixos. "
-            "Permite perceber manipulações visuais, mas ignora outros erros, "
-            "como amostras enviesadas ou correlações ilusórias. "
-            "Útil, mas insuficiente para revelar toda a verdade."
+            "Uma habilidade especializada em enxergar problemas nos eixos, como escalas comprimidas ou alongadas. No entanto, ela observa apenas a escala, sem avaliar a distribuição ou o contexto dos dados. É um bom começo, mas não resolve completamente a ilusão."
         ),
         "preco": 4,
         "feedback": (
-            "Você corrigiu os eixos, mas ainda sente algo errado. "
-            "Há mais ilusões escondidas além da escala."
-        )
+            "Você percebe o problema de escala, mas não o interpreta por completo. "
+            "Ainda falta entender como a escala afeta a percepção da correlação."
+        ),
+        "correta": False
     },
     {
         "conceito": "Visão da Correlação Falsa",
-        "descricao": "Distingue padrão real de coincidências visuais.",
+        "descricao": "Identifica quando uma correlação aparente não é real.",
         "descricao_completa": (
-            "Uma técnica poderosa, mas limitada. "
-            "Ajuda a não confundir coincidência com causa, "
-            "porém ignora problemas de eixos e seleção de dados. "
-            "Ver o padrão é bom, mas entender o contexto é essencial."
+            "Uma técnica útil para evitar interpretações equivocadas sobre relações entre variáveis. Porém, sem corrigir a escala do gráfico, a percepção da correlação continua distorcida. Não resolve a manipulação."
         ),
         "preco": 2,
         "feedback": (
-            "Você entendeu que correlação não é causalidade, "
-            "mas o gráfico ainda parece distorcido — algo falta."
-        )
+            "Você entendeu que não há causalidade, mas com a escala distorcida "
+            "a ilusão visual permanece. Algo ainda está fora do lugar."
+        ),
+        "correta": False
     },
     {
         "conceito": "Filtro da Amostra Pura",
-        "descricao": "Remove dados extremos que distorcem a correlação.",
+        "descricao": "Remove dados extremos para limpar visualmente um gráfico.",
         "descricao_completa": (
-            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
-            "Excluir pontos fora do padrão pode mascarar a realidade. "
-            "Amostras limpas ajudam, mas não garantem interpretação correta."
+            "Limpar a amostra pode ajudar em algumas análises, mas aqui o problema não está nos dados — está na escala. Remover pontos não muda a ilusão, e pode até ocultar informações importantes."
         ),
         "preco": 2,
         "feedback": (
-            "Você limpou a amostra, mas ainda não resolveu o problema com o grafico. "
-            "Erradon sorri — ele sabe que isso não basta."
-        )
+            "Você ajustou a amostra, mas nada mudou — porque o problema não era "
+            "a amostra, e sim a escala manipulada. A ilusão persiste intacta."
+        ),
+        "correta": False
     },
     {
         "conceito": "Olho do Equilíbrio Gráfico",
-        "descricao": "Examina escalas, dados e amostras com olhar crítico e purificador.",
+        "descricao": "Corrige escalas distorcidas e revela a verdadeira relação entre variáveis.",
         "descricao_completa": (
-            "Examina a escala e a dispersão dos dados, buscando um equilíbrio visual e interpretativo."
-            "Revela quando a escala distorce a percepção de correlação e ajuda a ver o padrão real escondido atrás da ilusão gráfica."
+            "Uma habilidade completa que detecta e corrige manipulações nos eixos, restaurando a proporção verdadeira do gráfico. Ao ajustar a escala, a suposta correlação desaparece e o padrão real dos dados é revelado."
         ),
         "preco": 3,
         "feedback": (
-            "Você trata os dados, ajusta a escala e percebe a verdade oculta. "
-            "O gráfico ganha forma e sentido — a ilusão de Erradon se desfaz diante do equilíbrio."
+            "Você corrige a escala e devolve o equilíbrio ao gráfico."
+            "Com os eixos proporcionais, percebe que não há tendência real"
+            "a ilusão criada por Erradon se desfaz instantaneamente."
         ),
-        "imagem":  os.path.join(image_path, "grafico_dispersao_fase5.png")
-
+        "imagem": image_path + "grafico_dispersao_feedback_fase5.png",
+        "correta": True
     }
 ]
 
@@ -2454,7 +2435,7 @@ class Level5():
         ),
         grafico_path = graficos_path + "grafico_dispersao_fase5.png",
         loja=self.loja,
-        correta_conceito = "Olho do Equilíbrio Gráfico"
+        correta_conceito ="Olho do Equilíbrio Gráfico"
     )
 
         vida_rect = (0, 0, 12, 12)
@@ -2501,123 +2482,133 @@ class Level5():
         for x, y, tileSurface in parede.tiles():
             self.paredesprites.add(Tile((x * TILESIZE, y * TILESIZE), tileSurface))
 
-       
+        dicas_estatisticas_fase5 = [
+    {
+        "conceito": "Olhar da Escala Quebrada",
+        "descricao": "Percebe quando a escala de um gráfico está distorcida.",
+        "descricao_completa": (
+            "Uma habilidade especializada em enxergar problemas nos eixos, como escalas comprimidas ou alongadas. No entanto, ela observa apenas a escala, sem avaliar a distribuição ou o contexto dos dados. É um bom começo, mas não resolve completamente a ilusão."
+        ),
+        "preco": 4,
+        "feedback": (
+            "Você percebe o problema de escala, mas não o interpreta por completo. "
+            "Ainda falta entender como a escala afeta a percepção da correlação."
+        ),
+        "correta": False
+    },
+    {
+        "conceito": "Visão da Correlação Falsa",
+        "descricao": "Identifica quando uma correlação aparente não é real.",
+        "descricao_completa": (
+            "Uma técnica útil para evitar interpretações equivocadas sobre relações entre variáveis. Porém, sem corrigir a escala do gráfico, a percepção da correlação continua distorcida. Não resolve a manipulação."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Você entendeu que não há causalidade, mas com a escala distorcida "
+            "a ilusão visual permanece. Algo ainda está fora do lugar."
+        ),
+        "correta": False
+    },
+    {
+        "conceito": "Filtro da Amostra Pura",
+        "descricao": "Remove dados extremos para limpar visualmente um gráfico.",
+        "descricao_completa": (
+            "Limpar a amostra pode ajudar em algumas análises, mas aqui o problema não está nos dados — está na escala. Remover pontos não muda a ilusão, e pode até ocultar informações importantes."
+        ),
+        "preco": 2,
+        "feedback": (
+            "Você ajustou a amostra, mas nada mudou — porque o problema não era "
+            "a amostra, e sim a escala manipulada. A ilusão persiste intacta."
+        ),
+        "correta": False
+    },
+    {
+        "conceito": "Olho do Equilíbrio Gráfico",
+        "descricao": "Corrige escalas distorcidas e revela a verdadeira relação entre variáveis.",
+        "descricao_completa": (
+            "Uma habilidade completa que detecta e corrige manipulações nos eixos, restaurando a proporção verdadeira do gráfico. Ao ajustar a escala, a suposta correlação desaparece e o padrão real dos dados é revelado."
+        ),
+        "preco": 3,
+        "feedback": (
+            "Você corrige a escala e devolve o equilíbrio ao gráfico."
+            "Com os eixos proporcionais, percebe que não há tendência real"
+            "a ilusão criada por Erradon se desfaz instantaneamente."
+        ),
+        "imagem": image_path + "grafico_dispersao_feedback_fase5.png",
+        "correta": True
+    }
+]
+        
+        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas_fase5, pos=(100, 50))
+
+        self.pergunta = PerguntaGrafico(
+        displaySurface=self.displaySurface,
+        hero=self.hero.sprite,
+        npc=self.samuraigirl.sprite,
+        pergunta=(
+            "Rosa acredita que o vento faz as flores crescerem mais rápido, "
+            "mas algo parece errado neste gráfico... "
+            "Qual é o verdadeiro problema que você enxerga?"
+        ),
+        grafico_path = graficos_path + "grafico_dispersao_feedback_fase5.png",
+        loja=self.loja,
+        correta_conceito ="Olho do Equilíbrio Gráfico"
+    )
+
+
+
         # Recria inimigos
         
-        
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
 
-        self.npcrobot.add(RobotNpc((1855,500) , faceRight= False))
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 710, limit_right= 950))
 
-        self.npcloja.add(LojaNpc((700,215) , faceRight= True))
+        self.samuraixamom.add(Samuraixamom((900,485), moveRight=True,limit_left= 690, limit_right= 980))
+
+        self.samuraixamom.add(Samuraixamom((900,485), moveRight=True,limit_left= 700, limit_right= 950))
+
+
+        self.samuraixamom.add(Samuraixamom((200,290), moveRight=True,limit_left= 180, limit_right= 400))
+
+        self.samuraixamom.add(Samuraixamom((1200,370), moveRight=True,limit_left= 1100, limit_right= 1350))
+
+        self.samuraixamom.add(Samuraixamom((1600,495), moveRight=True,limit_left= 1600, limit_right= 1850))
+
+        self.samuraixamom.add(Samuraixamom((1500,495), moveRight=True,limit_left= 1400, limit_right= 1650))
+
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
+
+        self.samuraixamom.add(Samuraixamom((900,240), moveRight=True,limit_left= 700, limit_right= 950))
+
+        self.samuraigirl.add(SamuraigirlNpc((173,481) , faceRight= False))
+
+        self.npcloja.add(LojaNpc((1800,265) , faceRight= False))
        
-        self.Coin.add(Coin((120,115)))
-        self.Coin.add(Coin((150,115)))
+        self.Coin.add(Coin((120,145)))
+        self.Coin.add(Coin((150,145)))
         
         self.Coin.add(Coin((80,370)))
         self.Coin.add(Coin((50,370)))
         
         
-        self.Coin.add(Coin((540,200)))
-        self.Coin.add(Coin((510,200)))
+        self.Coin.add(Coin((540,300)))
+        self.Coin.add(Coin((510,300)))
         
-        self.Coin.add(Coin((1040,200)))
-        self.Coin.add(Coin((1010,200)))
+        self.Coin.add(Coin((1040,300)))
+        self.Coin.add(Coin((1010,300)))
 
 
-        self.Coin.add(Coin((1250,140)))
-        self.Coin.add(Coin((1280,140)))
-
+        self.Coin.add(Coin((1250,280)))
+        self.Coin.add(Coin((1280,280)))
 
         self.potion.add(Potion((1800,490)))
 
         self.potion.add(Potion((1600,490)))
 
         self.potion.add(Potion((225,385)))
-      
-
-        # Recria herói
-        self.hero.add(Hero((170, 250), faceRight=True))
-
-        vida_rect = (0, 0, 12, 12)
-        self.hud = HUD(self.hero.sprite, hud_path + "vida_icon.png",vida_rect,contorno_path = hud_path + "vida_hud.png")
-
-        # Recria loja e pergunta para garantir estado inicial
-        dicas_estatisticas_fase5 = [
-    {
-        "conceito": "Olhar da Escala Quebrada",
-        "descricao": "Detecta distorções nos eixos de um gráfico.",
-        "descricao_completa": (
-            "Uma habilidade que foca apenas nas escalas e eixos. "
-            "Permite perceber manipulações visuais, mas ignora outros erros, "
-            "como amostras enviesadas ou correlações ilusórias. "
-            "Útil, mas insuficiente para revelar toda a verdade."
-        ),
-        "preco": 4,
-        "feedback": (
-            "Você corrigiu os eixos, mas ainda sente algo errado. "
-            "Há mais ilusões escondidas além da escala."
-        )
-    },
-    {
-        "conceito": "Visão da Correlação Falsa",
-        "descricao": "Distingue padrão real de coincidências visuais.",
-        "descricao_completa": (
-            "Uma técnica poderosa, mas limitada. "
-            "Ajuda a não confundir coincidência com causa, "
-            "porém ignora problemas de eixos e seleção de dados. "
-            "Ver o padrão é bom, mas entender o contexto é essencial."
-        ),
-        "preco": 2,
-        "feedback": (
-            "Você entendeu que correlação não é causalidade, "
-            "mas o gráfico ainda parece distorcido — algo falta."
-        )
-    },
-    {
-        "conceito": "Filtro da Amostra Pura",
-        "descricao": "Remove dados extremos que distorcem a correlação.",
-        "descricao_completa": (
-            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
-            "Excluir pontos fora do padrão pode mascarar a realidade. "
-            "Amostras limpas ajudam, mas não garantem interpretação correta."
-        ),
-        "preco": 2,
-        "feedback": (
-            "Você limpou a amostra, mas ainda há confusão. "
-            "Erradon sorri — ele sabe que isso não basta."
-        )
-    },
-    {
-        "conceito": "Olho do Equilíbrio Gráfico",
-        "descricao": "Examina escalas, dados e amostras com olhar crítico e purificador.",
-        "descricao_completa": (
-            "A habilidade definitiva da análise visual. "
-            "Não se deixa enganar por eixos distorcidos nem por correlações ilusórias. "
-            "Verifica se as escalas são proporcionais, se a amostra representa bem o fenômeno, "
-            "e aplica o tratamento adequado aos dados — removendo ruídos e outliers sem perder a essência do conjunto. "
-            "Filtrar ruídos é importante, mas perigoso se feito sem critério. "
-            "Excluir pontos fora do padrão pode mascarar a realidade. "
-            "O Olho do Equilíbrio ensina que compreender um gráfico exige harmonia entre clareza visual, integridade da amostra e cautela na interpretação. "
-            "Com esse olhar, Erradon não pode mais esconder suas manipulações."
-        ),
-        "preco": 3,
-        "feedback": (
-            "Você trata os dados, ajusta a escala e percebe a verdade oculta. "
-            "O gráfico ganha forma e sentido — a ilusão de Erradon se desfaz diante do equilíbrio."
-        )
-    }
-]
-
-        self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas_fase5, pos=(100, 50))
-        self.pergunta = PerguntaResposta(
-            displaySurface=self.displaySurface,
-            hero=self.hero.sprite,
-            npc=self.samuraigirl.sprite,
-            pergunta="Então, como eu posso ajustar os valores em uma única medida representativa?",
-            loja=self.loja,
-            correta_conceito="Média",
-            pos=(100, 100)
-        )
+    
+        self.hero.add(Hero((185, 400), faceRight=True))
+       
 
         # Recria zona de teleporte
         self.teleport_zone = pygame.Rect(
@@ -2982,7 +2973,7 @@ class Level6():
 
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite , dicas_estatisticas, pos=(100, 50))
   
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
         displaySurface=self.displaySurface,
         hero=self.hero.sprite,
         npc=self.erradon.sprite,
@@ -3064,7 +3055,7 @@ class Level6():
             }
         ]
         self.loja = LojaSimples(self.hero.sprite, self.displaySurface, self.npcloja.sprite, dicas_estatisticas, pos=(100, 50))
-        self.pergunta = PerguntaResposta(
+        self.pergunta = PerguntaResposta1(
             displaySurface=self.displaySurface,
             hero=self.hero.sprite,
             npc=self.npcrobot.sprite,

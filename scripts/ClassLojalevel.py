@@ -29,11 +29,6 @@ class LojaSimples:
         self.down_pressed_last_frame = False
         self.enter_pressed_last_frame = False
 
-        print("Dicas recebidas:", self.dicas)
-        for i, d in enumerate(self.dicas):
-            print(f"Dica {i}: {d['conceito']}, imagem: {d.get('imagem')}")
-
-
         # Painel visual
         self.painelloja = pygame.image.load(menu_path + "HUD/lojahud.png").convert_alpha()
         self.painellojarect = self.painelloja.get_rect(center=(
@@ -43,16 +38,15 @@ class LojaSimples:
 
         # Pré-carregar imagens das dicas
         for d in self.dicas:
-        
-            # Garante que as chaves existem
+
             if 'descricao' not in d:
                 d['descricao'] = ""
             if 'descricao_completa' not in d:
                 d['descricao_completa'] = d.get('descricao', "")
-            # Carrega imagem se existir
+
             img_path = d.get("imagem")
-            
-            if img_path :
+
+            if img_path:
                 try:
                     img = pygame.image.load(img_path).convert_alpha()
                     img = pygame.transform.scale(img, (120, 120))
@@ -78,16 +72,13 @@ class LojaSimples:
         if self.hero.coins_count >= dica['preco']:
             self.hero.coins_count -= dica['preco']
             self.compradas.append(dica)
-            
 
     # ------------------------------- INPUT -------------------------------
     def handle_input(self):
         keys = pygame.key.get_pressed()
 
-        # Mostrar "(B) Abrir Loja"
         self.npc.show_interaction = self.hero.hitbox.colliderect(self.npc.hitbox)
 
-        # Abrir/Fechar loja com B
         if keys[pygame.K_b] and not self.b_pressed_last_frame:
             if self.hero.hitbox.colliderect(self.npc.hitbox):
                 self.active = not self.active
@@ -95,14 +86,12 @@ class LojaSimples:
                 self.modo_descricao = False
         self.b_pressed_last_frame = keys[pygame.K_b]
 
-        # Abrir menu das compradas (TAB)
         if keys[pygame.K_TAB] and not self.tab_pressed_last_frame:
             if not self.active:
                 self.mostrar_compradas = not self.mostrar_compradas
                 self.modo_descricao = False
         self.tab_pressed_last_frame = keys[pygame.K_TAB]
 
-        # ------------------- MENU DAS COMPRADAS -------------------
         if self.mostrar_compradas:
             if not self.modo_descricao:
                 if keys[pygame.K_UP] and not self.up_pressed_last_frame:
@@ -120,11 +109,9 @@ class LojaSimples:
             self.enter_pressed_last_frame = keys[pygame.K_RETURN]
             return
 
-        # Não está na loja → não navega
         if not self.active:
             return
 
-        # ------------------- MENU DA LOJA -------------------
         if keys[pygame.K_UP] and not self.up_pressed_last_frame:
             self.mover_selecao(-1)
         if keys[pygame.K_DOWN] and not self.down_pressed_last_frame:
@@ -154,11 +141,15 @@ class LojaSimples:
 
         return linhas
 
+    # ------------------------------- QUEBRA DE PARÁGRAFOS -------------------------------
+    def _quebrar_paragrafos(self, texto):
+        partes = [p.strip() for p in texto.split('.') if p.strip()]
+        return partes
+
     # ------------------------------- DESENHO DO MENU DE COMPRADAS -------------------------------
     def draw_compradas(self):
         self.displaySurface.blit(self.painelloja, self.painellojarect)
 
-        # ----- CASO NÃO HAJA COMPRADAS -----
         if not self.compradas:
             vazio = self.font.render("Nenhuma dica adquirida", True, self.text_color)
             self.displaySurface.blit(vazio, (self.painellojarect.x + 10, self.painellojarect.y + 10))
@@ -166,7 +157,6 @@ class LojaSimples:
             self.displaySurface.blit(instrucao, (self.painellojarect.x + 10, self.painellojarect.bottom - 25))
             return
 
-        # ----- LISTA DE COMPRADAS -----
         if not self.modo_descricao:
             titulo = self.font.render("Dicas Compradas", True, self.text_color)
             self.displaySurface.blit(titulo, (self.painellojarect.x + 10, self.painellojarect.y + 10))
@@ -175,23 +165,28 @@ class LojaSimples:
             for i, dica in enumerate(self.compradas):
                 cor = self.highlight_color if i == self.compradas_index else self.text_color
                 texto = f"- {dica['conceito']}"
-                self.displaySurface.blit(self.font.render(texto, True, cor), (self.painellojarect.x + 10, y))
+                self.displaySurface.blit(self.font.render(texto, True, cor),
+                                         (self.painellojarect.x + 10, y))
                 y += 18
 
-        # ----- DESCRIÇÃO DE UMA DICA -----
         else:
             dica = self.compradas[self.compradas_index]
             titulo = self.font.render(dica['conceito'], True, self.highlight_color)
             self.displaySurface.blit(titulo, (self.painellojarect.x + 10, self.painellojarect.y + 10))
 
             y = self.painellojarect.y + 30
-            for linha in self._quebrar_texto(dica['descricao_completa'], 32):
-                self.displaySurface.blit(self.font.render(linha, True, self.text_color),
-                                         (self.painellojarect.x + 10, y))
-                y += 15
 
-            #
-        # ----- INSTRUÇÃO PADRÃO NO FINAL -----
+            paragrafos = self._quebrar_paragrafos(dica['descricao_completa'])
+
+            for paragrafo in paragrafos:
+                for linha in self._quebrar_texto(paragrafo, 32):
+                    self.displaySurface.blit(
+                        self.font.render(linha, True, self.text_color),
+                        (self.painellojarect.x + 10, y)
+                    )
+                    y += 15
+                y += 10  # espaço entre parágrafos
+
         instrucao = self.font.render("Pressione TAB para fechar", True, self.text_color)
         self.displaySurface.blit(instrucao, (self.painellojarect.x + 10, self.painellojarect.bottom - 25))
 
@@ -200,34 +195,31 @@ class LojaSimples:
         if self.active:
             self.displaySurface.blit(self.painelloja, self.painellojarect)
 
-            # Título
             titulo = self.font.render("Loja de Conceitos Variados", True, self.text_color)
             self.displaySurface.blit(
                 titulo,
                 (self.painellojarect.centerx - titulo.get_width() // 2, self.painellojarect.y + 10)
             )
 
-            # Lista de itens
             y = self.painellojarect.y + 50
             for i, dica in enumerate(self.dicas):
                 cor = self.highlight_color if i == self.selected_index else self.text_color
                 status = "(comprado)" if dica in self.compradas else f"- {dica['preco']} moedas"
                 texto = f"{dica['conceito']} {status}"
+
                 for linha in self._quebrar_texto(texto, 32):
-                    self.displaySurface.blit(self.font.render(linha, True, cor), (self.painellojarect.x + 10, y))
+                    self.displaySurface.blit(self.font.render(linha, True, cor),
+                                             (self.painellojarect.x + 10, y))
                     y += 15
 
-            # Descrição do item selecionado
             y += 10
             for linha in self._quebrar_texto(self.dicas[self.selected_index]['descricao'], 32):
                 self.displaySurface.blit(self.font.render(linha, True, self.text_color),
                                          (self.painellojarect.x + 10, y))
                 y += 15
 
-            # INSTRUÇÃO DE FECHAR
             instrucao = self.font.render("Pressione B para fechar a loja", True, self.text_color)
             self.displaySurface.blit(instrucao, (self.painellojarect.x + 10, self.painellojarect.bottom - 25))
 
-        # Menu das compradas
         if self.mostrar_compradas:
             self.draw_compradas()

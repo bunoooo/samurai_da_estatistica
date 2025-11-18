@@ -1,7 +1,7 @@
 import pygame
 from scripts.Config import *
 
-class PerguntaResposta:
+class PerguntaResposta1:
     def __init__(self, displaySurface, hero, npc, pergunta, loja, correta_conceito, pos=(100, 100)):
         """
         loja: instância da LojaSimples (ou None)
@@ -151,12 +151,12 @@ class PerguntaResposta:
                 self.displaySurface.blit(img, img_rect)
            
             # Resultado (acertou/errou)
-            resultado_texto = "Você aeeee" if self.acertou else "Você errou!"
+            resultado_texto = "Você acertou" if self.acertou else "Você errou!"
             resultado_surf = self.font.render(resultado_texto, True, self.highlight_color)
             self.displaySurface.blit(resultado_surf, (start_x, start_y + len(linhas) * 20 + 10))
 
             # Botão de sair
-            sair_surf = self.font.render("Pressione x para continuar...", True, self.highlight_color)
+            sair_surf = self.font.render("Pressione enter para continuar...", True, self.highlight_color)
             self.displaySurface.blit(sair_surf, (start_x, self.painelperguntarect.bottom - 30))
             return
 

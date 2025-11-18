@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
-def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_fase5.png"):
+def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_feedback_fase5.png"):
     """
-    Gráfico de dispersão com escala distorcida (600x400 px).
-    Rosa criou este gráfico para estudar a relação entre o vento e o crescimento das flores,
-    mas Erradon manipulou a escala para gerar uma ilusão de correlação.
+    Gráfico de dispersão honesto, sem manipulação de eixos.
+    Rosa criou este gráfico para estudar a relação entre o vento e o crescimento das flores.
+    Agora o gráfico aparece de forma proporcional e verdadeira.
     """
 
     # Gera dados fictícios
@@ -14,7 +14,7 @@ def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_fase5.p
     vento = np.random.uniform(0, 20, 30)
     crescimento = 2 * np.random.normal(5, 2, 30)  # sem correlação real
 
-    # Cria figura com aparência antiga
+    # Estilo antigo
     plt.style.use("seaborn-v0_8-muted")
     fig, ax = plt.subplots(figsize=(6, 4), dpi=100)
 
@@ -25,13 +25,15 @@ def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_fase5.p
     # Pontos no estilo clássico
     ax.scatter(vento, crescimento, color="#5b3a29", edgecolors="#2b1d13", s=70)
 
-    # Eixos manipulados — Erradon distorce a percepção!
-    ax.set_xlim(0, 20)
-    ax.set_ylim(0, 12)
-    ax.set_aspect(0.3)  # achatamento artificial — cria ilusão de tendência
+    # ❌ Sem manipulação de eixos
+    # ❌ Sem set_aspect artificial
+    # ✔️ Eixos automáticos
+    ax.set_xlim(min(vento) - 1, max(vento) + 1)
+    ax.set_ylim(min(crescimento) - 1, max(crescimento) + 1)
 
     # Título e rótulos com estilo antigo
-    ax.set_title("Crescimento das Flores x Velocidade do Vento", fontsize=13, color="#3b2f2f", pad=10)
+    ax.set_title("Crescimento das Flores x Velocidade do Vento",
+                 fontsize=13, color="#3b2f2f", pad=10)
     ax.set_xlabel("Velocidade do Vento (km/h)", color="#4b3e2b", fontsize=11)
     ax.set_ylabel("Altura das Flores (cm)", color="#4b3e2b", fontsize=11)
 
@@ -43,7 +45,6 @@ def gerar_grafico_fase5(caminho_saida="assets/graficos/grafico_dispersao_fase5.p
         spine.set_color("#6b594a")
         spine.set_linewidth(1.2)
 
-    # Ajuste e salvamento
     plt.tight_layout()
 
     pasta_saida = os.path.dirname(caminho_saida)
